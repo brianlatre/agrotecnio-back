@@ -72,7 +72,6 @@ def penalty_ratio(weight: float) -> float:
 
 @router.get("/init", response_model=InitResponse)
 def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
-    # --- LO DE ANTES: BD ---
     slaughterhouse = db.query(Slaughterhouse).first()
     if not slaughterhouse:
         logger.error("No hay mataderos en la base de datos")
@@ -115,10 +114,10 @@ def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
         diesel_s=diesel_s,
     )
 
-    # --- NUEVO: leer JSON de simulación TAL CUAL ---
+    # --- leer JSON simulación ---
     try:
         with SIM_RESULTS_PATH.open("r", encoding="utf-8") as f:
-            simulation_data = json.load(f)   # 🔹 aquí viene summary + daily_logs
+            simulation_data = json.load(f)
     except FileNotFoundError:
         logger.error(
             "Fichero de resultados de simulación no encontrado",
@@ -140,10 +139,12 @@ def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
 
     summary = simulation_data.get("summary", {})
     logger.info(
-        "Resultados de simulación cargados desde fichero",
+        "Estado inicial de simulación cargado",
+        slaughterhouse_id=slaughterhouse.slaughterhouse_id,
+        farms_count=len(farms),
+        base_price=base_price,
+        diesel_s=diesel_s,
         total_profit_net=summary.get("total_profit_net"),
-        total_transport_cost=summary.get("total_transport_cost"),
-        total_penalties=summary.get("total_penalties"),
     )
 
     return InitResponse(
@@ -152,6 +153,46 @@ def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
         prices=prices,
         simulation=simulation_data,
     )
+
+
+# @router.get("/init")
+# def get_initial_state() -> dict:
+#     """
+#     De momento devolvemos el resultado de la simulación
+#     precomputada (simulation_results.json) tal cual, para que
+#     el frontend pueda pintar el planning completo.
+#     """
+#     try:
+#         with SIM_RESULTS_PATH.open("r", encoding="utf-8") as f:
+#             data = json.load(f)
+#     except FileNotFoundError:
+#         logger.error(
+#             "Fichero de resultados de simulación no encontrado",
+#             path=str(SIM_RESULTS_PATH),
+#         )
+#         raise HTTPException(
+#             status_code=500,
+#             detail="Simulation results file not found",
+#         )
+#     except json.JSONDecodeError:
+#         logger.error(
+#             "Error parseando simulation_results.json",
+#             path=str(SIM_RESULTS_PATH),
+#         )
+#         raise HTTPException(
+#             status_code=500,
+#             detail="Invalid simulation results JSON",
+#         )
+
+#     summary = data.get("summary", {})
+#     logger.info(
+#         "Resultados de simulación cargados desde fichero",
+#         total_profit_net=summary.get("total_profit_net"),
+#         total_transport_cost=summary.get("total_transport_cost"),
+#         total_penalties=summary.get("total_penalties"),
+#     )
+
+#     return data
 
 
 # ---------- POST /api/simulation/next-day ----------
