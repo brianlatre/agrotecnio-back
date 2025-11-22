@@ -110,34 +110,28 @@ class Simulation:
         self.init_scenario()
 
     def init_scenario(self):
-        # 1. Create Fleet
-        print("[SYSTEM] Creating Fleet (Standard Capacity)...")
-        self.trucks.append(Truck(1, 10, 'small')) 
-        self.trucks.append(Truck(2, 10, 'small'))
-        self.trucks.append(Truck(3, 20, 'large'))
-
-        # 2. Create Farms
-        print("[SYSTEM] Generating 50 Mixed Farms (Small, Medium, Large)...")
-        base_coords = [
-            (41.93, 2.25), (41.80, 2.10), (42.00, 2.30), (41.65, 2.00), # Vic/Osona
-            (41.61, 0.62), (41.70, 0.80), (41.55, 0.50), (41.80, 0.90)  # Lleida
-        ]
-        
-        for i in range(50):
-            base = base_coords[i % len(base_coords)]
-            lat = base[0] + random.uniform(-0.15, 0.15)
-            lon = base[1] + random.uniform(-0.15, 0.15)
+        json_file = 'scenario_data.json'
+        try:
+            print(f"[SYSTEM] Loading scenario from '{json_file}'...")
+            with open(json_file, 'r') as f:
+                data = json.load(f)
             
-            rand_type = random.random()
-            if rand_type < 0.60:
-                inv = random.randint(20, 60) # Small
-            elif rand_type < 0.90:
-                inv = random.randint(100, 200) # Medium
-            else:
-                inv = random.randint(300, 600) # Large
-
-            w = random.uniform(85, 105)
-            self.farms.append(Farm(f"Farm_{i+1}", lat, lon, inv, w))
+            # 1. Load Fleet
+            for t in data['trucks']:
+                self.trucks.append(Truck(t['id'], t['capacity_tons'], t['type']))
+            
+            # 2. Load Farms
+            for f in data['farms']:
+                self.farms.append(Farm(f['id'], f['lat'], f['lon'], f['inventory'], f['avg_weight']))
+                
+            print(f"[SYSTEM] Successfully loaded {len(self.trucks)} trucks and {len(self.farms)} farms.")
+            
+        except FileNotFoundError:
+            print(f"[ERROR] Could not find '{json_file}'. Please run 'generate_data.py' first to create the input data.")
+            exit(1)
+        except json.JSONDecodeError:
+            print(f"[ERROR] '{json_file}' is not a valid JSON file.")
+            exit(1)
 
     # --- HELPER FUNCTIONS ---
 
