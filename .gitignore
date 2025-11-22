@@ -1,3 +1,5 @@
-data/logistics.db
+data/*
 .env
 logs/*
+*.pyc
+__pycache__/

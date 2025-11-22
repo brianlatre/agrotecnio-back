@@ -1,0 +1,371 @@
+{
+    "trucks": [
+        {
+            "id": 1,
+            "capacity_tons": 10,
+            "type": "small"
+        },
+        {
+            "id": 2,
+            "capacity_tons": 10,
+            "type": "small"
+        },
+        {
+            "id": 3,
+            "capacity_tons": 20,
+            "type": "large"
+        }
+    ],
+    "farms": [
+        {
+            "id": "Farm_1",
+            "lat": 41.949928,
+            "lon": 2.308754,
+            "inventory": 44,
+            "avg_weight": 102.52
+        },
+        {
+            "id": "Farm_2",
+            "lat": 41.885825,
+            "lon": 2.020739,
+            "inventory": 24,
+            "avg_weight": 104.77
+        },
+        {
+            "id": "Farm_3",
+            "lat": 41.852171,
+            "lon": 2.277308,
+            "inventory": 32,
+            "avg_weight": 104.48
+        },
+        {
+            "id": "Farm_4",
+            "lat": 41.541644,
+            "lon": 2.070618,
+            "inventory": 57,
+            "avg_weight": 100.36
+        },
+        {
+            "id": "Farm_5",
+            "lat": 41.571409,
+            "lon": 0.475763,
+            "inventory": 27,
+            "avg_weight": 100.23
+        },
+        {
+            "id": "Farm_6",
+            "lat": 41.586863,
+            "lon": 0.723626,
+            "inventory": 55,
+            "avg_weight": 100.95
+        },
+        {
+            "id": "Farm_7",
+            "lat": 41.55161,
+            "lon": 0.456926,
+            "inventory": 57,
+            "avg_weight": 90.03
+        },
+        {
+            "id": "Farm_8",
+            "lat": 41.756139,
+            "lon": 0.763455,
+            "inventory": 508,
+            "avg_weight": 95.46
+        },
+        {
+            "id": "Farm_9",
+            "lat": 41.98952,
+            "lon": 2.292664,
+            "inventory": 172,
+            "avg_weight": 96.36
+        },
+        {
+            "id": "Farm_10",
+            "lat": 41.834884,
+            "lon": 2.150803,
+            "inventory": 142,
+            "avg_weight": 90.36
+        },
+        {
+            "id": "Farm_11",
+            "lat": 41.926756,
+            "lon": 2.359802,
+            "inventory": 49,
+            "avg_weight": 87.33
+        },
+        {
+            "id": "Farm_12",
+            "lat": 41.724678,
+            "lon": 1.891729,
+            "inventory": 136,
+            "avg_weight": 91.34
+        },
+        {
+            "id": "Farm_13",
+            "lat": 41.749601,
+            "lon": 0.699055,
+            "inventory": 41,
+            "avg_weight": 92.44
+        },
+        {
+            "id": "Farm_14",
+            "lat": 41.613282,
+            "lon": 0.846716,
+            "inventory": 45,
+            "avg_weight": 100.77
+        },
+        {
+            "id": "Farm_15",
+            "lat": 41.665185,
+            "lon": 0.364721,
+            "inventory": 106,
+            "avg_weight": 102.08
+        },
+        {
+            "id": "Farm_16",
+            "lat": 41.871462,
+            "lon": 0.843419,
+            "inventory": 190,
+            "avg_weight": 94.15
+        },
+        {
+            "id": "Farm_17",
+            "lat": 41.912564,
+            "lon": 2.13839,
+            "inventory": 31,
+            "avg_weight": 89.71
+        },
+        {
+            "id": "Farm_18",
+            "lat": 41.845132,
+            "lon": 2.024193,
+            "inventory": 49,
+            "avg_weight": 102.68
+        },
+        {
+            "id": "Farm_19",
+            "lat": 42.111056,
+            "lon": 2.447985,
+            "inventory": 52,
+            "avg_weight": 104.84
+        },
+        {
+            "id": "Farm_20",
+            "lat": 41.605387,
+            "lon": 2.144394,
+            "inventory": 39,
+            "avg_weight": 93.9
+        },
+        {
+            "id": "Farm_21",
+            "lat": 41.604072,
+            "lon": 0.628947,
+            "inventory": 151,
+            "avg_weight": 97.04
+        },
+        {
+            "id": "Farm_22",
+            "lat": 41.587787,
+            "lon": 0.783494,
+            "inventory": 25,
+            "avg_weight": 101.14
+        },
+        {
+            "id": "Farm_23",
+            "lat": 41.64881,
+            "lon": 0.605955,
+            "inventory": 47,
+            "avg_weight": 91.63
+        },
+        {
+            "id": "Farm_24",
+            "lat": 41.670333,
+            "lon": 0.977872,
+            "inventory": 31,
+            "avg_weight": 101.64
+        },
+        {
+            "id": "Farm_25",
+            "lat": 41.869806,
+            "lon": 2.335448,
+            "inventory": 32,
+            "avg_weight": 87.6
+        },
+        {
+            "id": "Farm_26",
+            "lat": 41.916835,
+            "lon": 2.159704,
+            "inventory": 110,
+            "avg_weight": 92.61
+        },
+        {
+            "id": "Farm_27",
+            "lat": 41.876479,
+            "lon": 2.308685,
+            "inventory": 168,
+            "avg_weight": 95.46
+        },
+        {
+            "id": "Farm_28",
+            "lat": 41.781606,
+            "lon": 2.01329,
+            "inventory": 145,
+            "avg_weight": 94.52
+        },
+        {
+            "id": "Farm_29",
+            "lat": 41.725288,
+            "lon": 0.723339,
+            "inventory": 59,
+            "avg_weight": 93.98
+        },
+        {
+            "id": "Farm_30",
+            "lat": 41.720287,
+            "lon": 0.941639,
+            "inventory": 54,
+            "avg_weight": 85.85
+        },
+        {
+            "id": "Farm_31",
+            "lat": 41.420435,
+            "lon": 0.512911,
+            "inventory": 151,
+            "avg_weight": 98.4
+        },
+        {
+            "id": "Farm_32",
+            "lat": 41.804443,
+            "lon": 0.836297,
+            "inventory": 116,
+            "avg_weight": 104.25
+        },
+        {
+            "id": "Farm_33",
+            "lat": 41.977217,
+            "lon": 2.247223,
+            "inventory": 37,
+            "avg_weight": 85.44
+        },
+        {
+            "id": "Farm_34",
+            "lat": 41.823953,
+            "lon": 2.135167,
+            "inventory": 38,
+            "avg_weight": 103.06
+        },
+        {
+            "id": "Farm_35",
+            "lat": 41.914681,
+            "lon": 2.34048,
+            "inventory": 33,
+            "avg_weight": 91.51
+        },
+        {
+            "id": "Farm_36",
+            "lat": 41.67063,
+            "lon": 2.047562,
+            "inventory": 39,
+            "avg_weight": 93.29
+        },
+        {
+            "id": "Farm_37",
+            "lat": 41.743266,
+            "lon": 0.484245,
+            "inventory": 48,
+            "avg_weight": 97.16
+        },
+        {
+            "id": "Farm_38",
+            "lat": 41.589752,
+            "lon": 0.807003,
+            "inventory": 59,
+            "avg_weight": 104.89
+        },
+        {
+            "id": "Farm_39",
+            "lat": 41.649204,
+            "lon": 0.460261,
+            "inventory": 180,
+            "avg_weight": 100.11
+        },
+        {
+            "id": "Farm_40",
+            "lat": 41.926156,
+            "lon": 0.982395,
+            "inventory": 27,
+            "avg_weight": 90.15
+        },
+        {
+            "id": "Farm_41",
+            "lat": 41.933554,
+            "lon": 2.126467,
+            "inventory": 134,
+            "avg_weight": 88.53
+        },
+        {
+            "id": "Farm_42",
+            "lat": 41.935715,
+            "lon": 2.126088,
+            "inventory": 128,
+            "avg_weight": 100.96
+        },
+        {
+            "id": "Farm_43",
+            "lat": 41.855667,
+            "lon": 2.41006,
+            "inventory": 173,
+            "avg_weight": 94.18
+        },
+        {
+            "id": "Farm_44",
+            "lat": 41.770992,
+            "lon": 2.088242,
+            "inventory": 36,
+            "avg_weight": 102.34
+        },
+        {
+            "id": "Farm_45",
+            "lat": 41.715354,
+            "lon": 0.645837,
+            "inventory": 142,
+            "avg_weight": 100.51
+        },
+        {
+            "id": "Farm_46",
+            "lat": 41.691869,
+            "lon": 0.833247,
+            "inventory": 42,
+            "avg_weight": 90.59
+        },
+        {
+            "id": "Farm_47",
+            "lat": 41.450057,
+            "lon": 0.531041,
+            "inventory": 427,
+            "avg_weight": 90.2
+        },
+        {
+            "id": "Farm_48",
+            "lat": 41.801476,
+            "lon": 0.764386,
+            "inventory": 35,
+            "avg_weight": 93.81
+        },
+        {
+            "id": "Farm_49",
+            "lat": 41.946572,
+            "lon": 2.36758,
+            "inventory": 33,
+            "avg_weight": 93.57
+        },
+        {
+            "id": "Farm_50",
+            "lat": 41.673713,
+            "lon": 2.039983,
+            "inventory": 29,
+            "avg_weight": 90.26
+        }
+    ]
+}
