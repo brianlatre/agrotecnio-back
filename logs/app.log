@@ -1,0 +1,5 @@
+2025-11-22 17:32:37.815 | INFO     | logging:callHandlers:1737 - Started server process [8]
+2025-11-22 17:32:37.815 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:32:37.820 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:36:53.893 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:36:53.994 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.

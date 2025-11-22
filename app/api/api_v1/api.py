@@ -5,6 +5,7 @@ from app.api.api_v1.routers import (
     farms,
     slaughterhouses,
     transports,
+    simulation
 )
 
 api_router = APIRouter()
@@ -12,3 +13,4 @@ api_router = APIRouter()
 api_router.include_router(farms.router)
 api_router.include_router(slaughterhouses.router)
 api_router.include_router(transports.router)
+api_router.include_router(simulation.router)
