@@ -1,258 +1,258 @@
 {
     "summary": {
-        "total_profit_net": 416272.58,
-        "total_transport_cost": 17338.93,
-        "total_penalties": 63523.12,
+        "total_profit_net": 733469.03,
+        "total_transport_cost": 4602.89,
+        "total_penalties": 52260.3,
         "final_farm_status": [
             {
-                "id": "Farm_1",
+                "id": "Farm_1_Manlleu",
                 "remaining": 0,
+                "weight": 113.9
+            },
+            {
+                "id": "Farm_2_Taradell",
+                "remaining": 419,
+                "weight": 111.5
+            },
+            {
+                "id": "Farm_3_Manlleu",
+                "remaining": 88,
+                "weight": 108.0
+            },
+            {
+                "id": "Farm_4_Taradell",
+                "remaining": 0,
+                "weight": 123.2
+            },
+            {
+                "id": "Farm_5_Gurb",
+                "remaining": 230,
                 "weight": 112.9
             },
             {
-                "id": "Farm_2",
+                "id": "Farm_6_Calldetenes",
+                "remaining": 152,
+                "weight": 123.1
+            },
+            {
+                "id": "Farm_7_Taradell",
                 "remaining": 0,
+                "weight": 111.0
+            },
+            {
+                "id": "Farm_8_Calldetenes",
+                "remaining": 0,
+                "weight": 116.9
+            },
+            {
+                "id": "Farm_9_Gurb",
+                "remaining": 43,
+                "weight": 105.8
+            },
+            {
+                "id": "Farm_10_Tona",
+                "remaining": 37,
+                "weight": 114.4
+            },
+            {
+                "id": "Farm_11_Taradell",
+                "remaining": 0,
+                "weight": 113.6
+            },
+            {
+                "id": "Farm_12_Tona",
+                "remaining": 0,
+                "weight": 123.4
+            },
+            {
+                "id": "Farm_13_Sta. Eugenia",
+                "remaining": 50,
+                "weight": 109.4
+            },
+            {
+                "id": "Farm_14_Taradell",
+                "remaining": 550,
+                "weight": 115.0
+            },
+            {
+                "id": "Farm_15_Gurb",
+                "remaining": 0,
+                "weight": 117.5
+            },
+            {
+                "id": "Farm_16_Taradell",
+                "remaining": 43,
+                "weight": 102.4
+            },
+            {
+                "id": "Farm_17_Tona",
+                "remaining": 0,
+                "weight": 116.9
+            },
+            {
+                "id": "Farm_18_Taradell",
+                "remaining": 42,
+                "weight": 105.1
+            },
+            {
+                "id": "Farm_19_Gurb",
+                "remaining": 187,
+                "weight": 106.3
+            },
+            {
+                "id": "Farm_20_Calldetenes",
+                "remaining": 0,
+                "weight": 118.1
+            },
+            {
+                "id": "Farm_21_Tona",
+                "remaining": 43,
+                "weight": 105.5
+            },
+            {
+                "id": "Farm_22_Taradell",
+                "remaining": 92,
+                "weight": 110.2
+            },
+            {
+                "id": "Farm_23_Roda de Ter",
+                "remaining": 238,
+                "weight": 108.4
+            },
+            {
+                "id": "Farm_24_Gurb",
+                "remaining": 0,
+                "weight": 113.5
+            },
+            {
+                "id": "Farm_25_Sta. Eugenia",
+                "remaining": 0,
+                "weight": 118.1
+            },
+            {
+                "id": "Farm_26_Sta. Eugenia",
+                "remaining": 176,
+                "weight": 109.1
+            },
+            {
+                "id": "Farm_27_Taradell",
+                "remaining": 0,
+                "weight": 118.4
+            },
+            {
+                "id": "Farm_28_Calldetenes",
+                "remaining": 40,
+                "weight": 103.4
+            },
+            {
+                "id": "Farm_29_Gurb",
+                "remaining": 0,
+                "weight": 120.5
+            },
+            {
+                "id": "Farm_30_Manlleu",
+                "remaining": 45,
                 "weight": 102.0
             },
             {
-                "id": "Farm_3",
-                "remaining": 0,
+                "id": "Farm_31_Gurb",
+                "remaining": 120,
                 "weight": 107.2
             },
             {
-                "id": "Farm_4",
-                "remaining": 30,
-                "weight": 111.2
+                "id": "Farm_32_Taradell",
+                "remaining": 134,
+                "weight": 117.8
             },
             {
-                "id": "Farm_5",
-                "remaining": 32,
-                "weight": 107.6
+                "id": "Farm_33_Manlleu",
+                "remaining": 45,
+                "weight": 104.8
             },
             {
-                "id": "Farm_6",
-                "remaining": 35,
-                "weight": 102.3
-            },
-            {
-                "id": "Farm_7",
-                "remaining": 154,
-                "weight": 104.5
-            },
-            {
-                "id": "Farm_8",
-                "remaining": 203,
-                "weight": 113.3
-            },
-            {
-                "id": "Farm_9",
+                "id": "Farm_34_Roda de Ter",
                 "remaining": 0,
-                "weight": 113.2
+                "weight": 116.9
             },
             {
-                "id": "Farm_10",
+                "id": "Farm_35_Gurb",
                 "remaining": 0,
-                "weight": 104.5
+                "weight": 115.2
             },
             {
-                "id": "Farm_11",
-                "remaining": 0,
-                "weight": 109.0
-            },
-            {
-                "id": "Farm_12",
-                "remaining": 0,
-                "weight": 113.7
-            },
-            {
-                "id": "Farm_13",
-                "remaining": 50,
-                "weight": 107.1
-            },
-            {
-                "id": "Farm_14",
-                "remaining": 25,
-                "weight": 103.7
-            },
-            {
-                "id": "Farm_15",
-                "remaining": 51,
-                "weight": 109.8
-            },
-            {
-                "id": "Farm_16",
-                "remaining": 22,
-                "weight": 114.1
-            },
-            {
-                "id": "Farm_17",
-                "remaining": 0,
-                "weight": 98.6
-            },
-            {
-                "id": "Farm_18",
+                "id": "Farm_36_Sta. Eugenia",
                 "remaining": 0,
                 "weight": 113.1
             },
             {
-                "id": "Farm_19",
-                "remaining": 0,
-                "weight": 98.4
-            },
-            {
-                "id": "Farm_20",
-                "remaining": 0,
-                "weight": 97.5
-            },
-            {
-                "id": "Farm_21",
-                "remaining": 348,
-                "weight": 108.1
-            },
-            {
-                "id": "Farm_22",
-                "remaining": 86,
-                "weight": 106.2
-            },
-            {
-                "id": "Farm_23",
-                "remaining": 443,
-                "weight": 104.5
-            },
-            {
-                "id": "Farm_24",
-                "remaining": 0,
-                "weight": 97.6
-            },
-            {
-                "id": "Farm_25",
-                "remaining": 0,
-                "weight": 105.1
-            },
-            {
-                "id": "Farm_26",
-                "remaining": 0,
-                "weight": 114.0
-            },
-            {
-                "id": "Farm_27",
-                "remaining": 0,
-                "weight": 98.1
-            },
-            {
-                "id": "Farm_28",
-                "remaining": 0,
-                "weight": 99.7
-            },
-            {
-                "id": "Farm_29",
-                "remaining": 22,
+                "id": "Farm_37_Manlleu",
+                "remaining": 5,
                 "weight": 113.5
             },
             {
-                "id": "Farm_30",
-                "remaining": 121,
-                "weight": 102.1
-            },
-            {
-                "id": "Farm_31",
-                "remaining": 26,
-                "weight": 96.5
-            },
-            {
-                "id": "Farm_32",
+                "id": "Farm_38_Manlleu",
                 "remaining": 0,
-                "weight": 106.7
+                "weight": 112.2
             },
             {
-                "id": "Farm_33",
+                "id": "Farm_39_Gurb",
                 "remaining": 0,
-                "weight": 106.6
+                "weight": 114.4
             },
             {
-                "id": "Farm_34",
-                "remaining": 293,
-                "weight": 110.2
-            },
-            {
-                "id": "Farm_35",
+                "id": "Farm_40_Manlleu",
                 "remaining": 0,
-                "weight": 107.9
+                "weight": 115.1
             },
             {
-                "id": "Farm_36",
+                "id": "Farm_41_Calldetenes",
+                "remaining": 32,
+                "weight": 119.7
+            },
+            {
+                "id": "Farm_42_Roda de Ter",
+                "remaining": 82,
+                "weight": 119.0
+            },
+            {
+                "id": "Farm_43_Tona",
                 "remaining": 0,
-                "weight": 110.1
+                "weight": 117.0
             },
             {
-                "id": "Farm_37",
-                "remaining": 36,
-                "weight": 110.6
-            },
-            {
-                "id": "Farm_38",
-                "remaining": 91,
-                "weight": 105.9
-            },
-            {
-                "id": "Farm_39",
-                "remaining": 29,
-                "weight": 111.7
-            },
-            {
-                "id": "Farm_40",
+                "id": "Farm_44_Taradell",
                 "remaining": 0,
-                "weight": 111.8
+                "weight": 112.7
             },
             {
-                "id": "Farm_41",
-                "remaining": 452,
-                "weight": 111.5
-            },
-            {
-                "id": "Farm_42",
-                "remaining": 41,
-                "weight": 110.6
-            },
-            {
-                "id": "Farm_43",
-                "remaining": 0,
-                "weight": 115.7
-            },
-            {
-                "id": "Farm_44",
-                "remaining": 0,
-                "weight": 106.6
-            },
-            {
-                "id": "Farm_45",
-                "remaining": 58,
-                "weight": 100.7
-            },
-            {
-                "id": "Farm_46",
-                "remaining": 330,
-                "weight": 111.6
-            },
-            {
-                "id": "Farm_47",
-                "remaining": 41,
-                "weight": 97.2
-            },
-            {
-                "id": "Farm_48",
-                "remaining": 0,
-                "weight": 112.4
-            },
-            {
-                "id": "Farm_49",
-                "remaining": 0,
-                "weight": 96.7
-            },
-            {
-                "id": "Farm_50",
+                "id": "Farm_45_Sta. Eugenia",
                 "remaining": 38,
-                "weight": 108.9
+                "weight": 117.8
+            },
+            {
+                "id": "Farm_46_Sta. Eugenia",
+                "remaining": 0,
+                "weight": 110.6
+            },
+            {
+                "id": "Farm_47_Tona",
+                "remaining": 197,
+                "weight": 121.1
+            },
+            {
+                "id": "Farm_48_Taradell",
+                "remaining": 87,
+                "weight": 112.9
+            },
+            {
+                "id": "Farm_49_Roda de Ter",
+                "remaining": 8,
+                "weight": 112.9
+            },
+            {
+                "id": "Farm_50_Sta. Eugenia",
+                "remaining": 240,
+                "weight": 108.2
             }
         ]
     },
@@ -263,67 +263,65 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_3",
-                        "Farm_1",
-                        "Farm_43"
+                        "Farm_29_Gurb",
+                        "Farm_41_Calldetenes"
                     ],
-                    "trip_duration_hours": 3.29,
-                    "distance_km": 64.3,
-                    "pigs_delivered": 99,
+                    "trip_duration_hours": 1.75,
+                    "distance_km": 12.32,
+                    "pigs_delivered": 180,
                     "load_pct": 99.5,
-                    "trip_cost": 73.95,
-                    "revenue": 13398.89,
-                    "penalty": 2178.96,
-                    "profit": 13324.94
-                },
-                {
-                    "truck_id": 2,
-                    "route": [
-                        "Farm_33",
-                        "Farm_26",
-                        "Farm_41"
-                    ],
-                    "trip_duration_hours": 3.62,
-                    "distance_km": 80.76,
-                    "pigs_delivered": 100,
-                    "load_pct": 99.6,
-                    "trip_cost": 92.87,
-                    "revenue": 13525.38,
-                    "penalty": 2189.04,
-                    "profit": 13432.51
-                },
-                {
-                    "truck_id": 3,
-                    "route": [
-                        "Farm_9",
-                        "Farm_42"
-                    ],
-                    "trip_duration_hours": 3.3,
-                    "distance_km": 89.85,
-                    "pigs_delivered": 195,
-                    "load_pct": 99.9,
-                    "trip_cost": 112.31,
-                    "revenue": 27096.46,
-                    "penalty": 3855.79,
-                    "profit": 26984.15
+                    "trip_cost": 15.33,
+                    "revenue": 29187.16,
+                    "penalty": 1602.74,
+                    "profit": 29171.83
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_17"
+                        "Farm_6_Calldetenes"
                     ],
-                    "trip_duration_hours": 1.37,
-                    "distance_km": 18.66,
-                    "pigs_delivered": 114,
-                    "load_pct": 100.0,
-                    "trip_cost": 21.46,
-                    "revenue": 12423.97,
-                    "penalty": 3105.99,
-                    "profit": 12402.51
+                    "trip_duration_hours": 1.2,
+                    "distance_km": 9.84,
+                    "pigs_delivered": 177,
+                    "load_pct": 99.9,
+                    "trip_cost": 12.28,
+                    "revenue": 29254.34,
+                    "penalty": 2008.18,
+                    "profit": 29242.06
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_4_Taradell",
+                        "Farm_27_Taradell"
+                    ],
+                    "trip_duration_hours": 1.97,
+                    "distance_km": 23.26,
+                    "pigs_delivered": 178,
+                    "load_pct": 99.9,
+                    "trip_cost": 29.05,
+                    "revenue": 29504.12,
+                    "penalty": 1233.53,
+                    "profit": 29475.07
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_12_Tona",
+                        "Farm_47_Tona"
+                    ],
+                    "trip_duration_hours": 2.06,
+                    "distance_km": 27.94,
+                    "pigs_delivered": 178,
+                    "load_pct": 99.8,
+                    "trip_cost": 34.87,
+                    "revenue": 29381.95,
+                    "penalty": 2036.25,
+                    "profit": 29347.08
                 }
             ],
-            "total_processed": 508,
-            "daily_profit": 66144.10409297112
+            "total_processed": 713,
+            "daily_profit": 117236.04066475884
         },
         {
             "day": 2,
@@ -331,80 +329,64 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_25",
-                        "Farm_34"
+                        "Farm_45_Sta. Eugenia"
                     ],
-                    "trip_duration_hours": 3.66,
-                    "distance_km": 108.07,
-                    "pigs_delivered": 100,
-                    "load_pct": 99.2,
-                    "trip_cost": 124.28,
-                    "revenue": 12841.78,
-                    "penalty": 2488.66,
-                    "profit": 12717.5
-                },
-                {
-                    "truck_id": 2,
-                    "route": [
-                        "Farm_2"
-                    ],
-                    "trip_duration_hours": 1.76,
-                    "distance_km": 37.77,
-                    "pigs_delivered": 108,
+                    "trip_duration_hours": 1.13,
+                    "distance_km": 6.44,
+                    "pigs_delivered": 184,
                     "load_pct": 99.9,
-                    "trip_cost": 43.43,
-                    "revenue": 12569.98,
-                    "penalty": 3032.01,
-                    "profit": 12526.55
-                },
-                {
-                    "truck_id": 3,
-                    "route": [
-                        "Farm_49",
-                        "Farm_18",
-                        "Farm_4"
-                    ],
-                    "trip_duration_hours": 5.0,
-                    "distance_km": 150.07,
-                    "pigs_delivered": 201,
-                    "load_pct": 99.7,
-                    "trip_cost": 187.58,
-                    "revenue": 25523.58,
-                    "penalty": 5184.71,
-                    "profit": 25336.0
+                    "trip_cost": 8.05,
+                    "revenue": 29462.78,
+                    "penalty": 1669.89,
+                    "profit": 29454.73
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_11"
+                        "Farm_20_Calldetenes"
                     ],
-                    "trip_duration_hours": 2.24,
-                    "distance_km": 62.19,
-                    "pigs_delivered": 100,
+                    "trip_duration_hours": 1.17,
+                    "distance_km": 8.48,
+                    "pigs_delivered": 184,
                     "load_pct": 99.7,
-                    "trip_cost": 71.52,
-                    "revenue": 13087.5,
-                    "penalty": 2474.62,
-                    "profit": 13015.98
+                    "trip_cost": 10.56,
+                    "revenue": 29276.93,
+                    "penalty": 1665.42,
+                    "profit": 29266.37
                 },
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_19",
-                        "Farm_12"
+                        "Farm_15_Gurb",
+                        "Farm_42_Roda de Ter"
                     ],
-                    "trip_duration_hours": 5.74,
-                    "distance_km": 211.77,
-                    "pigs_delivered": 100,
-                    "load_pct": 99.1,
-                    "trip_cost": 243.53,
-                    "revenue": 12346.43,
-                    "penalty": 2711.33,
-                    "profit": 12102.9
+                    "trip_duration_hours": 2.05,
+                    "distance_km": 27.59,
+                    "pigs_delivered": 184,
+                    "load_pct": 100.0,
+                    "trip_cost": 34.48,
+                    "revenue": 28945.31,
+                    "penalty": 1996.81,
+                    "profit": 28910.83
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_25_Sta. Eugenia",
+                        "Farm_32_Taradell"
+                    ],
+                    "trip_duration_hours": 2.02,
+                    "distance_km": 26.11,
+                    "pigs_delivered": 184,
+                    "load_pct": 99.7,
+                    "trip_cost": 32.52,
+                    "revenue": 29344.49,
+                    "penalty": 1678.68,
+                    "profit": 29311.97
                 }
             ],
-            "total_processed": 609,
-            "daily_profit": 75698.93342701372
+            "total_processed": 736,
+            "daily_profit": 116943.8948494841
         },
         {
             "day": 3,
@@ -412,53 +394,21 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_35",
-                        "Farm_50"
+                        "Farm_43_Tona",
+                        "Farm_34_Roda de Ter"
                     ],
-                    "trip_duration_hours": 5.05,
-                    "distance_km": 177.45,
-                    "pigs_delivered": 100,
-                    "load_pct": 99.5,
-                    "trip_cost": 204.06,
-                    "revenue": 13008.94,
-                    "penalty": 2496.77,
-                    "profit": 12804.87
-                },
-                {
-                    "truck_id": 2,
-                    "route": [
-                        "Farm_27",
-                        "Farm_36",
-                        "Farm_28"
-                    ],
-                    "trip_duration_hours": 6.41,
-                    "distance_km": 220.32,
-                    "pigs_delivered": 92,
-                    "load_pct": 85.9,
-                    "trip_cost": 253.36,
-                    "revenue": 10777.18,
-                    "penalty": 2635.28,
-                    "profit": 10523.81
-                },
-                {
-                    "truck_id": 3,
-                    "route": [
-                        "Farm_10",
-                        "Farm_44",
-                        "Farm_20"
-                    ],
-                    "trip_duration_hours": 4.67,
-                    "distance_km": 133.65,
-                    "pigs_delivered": 218,
-                    "load_pct": 99.9,
-                    "trip_cost": 167.06,
-                    "revenue": 25852.06,
-                    "penalty": 6140.72,
-                    "profit": 25685.0
+                    "trip_duration_hours": 2.34,
+                    "distance_km": 42.08,
+                    "pigs_delivered": 149,
+                    "load_pct": 80.6,
+                    "trip_cost": 42.4,
+                    "revenue": 23874.61,
+                    "penalty": 1299.23,
+                    "profit": 23832.2
                 }
             ],
-            "total_processed": 410,
-            "daily_profit": 49013.679352510946
+            "total_processed": 149,
+            "daily_profit": 23832.202595112496
         },
         {
             "day": 4,
@@ -466,56 +416,56 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_40",
-                        "Farm_16"
+                        "Farm_8_Calldetenes",
+                        "Farm_17_Tona"
                     ],
-                    "trip_duration_hours": 6.99,
-                    "distance_km": 274.3,
-                    "pigs_delivered": 95,
-                    "load_pct": 99.7,
-                    "trip_cost": 315.45,
-                    "revenue": 14139.15,
-                    "penalty": 1425.83,
-                    "profit": 13823.7
-                },
-                {
-                    "truck_id": 3,
-                    "route": [
-                        "Farm_8"
-                    ],
-                    "trip_duration_hours": 7.21,
-                    "distance_km": 310.28,
-                    "pigs_delivered": 189,
-                    "load_pct": 99.7,
-                    "trip_cost": 387.85,
-                    "revenue": 28556.24,
-                    "penalty": 2592.74,
-                    "profit": 28168.39
+                    "trip_duration_hours": 2.05,
+                    "distance_km": 27.71,
+                    "pigs_delivered": 116,
+                    "load_pct": 62.9,
+                    "trip_cost": 21.79,
+                    "revenue": 18414.31,
+                    "penalty": 1095.73,
+                    "profit": 18392.52
                 }
             ],
-            "total_processed": 284,
-            "daily_profit": 41992.09531355044
+            "total_processed": 116,
+            "daily_profit": 18392.517026089692
         },
         {
             "day": 5,
             "trucks_ops": [
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_37"
+                        "Farm_35_Gurb"
                     ],
-                    "trip_duration_hours": 7.73,
-                    "distance_km": 336.53,
-                    "pigs_delivered": 96,
-                    "load_pct": 99.5,
-                    "trip_cost": 387.01,
-                    "revenue": 14277.48,
-                    "penalty": 1405.87,
-                    "profit": 13890.47
+                    "trip_duration_hours": 1.05,
+                    "distance_km": 2.31,
+                    "pigs_delivered": 184,
+                    "load_pct": 99.7,
+                    "trip_cost": 2.88,
+                    "revenue": 29593.35,
+                    "penalty": 1611.16,
+                    "profit": 29590.47
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_40_Manlleu"
+                    ],
+                    "trip_duration_hours": 1.27,
+                    "distance_km": 13.32,
+                    "pigs_delivered": 65,
+                    "load_pct": 35.1,
+                    "trip_cost": 5.85,
+                    "revenue": 10499.07,
+                    "penalty": 519.81,
+                    "profit": 10493.22
                 }
             ],
-            "total_processed": 96,
-            "daily_profit": 13890.467244196969
+            "total_processed": 249,
+            "daily_profit": 40083.68977218904
         },
         {
             "day": 8,
@@ -523,36 +473,78 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_43",
-                        "Farm_41"
+                        "Farm_6_Calldetenes"
                     ],
-                    "trip_duration_hours": 3.28,
-                    "distance_km": 89.09,
-                    "pigs_delivered": 92,
+                    "trip_duration_hours": 1.2,
+                    "distance_km": 9.84,
+                    "pigs_delivered": 169,
                     "load_pct": 99.9,
-                    "trip_cost": 102.46,
-                    "revenue": 14780.85,
-                    "penalty": 816.22,
-                    "profit": 14678.39
+                    "trip_cost": 12.29,
+                    "revenue": 26892.09,
+                    "penalty": 4465.25,
+                    "profit": 26879.8
                 },
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_17",
-                        "Farm_42"
+                        "Farm_41_Calldetenes"
                     ],
-                    "trip_duration_hours": 3.02,
-                    "distance_km": 75.87,
-                    "pigs_delivered": 102,
-                    "load_pct": 99.1,
-                    "trip_cost": 87.25,
-                    "revenue": 13483.03,
-                    "penalty": 2401.46,
-                    "profit": 13395.78
+                    "trip_duration_hours": 1.16,
+                    "distance_km": 8.17,
+                    "pigs_delivered": 173,
+                    "load_pct": 99.6,
+                    "trip_cost": 10.17,
+                    "revenue": 28113.28,
+                    "penalty": 2994.23,
+                    "profit": 28103.11
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_24_Gurb",
+                        "Farm_5_Gurb"
+                    ],
+                    "trip_duration_hours": 1.72,
+                    "distance_km": 10.99,
+                    "pigs_delivered": 184,
+                    "load_pct": 99.7,
+                    "trip_cost": 13.69,
+                    "revenue": 29429.26,
+                    "penalty": 1554.71,
+                    "profit": 29415.57
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_36_Sta. Eugenia",
+                        "Farm_14_Taradell"
+                    ],
+                    "trip_duration_hours": 1.92,
+                    "distance_km": 20.89,
+                    "pigs_delivered": 183,
+                    "load_pct": 99.5,
+                    "trip_cost": 25.99,
+                    "revenue": 29871.28,
+                    "penalty": 1326.69,
+                    "profit": 29845.29
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_27_Taradell"
+                    ],
+                    "trip_duration_hours": 1.47,
+                    "distance_km": 23.26,
+                    "pigs_delivered": 23,
+                    "load_pct": 13.1,
+                    "trip_cost": 3.8,
+                    "revenue": 3692.13,
+                    "penalty": 430.43,
+                    "profit": 3688.33
                 }
             ],
-            "total_processed": 194,
-            "daily_profit": 28074.175095364895
+            "total_processed": 732,
+            "daily_profit": 117932.10279525074
         },
         {
             "day": 9,
@@ -560,50 +552,77 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_2",
-                        "Farm_34"
+                        "Farm_45_Sta. Eugenia"
                     ],
-                    "trip_duration_hours": 3.36,
-                    "distance_km": 92.87,
-                    "pigs_delivered": 96,
-                    "load_pct": 99.0,
-                    "trip_cost": 106.8,
-                    "revenue": 13275.3,
-                    "penalty": 1947.64,
-                    "profit": 13168.5
+                    "trip_duration_hours": 1.13,
+                    "distance_km": 6.44,
+                    "pigs_delivered": 175,
+                    "load_pct": 99.7,
+                    "trip_cost": 8.03,
+                    "revenue": 28710.45,
+                    "penalty": 2517.41,
+                    "profit": 28702.41
                 },
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_11",
-                        "Farm_4"
+                        "Farm_20_Calldetenes",
+                        "Farm_48_Taradell"
                     ],
-                    "trip_duration_hours": 6.18,
-                    "distance_km": 234.04,
-                    "pigs_delivered": 94,
-                    "load_pct": 99.3,
-                    "trip_cost": 269.15,
-                    "revenue": 14575.01,
-                    "penalty": 998.75,
-                    "profit": 14305.86
+                    "trip_duration_hours": 1.99,
+                    "distance_km": 24.26,
+                    "pigs_delivered": 182,
+                    "load_pct": 99.8,
+                    "trip_cost": 30.27,
+                    "revenue": 29669.39,
+                    "penalty": 2102.6,
+                    "profit": 29639.12
                 },
                 {
-                    "truck_id": 3,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_12"
+                        "Farm_32_Taradell"
                     ],
-                    "trip_duration_hours": 4.12,
-                    "distance_km": 155.93,
-                    "pigs_delivered": 110,
-                    "load_pct": 60.5,
-                    "trip_cost": 194.91,
-                    "revenue": 17900.16,
-                    "penalty": 975.72,
-                    "profit": 17705.25
+                    "trip_duration_hours": 1.35,
+                    "distance_km": 17.46,
+                    "pigs_delivered": 175,
+                    "load_pct": 99.7,
+                    "trip_cost": 21.77,
+                    "revenue": 28770.66,
+                    "penalty": 2274.9,
+                    "profit": 28748.89
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_42_Roda de Ter"
+                    ],
+                    "trip_duration_hours": 1.46,
+                    "distance_km": 23.05,
+                    "pigs_delivered": 173,
+                    "load_pct": 99.6,
+                    "trip_cost": 28.68,
+                    "revenue": 28132.43,
+                    "penalty": 3185.46,
+                    "profit": 28103.75
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_47_Tona"
+                    ],
+                    "trip_duration_hours": 1.45,
+                    "distance_km": 22.26,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.5,
+                    "trip_cost": 27.7,
+                    "revenue": 27299.83,
+                    "penalty": 3639.38,
+                    "profit": 27272.13
                 }
             ],
-            "total_processed": 300,
-            "daily_profit": 45179.61348707833
+            "total_processed": 875,
+            "daily_profit": 142466.302063993
         },
         {
             "day": 10,
@@ -611,35 +630,53 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_50"
+                        "Farm_11_Taradell",
+                        "Farm_44_Taradell",
+                        "Farm_2_Taradell"
                     ],
-                    "trip_duration_hours": 2.92,
-                    "distance_km": 96.15,
-                    "pigs_delivered": 94,
-                    "load_pct": 99.5,
-                    "trip_cost": 110.58,
-                    "revenue": 14423.09,
-                    "penalty": 1042.57,
-                    "profit": 14312.51
+                    "trip_duration_hours": 2.51,
+                    "distance_km": 25.55,
+                    "pigs_delivered": 182,
+                    "load_pct": 99.9,
+                    "trip_cost": 31.9,
+                    "revenue": 29507.71,
+                    "penalty": 1597.5,
+                    "profit": 29475.81
                 },
                 {
-                    "truck_id": 3,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_32",
-                        "Farm_38"
+                        "Farm_1_Manlleu",
+                        "Farm_37_Manlleu"
                     ],
-                    "trip_duration_hours": 7.2,
-                    "distance_km": 284.83,
-                    "pigs_delivered": 193,
-                    "load_pct": 99.8,
-                    "trip_cost": 356.04,
-                    "revenue": 28396.92,
-                    "penalty": 2904.73,
-                    "profit": 28040.88
+                    "trip_duration_hours": 2.01,
+                    "distance_km": 25.33,
+                    "pigs_delivered": 180,
+                    "load_pct": 99.6,
+                    "trip_cost": 31.52,
+                    "revenue": 29465.42,
+                    "penalty": 1766.14,
+                    "profit": 29433.9
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_39_Gurb",
+                        "Farm_38_Manlleu",
+                        "Farm_49_Roda de Ter"
+                    ],
+                    "trip_duration_hours": 2.77,
+                    "distance_km": 38.53,
+                    "pigs_delivered": 182,
+                    "load_pct": 99.9,
+                    "trip_cost": 48.13,
+                    "revenue": 29443.3,
+                    "penalty": 1560.95,
+                    "profit": 29395.17
                 }
             ],
-            "total_processed": 287,
-            "daily_profit": 42353.385947308445
+            "total_processed": 544,
+            "daily_profit": 88304.87346581346
         },
         {
             "day": 11,
@@ -647,72 +684,265 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_20",
-                        "Farm_48",
-                        "Farm_16"
+                        "Farm_46_Sta. Eugenia",
+                        "Farm_10_Tona"
                     ],
-                    "trip_duration_hours": 7.87,
-                    "distance_km": 293.4,
-                    "pigs_delivered": 90,
-                    "load_pct": 99.0,
-                    "trip_cost": 337.41,
-                    "revenue": 13660.24,
-                    "penalty": 1126.1,
-                    "profit": 13322.83
+                    "trip_duration_hours": 1.92,
+                    "distance_km": 21.12,
+                    "pigs_delivered": 180,
+                    "load_pct": 99.8,
+                    "trip_cost": 26.37,
+                    "revenue": 29105.21,
+                    "penalty": 1879.36,
+                    "profit": 29078.85
                 },
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_22"
+                        "Farm_7_Taradell"
                     ],
-                    "trip_duration_hours": 6.47,
-                    "distance_km": 273.56,
-                    "pigs_delivered": 96,
-                    "load_pct": 99.4,
-                    "trip_cost": 314.6,
-                    "revenue": 14130.54,
-                    "penalty": 1461.13,
-                    "profit": 13815.94
-                },
-                {
-                    "truck_id": 3,
-                    "route": [
-                        "Farm_24",
-                        "Farm_8"
-                    ],
-                    "trip_duration_hours": 7.91,
-                    "distance_km": 320.64,
-                    "pigs_delivered": 188,
-                    "load_pct": 99.9,
-                    "trip_cost": 400.8,
-                    "revenue": 26080.94,
-                    "penalty": 3779.24,
-                    "profit": 25680.14
+                    "trip_duration_hours": 1.53,
+                    "distance_km": 26.3,
+                    "pigs_delivered": 84,
+                    "load_pct": 45.6,
+                    "trip_cost": 14.99,
+                    "revenue": 13553.16,
+                    "penalty": 682.31,
+                    "profit": 13538.17
                 }
             ],
-            "total_processed": 374,
-            "daily_profit": 52818.90915903712
+            "total_processed": 264,
+            "daily_profit": 42617.013649976514
         },
         {
             "day": 12,
             "trucks_ops": [
                 {
-                    "truck_id": 2,
+                    "truck_id": 1,
                     "route": [
-                        "Farm_6"
+                        "Farm_35_Gurb",
+                        "Farm_22_Taradell"
                     ],
-                    "trip_duration_hours": 7.49,
-                    "distance_km": 324.52,
-                    "pigs_delivered": 99,
-                    "load_pct": 99.8,
-                    "trip_cost": 373.2,
-                    "revenue": 13480.41,
-                    "penalty": 2151.24,
-                    "profit": 13107.21
+                    "trip_duration_hours": 1.78,
+                    "distance_km": 14.06,
+                    "pigs_delivered": 182,
+                    "load_pct": 99.7,
+                    "trip_cost": 17.52,
+                    "revenue": 29677.91,
+                    "penalty": 1865.56,
+                    "profit": 29660.39
                 }
             ],
-            "total_processed": 99,
-            "daily_profit": 13107.212947105467
+            "total_processed": 182,
+            "daily_profit": 29660.39057045119
         }
-    ]
+    ],
+    "metadata": {
+        "slaughterhouse": {
+            "lat": 41.9308,
+            "lon": 2.2545
+        },
+        "farms": {
+            "Farm_1_Manlleu": {
+                "lat": 41.9905,
+                "lon": 2.273842
+            },
+            "Farm_2_Taradell": {
+                "lat": 41.863839,
+                "lon": 2.283799
+            },
+            "Farm_3_Manlleu": {
+                "lat": 41.969228,
+                "lon": 2.283829
+            },
+            "Farm_4_Taradell": {
+                "lat": 41.884048,
+                "lon": 2.272146
+            },
+            "Farm_5_Gurb": {
+                "lat": 41.954938,
+                "lon": 2.237155
+            },
+            "Farm_6_Calldetenes": {
+                "lat": 41.903149,
+                "lon": 2.254422
+            },
+            "Farm_7_Taradell": {
+                "lat": 41.85111,
+                "lon": 2.282914
+            },
+            "Farm_8_Calldetenes": {
+                "lat": 41.928812,
+                "lon": 2.275323
+            },
+            "Farm_9_Gurb": {
+                "lat": 41.958454,
+                "lon": 2.223943
+            },
+            "Farm_10_Tona": {
+                "lat": 41.861153,
+                "lon": 2.220158
+            },
+            "Farm_11_Taradell": {
+                "lat": 41.869912,
+                "lon": 2.257176
+            },
+            "Farm_12_Tona": {
+                "lat": 41.867833,
+                "lon": 2.229015
+            },
+            "Farm_13_Sta. Eugenia": {
+                "lat": 41.900135,
+                "lon": 2.299473
+            },
+            "Farm_14_Taradell": {
+                "lat": 41.876408,
+                "lon": 2.275078
+            },
+            "Farm_15_Gurb": {
+                "lat": 41.959631,
+                "lon": 2.242193
+            },
+            "Farm_16_Taradell": {
+                "lat": 41.872375,
+                "lon": 2.295978
+            },
+            "Farm_17_Tona": {
+                "lat": 41.8573,
+                "lon": 2.197225
+            },
+            "Farm_18_Taradell": {
+                "lat": 41.917275,
+                "lon": 2.303066
+            },
+            "Farm_19_Gurb": {
+                "lat": 41.935653,
+                "lon": 2.228698
+            },
+            "Farm_20_Calldetenes": {
+                "lat": 41.9202,
+                "lon": 2.288729
+            },
+            "Farm_21_Tona": {
+                "lat": 41.867405,
+                "lon": 2.218897
+            },
+            "Farm_22_Taradell": {
+                "lat": 41.895856,
+                "lon": 2.27318
+            },
+            "Farm_23_Roda de Ter": {
+                "lat": 41.969669,
+                "lon": 2.260086
+            },
+            "Farm_24_Gurb": {
+                "lat": 41.944295,
+                "lon": 2.260849
+            },
+            "Farm_25_Sta. Eugenia": {
+                "lat": 41.891064,
+                "lon": 2.297443
+            },
+            "Farm_26_Sta. Eugenia": {
+                "lat": 41.908412,
+                "lon": 2.284965
+            },
+            "Farm_27_Taradell": {
+                "lat": 41.866419,
+                "lon": 2.28286
+            },
+            "Farm_28_Calldetenes": {
+                "lat": 41.920165,
+                "lon": 2.280022
+            },
+            "Farm_29_Gurb": {
+                "lat": 41.942417,
+                "lon": 2.240878
+            },
+            "Farm_30_Manlleu": {
+                "lat": 41.988786,
+                "lon": 2.278619
+            },
+            "Farm_31_Gurb": {
+                "lat": 41.951034,
+                "lon": 2.252315
+            },
+            "Farm_32_Taradell": {
+                "lat": 41.873536,
+                "lon": 2.261476
+            },
+            "Farm_33_Manlleu": {
+                "lat": 41.998978,
+                "lon": 2.25522
+            },
+            "Farm_34_Roda de Ter": {
+                "lat": 41.999023,
+                "lon": 2.314726
+            },
+            "Farm_35_Gurb": {
+                "lat": 41.935054,
+                "lon": 2.250557
+            },
+            "Farm_36_Sta. Eugenia": {
+                "lat": 41.916291,
+                "lon": 2.285994
+            },
+            "Farm_37_Manlleu": {
+                "lat": 41.991705,
+                "lon": 2.283639
+            },
+            "Farm_38_Manlleu": {
+                "lat": 42.000526,
+                "lon": 2.284695
+            },
+            "Farm_39_Gurb": {
+                "lat": 41.977576,
+                "lon": 2.190757
+            },
+            "Farm_40_Manlleu": {
+                "lat": 41.976937,
+                "lon": 2.273461
+            },
+            "Farm_41_Calldetenes": {
+                "lat": 41.925309,
+                "lon": 2.290462
+            },
+            "Farm_42_Roda de Ter": {
+                "lat": 41.988353,
+                "lon": 2.292579
+            },
+            "Farm_43_Tona": {
+                "lat": 41.860342,
+                "lon": 2.230789
+            },
+            "Farm_44_Taradell": {
+                "lat": 41.859053,
+                "lon": 2.277624
+            },
+            "Farm_45_Sta. Eugenia": {
+                "lat": 41.920933,
+                "lon": 2.276314
+            },
+            "Farm_46_Sta. Eugenia": {
+                "lat": 41.919596,
+                "lon": 2.258402
+            },
+            "Farm_47_Tona": {
+                "lat": 41.856223,
+                "lon": 2.21057
+            },
+            "Farm_48_Taradell": {
+                "lat": 41.884982,
+                "lon": 2.302938
+            },
+            "Farm_49_Roda de Ter": {
+                "lat": 41.999697,
+                "lon": 2.314004
+            },
+            "Farm_50_Sta. Eugenia": {
+                "lat": 41.91344,
+                "lon": 2.283672
+            }
+        }
+    }
 }
