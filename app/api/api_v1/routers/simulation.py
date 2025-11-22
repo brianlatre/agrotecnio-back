@@ -1,4 +1,9 @@
 import math
+
+import json
+
+from pathlib import Path
+
 from typing import Dict, List
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -26,6 +31,10 @@ from app.schemas.simulation import (
 
 router = APIRouter(tags=["simulation"])
 logger = get_logger(module="simulation")
+
+# Ruta al fichero de resultados de simulación (plan multi-día)
+BASE_DIR = Path(__file__).resolve().parents[3]  # /app
+SIM_RESULTS_PATH = BASE_DIR / "data" / "simulation_results.json"
 
 # Día actual de simulación (estado en memoria, simple)
 CURRENT_DAY_INDEX = 0
@@ -61,65 +70,104 @@ def penalty_ratio(weight: float) -> float:
 
 # ---------- GET /api/init ----------
 
-@router.get("/init", response_model=InitResponse)
-def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
-    slaughterhouse = db.query(Slaughterhouse).first()
-    if not slaughterhouse:
-        logger.error("No hay mataderos en la base de datos")
-        raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
+# @router.get("/init", response_model=InitResponse)
+# def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
+#     slaughterhouse = db.query(Slaughterhouse).first()
+#     if not slaughterhouse:
+#         logger.error("No hay mataderos en la base de datos")
+#         raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
 
-    farms = db.query(Farm).all()
-    if not farms:
-        logger.error("No hay granjas en la base de datos")
-        raise HTTPException(status_code=500, detail="No hay granjas en la base de datos")
+#     farms = db.query(Farm).all()
+#     if not farms:
+#         logger.error("No hay granjas en la base de datos")
+#         raise HTTPException(status_code=500, detail="No hay granjas en la base de datos")
 
-    slaughterhouse_data = InitSlaughterhouse(
-        id=slaughterhouse.slaughterhouse_id,
-        lat=slaughterhouse.lat,
-        lng=slaughterhouse.lon,
-        capacity=slaughterhouse.capacity_per_day,
-    )
+#     slaughterhouse_data = InitSlaughterhouse(
+#         id=slaughterhouse.slaughterhouse_id,
+#         lat=slaughterhouse.lat,
+#         lng=slaughterhouse.lon,
+#         capacity=slaughterhouse.capacity_per_day,
+#     )
 
-    farms_data = [
-        InitFarm(
-            id=farm.farm_id,
-            lat=farm.lat,
-            lng=farm.lon,
-            pigs=farm.inventory_pigs,
-            avg_weight=farm.avg_weight_kg,
+#     farms_data = [
+#         InitFarm(
+#             id=farm.farm_id,
+#             lat=farm.lat,
+#             lng=farm.lon,
+#             pigs=farm.inventory_pigs,
+#             avg_weight=farm.avg_weight_kg,
+#         )
+#         for farm in farms
+#     ]
+
+#     # precio base por kg desde el matadero; si no, fallback
+#     base_price = slaughterhouse.price_per_kg or 1.56
+
+#     # un transport “small” para coger diesel_s; si no hay, fallback
+#     small_truck = (
+#         db.query(Transport)
+#         .order_by(Transport.capacity_tons.asc())
+#         .first()
+#     )
+#     diesel_s = small_truck.cost_per_km if small_truck else 1.15
+
+#     prices = InitPrices(
+#         base=base_price,
+#         diesel_s=diesel_s,
+#     )
+
+#     logger.info(
+#         "Estado inicial de simulación cargado",
+#         slaughterhouse_id=slaughterhouse.slaughterhouse_id,
+#         farms_count=len(farms),
+#         base_price=base_price,
+#         diesel_s=diesel_s,
+#     )
+
+#     return InitResponse(
+#         slaughterhouse=slaughterhouse_data,
+#         farms=farms_data,
+#         prices=prices,
+#     )
+
+@router.get("/init")
+def get_initial_state() -> dict:
+    """
+    De momento devolvemos el resultado de la simulación
+    precomputada (simulation_results.json) tal cual, para que
+    el frontend pueda pintar el planning completo.
+    """
+    try:
+        with SIM_RESULTS_PATH.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        logger.error(
+            "Fichero de resultados de simulación no encontrado",
+            path=str(SIM_RESULTS_PATH),
         )
-        for farm in farms
-    ]
+        raise HTTPException(
+            status_code=500,
+            detail="Simulation results file not found",
+        )
+    except json.JSONDecodeError:
+        logger.error(
+            "Error parseando simulation_results.json",
+            path=str(SIM_RESULTS_PATH),
+        )
+        raise HTTPException(
+            status_code=500,
+            detail="Invalid simulation results JSON",
+        )
 
-    # precio base por kg desde el matadero; si no, fallback
-    base_price = slaughterhouse.price_per_kg or 1.56
-
-    # un transport “small” para coger diesel_s; si no hay, fallback
-    small_truck = (
-        db.query(Transport)
-        .order_by(Transport.capacity_tons.asc())
-        .first()
-    )
-    diesel_s = small_truck.cost_per_km if small_truck else 1.15
-
-    prices = InitPrices(
-        base=base_price,
-        diesel_s=diesel_s,
-    )
-
+    summary = data.get("summary", {})
     logger.info(
-        "Estado inicial de simulación cargado",
-        slaughterhouse_id=slaughterhouse.slaughterhouse_id,
-        farms_count=len(farms),
-        base_price=base_price,
-        diesel_s=diesel_s,
+        "Resultados de simulación cargados desde fichero",
+        total_profit_net=summary.get("total_profit_net"),
+        total_transport_cost=summary.get("total_transport_cost"),
+        total_penalties=summary.get("total_penalties"),
     )
 
-    return InitResponse(
-        slaughterhouse=slaughterhouse_data,
-        farms=farms_data,
-        prices=prices,
-    )
+    return data
 
 
 # ---------- POST /api/simulation/next-day ----------

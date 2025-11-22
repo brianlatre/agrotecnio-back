@@ -1,0 +1,718 @@
+{
+    "summary": {
+        "total_profit_net": 416272.58,
+        "total_transport_cost": 17338.93,
+        "total_penalties": 63523.12,
+        "final_farm_status": [
+            {
+                "id": "Farm_1",
+                "remaining": 0,
+                "weight": 112.9
+            },
+            {
+                "id": "Farm_2",
+                "remaining": 0,
+                "weight": 102.0
+            },
+            {
+                "id": "Farm_3",
+                "remaining": 0,
+                "weight": 107.2
+            },
+            {
+                "id": "Farm_4",
+                "remaining": 30,
+                "weight": 111.2
+            },
+            {
+                "id": "Farm_5",
+                "remaining": 32,
+                "weight": 107.6
+            },
+            {
+                "id": "Farm_6",
+                "remaining": 35,
+                "weight": 102.3
+            },
+            {
+                "id": "Farm_7",
+                "remaining": 154,
+                "weight": 104.5
+            },
+            {
+                "id": "Farm_8",
+                "remaining": 203,
+                "weight": 113.3
+            },
+            {
+                "id": "Farm_9",
+                "remaining": 0,
+                "weight": 113.2
+            },
+            {
+                "id": "Farm_10",
+                "remaining": 0,
+                "weight": 104.5
+            },
+            {
+                "id": "Farm_11",
+                "remaining": 0,
+                "weight": 109.0
+            },
+            {
+                "id": "Farm_12",
+                "remaining": 0,
+                "weight": 113.7
+            },
+            {
+                "id": "Farm_13",
+                "remaining": 50,
+                "weight": 107.1
+            },
+            {
+                "id": "Farm_14",
+                "remaining": 25,
+                "weight": 103.7
+            },
+            {
+                "id": "Farm_15",
+                "remaining": 51,
+                "weight": 109.8
+            },
+            {
+                "id": "Farm_16",
+                "remaining": 22,
+                "weight": 114.1
+            },
+            {
+                "id": "Farm_17",
+                "remaining": 0,
+                "weight": 98.6
+            },
+            {
+                "id": "Farm_18",
+                "remaining": 0,
+                "weight": 113.1
+            },
+            {
+                "id": "Farm_19",
+                "remaining": 0,
+                "weight": 98.4
+            },
+            {
+                "id": "Farm_20",
+                "remaining": 0,
+                "weight": 97.5
+            },
+            {
+                "id": "Farm_21",
+                "remaining": 348,
+                "weight": 108.1
+            },
+            {
+                "id": "Farm_22",
+                "remaining": 86,
+                "weight": 106.2
+            },
+            {
+                "id": "Farm_23",
+                "remaining": 443,
+                "weight": 104.5
+            },
+            {
+                "id": "Farm_24",
+                "remaining": 0,
+                "weight": 97.6
+            },
+            {
+                "id": "Farm_25",
+                "remaining": 0,
+                "weight": 105.1
+            },
+            {
+                "id": "Farm_26",
+                "remaining": 0,
+                "weight": 114.0
+            },
+            {
+                "id": "Farm_27",
+                "remaining": 0,
+                "weight": 98.1
+            },
+            {
+                "id": "Farm_28",
+                "remaining": 0,
+                "weight": 99.7
+            },
+            {
+                "id": "Farm_29",
+                "remaining": 22,
+                "weight": 113.5
+            },
+            {
+                "id": "Farm_30",
+                "remaining": 121,
+                "weight": 102.1
+            },
+            {
+                "id": "Farm_31",
+                "remaining": 26,
+                "weight": 96.5
+            },
+            {
+                "id": "Farm_32",
+                "remaining": 0,
+                "weight": 106.7
+            },
+            {
+                "id": "Farm_33",
+                "remaining": 0,
+                "weight": 106.6
+            },
+            {
+                "id": "Farm_34",
+                "remaining": 293,
+                "weight": 110.2
+            },
+            {
+                "id": "Farm_35",
+                "remaining": 0,
+                "weight": 107.9
+            },
+            {
+                "id": "Farm_36",
+                "remaining": 0,
+                "weight": 110.1
+            },
+            {
+                "id": "Farm_37",
+                "remaining": 36,
+                "weight": 110.6
+            },
+            {
+                "id": "Farm_38",
+                "remaining": 91,
+                "weight": 105.9
+            },
+            {
+                "id": "Farm_39",
+                "remaining": 29,
+                "weight": 111.7
+            },
+            {
+                "id": "Farm_40",
+                "remaining": 0,
+                "weight": 111.8
+            },
+            {
+                "id": "Farm_41",
+                "remaining": 452,
+                "weight": 111.5
+            },
+            {
+                "id": "Farm_42",
+                "remaining": 41,
+                "weight": 110.6
+            },
+            {
+                "id": "Farm_43",
+                "remaining": 0,
+                "weight": 115.7
+            },
+            {
+                "id": "Farm_44",
+                "remaining": 0,
+                "weight": 106.6
+            },
+            {
+                "id": "Farm_45",
+                "remaining": 58,
+                "weight": 100.7
+            },
+            {
+                "id": "Farm_46",
+                "remaining": 330,
+                "weight": 111.6
+            },
+            {
+                "id": "Farm_47",
+                "remaining": 41,
+                "weight": 97.2
+            },
+            {
+                "id": "Farm_48",
+                "remaining": 0,
+                "weight": 112.4
+            },
+            {
+                "id": "Farm_49",
+                "remaining": 0,
+                "weight": 96.7
+            },
+            {
+                "id": "Farm_50",
+                "remaining": 38,
+                "weight": 108.9
+            }
+        ]
+    },
+    "daily_logs": [
+        {
+            "day": 1,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_3",
+                        "Farm_1",
+                        "Farm_43"
+                    ],
+                    "trip_duration_hours": 3.29,
+                    "distance_km": 64.3,
+                    "pigs_delivered": 99,
+                    "load_pct": 99.5,
+                    "trip_cost": 73.95,
+                    "revenue": 13398.89,
+                    "penalty": 2178.96,
+                    "profit": 13324.94
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_33",
+                        "Farm_26",
+                        "Farm_41"
+                    ],
+                    "trip_duration_hours": 3.62,
+                    "distance_km": 80.76,
+                    "pigs_delivered": 100,
+                    "load_pct": 99.6,
+                    "trip_cost": 92.87,
+                    "revenue": 13525.38,
+                    "penalty": 2189.04,
+                    "profit": 13432.51
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_9",
+                        "Farm_42"
+                    ],
+                    "trip_duration_hours": 3.3,
+                    "distance_km": 89.85,
+                    "pigs_delivered": 195,
+                    "load_pct": 99.9,
+                    "trip_cost": 112.31,
+                    "revenue": 27096.46,
+                    "penalty": 3855.79,
+                    "profit": 26984.15
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_17"
+                    ],
+                    "trip_duration_hours": 1.37,
+                    "distance_km": 18.66,
+                    "pigs_delivered": 114,
+                    "load_pct": 100.0,
+                    "trip_cost": 21.46,
+                    "revenue": 12423.97,
+                    "penalty": 3105.99,
+                    "profit": 12402.51
+                }
+            ],
+            "total_processed": 508,
+            "daily_profit": 66144.10409297112
+        },
+        {
+            "day": 2,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_25",
+                        "Farm_34"
+                    ],
+                    "trip_duration_hours": 3.66,
+                    "distance_km": 108.07,
+                    "pigs_delivered": 100,
+                    "load_pct": 99.2,
+                    "trip_cost": 124.28,
+                    "revenue": 12841.78,
+                    "penalty": 2488.66,
+                    "profit": 12717.5
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_2"
+                    ],
+                    "trip_duration_hours": 1.76,
+                    "distance_km": 37.77,
+                    "pigs_delivered": 108,
+                    "load_pct": 99.9,
+                    "trip_cost": 43.43,
+                    "revenue": 12569.98,
+                    "penalty": 3032.01,
+                    "profit": 12526.55
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_49",
+                        "Farm_18",
+                        "Farm_4"
+                    ],
+                    "trip_duration_hours": 5.0,
+                    "distance_km": 150.07,
+                    "pigs_delivered": 201,
+                    "load_pct": 99.7,
+                    "trip_cost": 187.58,
+                    "revenue": 25523.58,
+                    "penalty": 5184.71,
+                    "profit": 25336.0
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_11"
+                    ],
+                    "trip_duration_hours": 2.24,
+                    "distance_km": 62.19,
+                    "pigs_delivered": 100,
+                    "load_pct": 99.7,
+                    "trip_cost": 71.52,
+                    "revenue": 13087.5,
+                    "penalty": 2474.62,
+                    "profit": 13015.98
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_19",
+                        "Farm_12"
+                    ],
+                    "trip_duration_hours": 5.74,
+                    "distance_km": 211.77,
+                    "pigs_delivered": 100,
+                    "load_pct": 99.1,
+                    "trip_cost": 243.53,
+                    "revenue": 12346.43,
+                    "penalty": 2711.33,
+                    "profit": 12102.9
+                }
+            ],
+            "total_processed": 609,
+            "daily_profit": 75698.93342701372
+        },
+        {
+            "day": 3,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_35",
+                        "Farm_50"
+                    ],
+                    "trip_duration_hours": 5.05,
+                    "distance_km": 177.45,
+                    "pigs_delivered": 100,
+                    "load_pct": 99.5,
+                    "trip_cost": 204.06,
+                    "revenue": 13008.94,
+                    "penalty": 2496.77,
+                    "profit": 12804.87
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_27",
+                        "Farm_36",
+                        "Farm_28"
+                    ],
+                    "trip_duration_hours": 6.41,
+                    "distance_km": 220.32,
+                    "pigs_delivered": 92,
+                    "load_pct": 85.9,
+                    "trip_cost": 253.36,
+                    "revenue": 10777.18,
+                    "penalty": 2635.28,
+                    "profit": 10523.81
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_10",
+                        "Farm_44",
+                        "Farm_20"
+                    ],
+                    "trip_duration_hours": 4.67,
+                    "distance_km": 133.65,
+                    "pigs_delivered": 218,
+                    "load_pct": 99.9,
+                    "trip_cost": 167.06,
+                    "revenue": 25852.06,
+                    "penalty": 6140.72,
+                    "profit": 25685.0
+                }
+            ],
+            "total_processed": 410,
+            "daily_profit": 49013.679352510946
+        },
+        {
+            "day": 4,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_40",
+                        "Farm_16"
+                    ],
+                    "trip_duration_hours": 6.99,
+                    "distance_km": 274.3,
+                    "pigs_delivered": 95,
+                    "load_pct": 99.7,
+                    "trip_cost": 315.45,
+                    "revenue": 14139.15,
+                    "penalty": 1425.83,
+                    "profit": 13823.7
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_8"
+                    ],
+                    "trip_duration_hours": 7.21,
+                    "distance_km": 310.28,
+                    "pigs_delivered": 189,
+                    "load_pct": 99.7,
+                    "trip_cost": 387.85,
+                    "revenue": 28556.24,
+                    "penalty": 2592.74,
+                    "profit": 28168.39
+                }
+            ],
+            "total_processed": 284,
+            "daily_profit": 41992.09531355044
+        },
+        {
+            "day": 5,
+            "trucks_ops": [
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_37"
+                    ],
+                    "trip_duration_hours": 7.73,
+                    "distance_km": 336.53,
+                    "pigs_delivered": 96,
+                    "load_pct": 99.5,
+                    "trip_cost": 387.01,
+                    "revenue": 14277.48,
+                    "penalty": 1405.87,
+                    "profit": 13890.47
+                }
+            ],
+            "total_processed": 96,
+            "daily_profit": 13890.467244196969
+        },
+        {
+            "day": 8,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_43",
+                        "Farm_41"
+                    ],
+                    "trip_duration_hours": 3.28,
+                    "distance_km": 89.09,
+                    "pigs_delivered": 92,
+                    "load_pct": 99.9,
+                    "trip_cost": 102.46,
+                    "revenue": 14780.85,
+                    "penalty": 816.22,
+                    "profit": 14678.39
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_17",
+                        "Farm_42"
+                    ],
+                    "trip_duration_hours": 3.02,
+                    "distance_km": 75.87,
+                    "pigs_delivered": 102,
+                    "load_pct": 99.1,
+                    "trip_cost": 87.25,
+                    "revenue": 13483.03,
+                    "penalty": 2401.46,
+                    "profit": 13395.78
+                }
+            ],
+            "total_processed": 194,
+            "daily_profit": 28074.175095364895
+        },
+        {
+            "day": 9,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_2",
+                        "Farm_34"
+                    ],
+                    "trip_duration_hours": 3.36,
+                    "distance_km": 92.87,
+                    "pigs_delivered": 96,
+                    "load_pct": 99.0,
+                    "trip_cost": 106.8,
+                    "revenue": 13275.3,
+                    "penalty": 1947.64,
+                    "profit": 13168.5
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_11",
+                        "Farm_4"
+                    ],
+                    "trip_duration_hours": 6.18,
+                    "distance_km": 234.04,
+                    "pigs_delivered": 94,
+                    "load_pct": 99.3,
+                    "trip_cost": 269.15,
+                    "revenue": 14575.01,
+                    "penalty": 998.75,
+                    "profit": 14305.86
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_12"
+                    ],
+                    "trip_duration_hours": 4.12,
+                    "distance_km": 155.93,
+                    "pigs_delivered": 110,
+                    "load_pct": 60.5,
+                    "trip_cost": 194.91,
+                    "revenue": 17900.16,
+                    "penalty": 975.72,
+                    "profit": 17705.25
+                }
+            ],
+            "total_processed": 300,
+            "daily_profit": 45179.61348707833
+        },
+        {
+            "day": 10,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_50"
+                    ],
+                    "trip_duration_hours": 2.92,
+                    "distance_km": 96.15,
+                    "pigs_delivered": 94,
+                    "load_pct": 99.5,
+                    "trip_cost": 110.58,
+                    "revenue": 14423.09,
+                    "penalty": 1042.57,
+                    "profit": 14312.51
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_32",
+                        "Farm_38"
+                    ],
+                    "trip_duration_hours": 7.2,
+                    "distance_km": 284.83,
+                    "pigs_delivered": 193,
+                    "load_pct": 99.8,
+                    "trip_cost": 356.04,
+                    "revenue": 28396.92,
+                    "penalty": 2904.73,
+                    "profit": 28040.88
+                }
+            ],
+            "total_processed": 287,
+            "daily_profit": 42353.385947308445
+        },
+        {
+            "day": 11,
+            "trucks_ops": [
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_20",
+                        "Farm_48",
+                        "Farm_16"
+                    ],
+                    "trip_duration_hours": 7.87,
+                    "distance_km": 293.4,
+                    "pigs_delivered": 90,
+                    "load_pct": 99.0,
+                    "trip_cost": 337.41,
+                    "revenue": 13660.24,
+                    "penalty": 1126.1,
+                    "profit": 13322.83
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_22"
+                    ],
+                    "trip_duration_hours": 6.47,
+                    "distance_km": 273.56,
+                    "pigs_delivered": 96,
+                    "load_pct": 99.4,
+                    "trip_cost": 314.6,
+                    "revenue": 14130.54,
+                    "penalty": 1461.13,
+                    "profit": 13815.94
+                },
+                {
+                    "truck_id": 3,
+                    "route": [
+                        "Farm_24",
+                        "Farm_8"
+                    ],
+                    "trip_duration_hours": 7.91,
+                    "distance_km": 320.64,
+                    "pigs_delivered": 188,
+                    "load_pct": 99.9,
+                    "trip_cost": 400.8,
+                    "revenue": 26080.94,
+                    "penalty": 3779.24,
+                    "profit": 25680.14
+                }
+            ],
+            "total_processed": 374,
+            "daily_profit": 52818.90915903712
+        },
+        {
+            "day": 12,
+            "trucks_ops": [
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_6"
+                    ],
+                    "trip_duration_hours": 7.49,
+                    "distance_km": 324.52,
+                    "pigs_delivered": 99,
+                    "load_pct": 99.8,
+                    "trip_cost": 373.2,
+                    "revenue": 13480.41,
+                    "penalty": 2151.24,
+                    "profit": 13107.21
+                }
+            ],
+            "total_processed": 99,
+            "daily_profit": 13107.212947105467
+        }
+    ]
+}
