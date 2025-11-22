@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 # --- CONFIGURATION AND CONSTANTS ---
 
 SIMULATION_DAYS = 14
-WORK_DAYS = [0, 1, 2, 3, 4]  # 0=Monday, ..., 6=Sunday
-MAX_STOPS = 3 # Maximum stops per trip
+WORK_DAYS = [0, 1, 2, 3, 4]
+MAX_STOPS = 3
 
 # Time Constraints
 MAX_DAILY_HOURS = 8.0
@@ -85,10 +85,7 @@ class Farm:
 
     def grow_pigs(self):
         gain = random.normalvariate(DAILY_GROWTH_MEAN, DAILY_GROWTH_STD)
-        old_weight = self.avg_weight
         self.avg_weight += gain
-        # Log reducido para no saturar, descomentar si necesario
-        # print(f"[GROWTH] {self.id}: {old_weight:.1f}kg -> {self.avg_weight:.1f}kg")
 
 class Simulation:
     def __init__(self):
@@ -202,42 +199,27 @@ class Simulation:
 
         daily_log = {"day": day_num, "trucks_ops": [], "total_processed": 0, "daily_profit": 0}
 
-        # 1. Identify Candidates
         candidates = []
-        skipped_count = 0
         for f in self.farms:
             days_since = day_index - f.last_visit_day
             if days_since >= 7 and f.inventory > 0:
                 candidates.append(f)
-            else:
-                skipped_count += 1
         
-        print(f"[FILTRO] Candidatos: {len(candidates)} | Omitidos (Regla 7 días o vacíos): {skipped_count}")
-
         # Scoring
         PANIC_THRESHOLD_WEIGHT = 118.0 
-        print(f"[ANÁLISIS] Calculando 'Urgency Score' para {len(candidates)} granjas...")
         for f in candidates:
-            dist_to_hub = self.get_real_road_distance(SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'], f.lat, f.lon)
+            # Usamos Haversine para el scoring inicial para no saturar la API
+            dist_est = self.get_haversine_estimate(SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'], f.lat, f.lon)
             if f.avg_weight >= PANIC_THRESHOLD_WEIGHT:
-                f.urgency_score = 1000 + f.avg_weight # Pánico
-                mode = "PÁNICO"
+                f.urgency_score = 1000 + f.avg_weight
             else:
                 est_revenue = f.avg_weight * PRICE_PER_KG
-                est_transport_cost = dist_to_hub * 2 * 1.20 
+                est_transport_cost = dist_est * 2 * 1.20 
                 f.urgency_score = est_revenue - est_transport_cost
-                mode = "ECONÓMICO"
 
         candidates.sort(key=lambda x: x.urgency_score, reverse=True)
         
-        # Mostrar Top 5 Decisiones
-        print("  [DECISIÓN] Top 5 Prioridades del Día:")
-        for i, c in enumerate(candidates[:5]):
-             print(f"    {i+1}. {c.id} | Peso: {c.avg_weight:.1f}kg | Score: {c.urgency_score:.1f} | Dist Hub: ~?")
-
         slaughtered_today = 0
-        
-        # Multi-trip Logic
         active_trucks = []
         for t in self.trucks:
             t.reset_daily_stats()
@@ -249,12 +231,11 @@ class Simulation:
             truck.reset_route() 
 
             if truck.daily_hours_used >= MAX_DAILY_HOURS:
-                # print(f"[TIEMPO] Camión {truck.id} finalizó jornada.")
                 continue 
 
-            print(f"\n[RUTA] Planificando Viaje para Camión {truck.id} (Horas usadas: {truck.daily_hours_used:.1f}h)")
+            print(f"\n[RUTA] Planificando Viaje para Camión {truck.id} (Horas usadas hoy: {truck.daily_hours_used:.2f}h)")
             
-            # 1. Seleccionar primera parada
+            # 1. Primera Parada
             current_farm = candidates.pop(0)
             truck.route.append(current_farm)
             
@@ -266,50 +247,75 @@ class Simulation:
             truck.pigs_loaded = pigs_take
             truck.current_load_kg = pigs_take * current_farm.avg_weight
             
-            print(f"  -> Parada 1: {current_farm.id} (Prioridad Alta). Carga: {pigs_take} cerdos.")
+            print(f"  -> Inicio: {current_farm.id} ({current_farm.avg_weight:.1f}kg). Carga: {pigs_take} cerdos.")
 
-            # 2. Búsqueda Multi-stop (Smart Neighbor)
+            # Cálculo base de distancia/tiempo para lo que ya tenemos en ruta
+            # Usamos Haversine para estimación rápida dentro del bucle
+            curr_lat, curr_lon = current_farm.lat, current_farm.lon
+            dist_hub_direct = self.get_haversine_estimate(curr_lat, curr_lon, SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'])
+            dist_accum_base = self.get_haversine_estimate(SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'], curr_lat, curr_lon)
+            
+            # 2. Búsqueda Multi-stop con CHECK DE TIEMPO
             while len(truck.route) < MAX_STOPS and truck.current_load_kg < truck.capacity_kg * 0.90:
-                print(f"  [DECISIÓN] Buscando vecino inteligente para completar carga ({int(truck.capacity_kg - truck.current_load_kg)}kg libres)...")
+                print(f"  [DECISIÓN] Buscando vecino...")
                 best_next = None
                 best_score = -float('inf')
                 
-                comparison_log = [] # Para loguear las opciones consideradas
+                # Distancia actual total aproximada si volviéramos ahora (Ida + Vuelta directa)
+                current_trip_dist_est = dist_accum_base + dist_hub_direct
                 
                 for cand in candidates:
                     if cand.inventory > 0:
-                        dist_km = self.get_haversine_estimate(current_farm.lat, current_farm.lon, cand.lat, cand.lon)
+                        # Distancia desde granja actual al candidato
+                        leg_dist = self.get_haversine_estimate(current_farm.lat, current_farm.lon, cand.lat, cand.lon)
                         
-                        # Solo considerar vecinos en radio razonable
-                        if dist_km > 100: continue
+                        if leg_dist > 100: continue
+
+                        # --- VALIDACIÓN DE TIEMPO PREDICTIVA ---
+                        # Distancia de retorno desde el candidato al matadero
+                        return_dist_cand = self.get_haversine_estimate(cand.lat, cand.lon, SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'])
                         
-                        # Scoring Heurístico
-                        cost_score = -(dist_km * 1.2)
+                        # Distancia total si añadimos este candidato:
+                        # (Lo que ya llevamos) - (Vuelta directa anterior) + (Desvio al candidato) + (Vuelta nueva)
+                        # Simplificado: Acumulado hasta actual + Leg + Return
+                        new_total_dist = dist_accum_base + leg_dist + return_dist_cand
+                        
+                        # Tiempo estimado: Conducción + (Paradas actuales + 1 nueva) * Servicio + Descarga
+                        new_total_time = self.estimate_trip_time(new_total_dist, len(truck.route) + 1)
+                        
+                        if (truck.daily_hours_used + new_total_time) > MAX_DAILY_HOURS:
+                            # [SKIP] No tenemos tiempo para este desvío, aunque esté cerca
+                            # print(f"    [SKIP TIEMPO] {cand.id} descartado. Se pasaría a {truck.daily_hours_used + new_total_time:.2f}h")
+                            continue
+
+                        # Scoring
+                        cost_score = -(leg_dist * 1.2)
                         qual_score = 100 - abs(cand.avg_weight - 110)
                         if cand.avg_weight < 100: qual_score -= 200
                         if cand.avg_weight > 118: qual_score += 500
                         
                         comb = qual_score + cost_score
                         
-                        # Guardamos log de los mejores candidatos para mostrar decisión
-                        if comb > -100: # Filtro para no ensuciar log con opciones muy malas
-                            comparison_log.append(f"    > {cand.id}: Dist {dist_km:.0f}km (Cost {cost_score:.0f}) + Calidad {cand.avg_weight:.1f}kg (Pts {qual_score}) = Score {comb:.0f}")
-
                         if comb > best_score:
                             best_score = comb
                             best_next = cand
-                
-                # Imprimir comparativa (limitada a 3 para no saturar)
-                if comparison_log:
-                    print("\n".join(comparison_log[:3]))
-                    if len(comparison_log) > 3: print(f"    ... y {len(comparison_log)-3} más.")
+                            # Guardamos datos para actualizar referencias si gana
+                            best_leg_dist = leg_dist
+                            best_return_dist = return_dist_cand
 
                 if best_next:
-                    print(f"  => GANADOR: {best_next.id} (Score: {best_score:.0f})")
+                    print(f"  => AÑADIDO: {best_next.id} (Score: {best_score:.0f})")
                     candidates.remove(best_next)
+                    
+                    # Actualizamos referencias de posición para la siguiente iteración
                     current_farm = best_next
                     truck.route.append(current_farm)
                     
+                    # Actualizamos acumuladores de distancia para la siguiente vuelta del bucle
+                    dist_accum_base += best_leg_dist # Sumamos el tramo que acabamos de confirmar
+                    dist_hub_direct = best_return_dist # La nueva vuelta directa sería desde aquí
+                    
+                    # Lógica de carga
                     rem_kg = truck.capacity_kg - truck.current_load_kg
                     p_cap = int(rem_kg / current_farm.avg_weight)
                     p_take = min(p_cap, current_farm.inventory)
@@ -318,15 +324,15 @@ class Simulation:
                     if p_take > 0:
                         truck.pigs_loaded += p_take
                         truck.current_load_kg += p_take * current_farm.avg_weight
-                        print(f"     Agregados {p_take} cerdos. Camiòn al {int(truck.current_load_kg/truck.capacity_kg*100)}%")
+                        print(f"     Carga extra: {p_take} cerdos. Llenado: {int(truck.current_load_kg/truck.capacity_kg*100)}%")
                     else:
-                        print("     Vecino encontrado pero cupo escorxador lleno.")
                         break
                 else:
-                    print("  => NINGÚN vecino viable encontrado (muy lejos o mala calidad).")
+                    print("  => Fin de carga (Nadie viable por distancia, peso o TIEMPO RESTANTE).")
                     break
             
-            # -- VALIDATE TIME --
+            # -- VALIDATE TIME FINAL (Con API Real) --
+            # Ahora calculamos con precisión OSRM antes de confirmar definitivamente
             trip_dist_km = 0
             c_lat, c_lon = SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon']
             for f in truck.route:
@@ -336,15 +342,14 @@ class Simulation:
             
             est_time = self.estimate_trip_time(trip_dist_km, len(truck.route))
             
-            print(f"  [VALIDACIÓN TIEMPO] Acumulado: {truck.daily_hours_used:.2f}h + Nuevo Viaje: {est_time:.2f}h = {truck.daily_hours_used + est_time:.2f}h")
+            print(f"  [VALIDACIÓN FINAL] Uso: {truck.daily_hours_used:.2f}h + Ruta: {est_time:.2f}h = {truck.daily_hours_used + est_time:.2f}h")
             
             if truck.daily_hours_used + est_time <= MAX_DAILY_HOURS:
                 # COMMIT
-                print(f"  ✅ VIAJE APROBADO. Total cerdos: {truck.pigs_loaded}. Distancia: {trip_dist_km:.1f}km")
+                print(f"  ✅ CONFIRMADO. {len(truck.route)} paradas.")
                 truck.daily_hours_used += est_time
                 slaughtered_today += truck.pigs_loaded
                 
-                # Apply deductions
                 remaining_cap_kg = truck.capacity_kg
                 actual_pigs_loaded_verify = 0
                 for farm_in_route in truck.route:
@@ -358,12 +363,12 @@ class Simulation:
                     remaining_cap_kg -= (amount_for_this_farm * farm_in_route.avg_weight)
                 
                 self.process_truck_trip(truck, daily_log, trip_dist_km, est_time)
-                active_trucks.append(truck) # Vuelve a la cola
-                
+                active_trucks.append(truck) 
             else:
                 # REJECT
-                print(f"  ⛔ VIAJE RECHAZADO. Excede jornada laboral de {MAX_DAILY_HOURS}h.")
-                # Devolver granjas a candidatos
+                # Nota: Gracias al filtro previo, esto ocurrirá mucho menos, 
+                # solo cuando la diferencia entre Haversine (estimado) y OSRM (real) sea grande.
+                print(f"  ⛔ RECHAZADO POR API REAL. {est_time:.2f}h excede límite.")
                 for f in reversed(truck.route):
                     candidates.insert(0, f) 
                 pass 
@@ -380,7 +385,6 @@ class Simulation:
         profit = rev - trip_cost
         
         fill_pct = (truck.current_load_kg / truck.capacity_kg) * 100
-        # print(f"  -> FINANCIALS: Net: {profit:.0f} EUR")
         
         self.total_profit += profit
         self.total_penalties += pen
