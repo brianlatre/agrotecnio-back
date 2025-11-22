@@ -1,289 +1,376 @@
 import math
 import json
-import logging
-import requests
-from dataclasses import dataclass, asdict
-from typing import List, Dict, Tuple
-from ortools.constraint_solver import routing_enums_pb2
-from ortools.constraint_solver import pywrapcp
+import random
+import numpy as np
+from datetime import datetime, timedelta
 
-# --- CONFIGURACIÓN DE LOGGING (FORMATO HISTORIA) ---
-logging.basicConfig(
-    level=logging.INFO, 
-    format='%(asctime)s | %(message)s', 
-    datefmt='%H:%M:%S'
-)
-logger = logging.getLogger("SmartLogistics")
+# --- CONFIGURATION AND CONSTANTS ---
 
-# --- CONFIGURACIÓN ---
-CONFIG = {
-    "slaughterhouse": {"lat": 41.930, "lng": 2.254, "max_capacity": 2000},
-    "prices": {
-        "base_per_kg": 1.56,
-        "penalty_medium": 0.15, 
-        "penalty_high": 0.20,   
-        "transport_small": 1.15, # €/km (10T)
-        "transport_large": 1.25, # €/km (20T)
-        "fleet_fixed": 2000      
-    }
-}
+SIMULATION_DAYS = 14
+WORK_DAYS = [0, 1, 2, 3, 4]  # 0=Monday, ..., 6=Sunday
+MAX_STOPS = 3 # Maximum stops per trip
 
-@dataclass
+# Prices and Costs (EUR)
+PRICE_PER_KG = 1.56
+FIXED_COST_TRUCK = 2000.0  # Per week
+COST_PER_KM_SMALL = 1.15
+COST_PER_KM_LARGE = 1.25
+
+# Weights (kg)
+IDEAL_MIN = 105
+IDEAL_MAX = 115
+PENALTY_RANGE_1_MIN = 100
+PENALTY_RANGE_1_MAX = 120
+
+# Penalties
+PENALTY_FACTOR_MILD = 0.15  # 15%
+PENALTY_FACTOR_HARSH = 0.20 # 20%
+
+# Growth parameters
+DAILY_GROWTH_MEAN = 0.8  # kg/day gained
+DAILY_GROWTH_STD = 0.1
+
+# Base Location (Slaughterhouse - Vic Area)
+SLAUGHTERHOUSE_LOC = {"lat": 41.9308, "lon": 2.2545} 
+SLAUGHTERHOUSE_CAPACITY = 2000 # Pigs per day capacity
+
+# --- CLASSES ---
+
+class Truck:
+    def __init__(self, t_id, capacity_tons, truck_type):
+        self.id = t_id
+        self.capacity_kg = capacity_tons * 1000
+        self.truck_type = truck_type # 'small' or 'large'
+        self.cost_per_km = COST_PER_KM_SMALL if truck_type == 'small' else COST_PER_KM_LARGE
+        self.current_load_kg = 0
+        self.pigs_loaded = 0
+        self.route = [] # List of Farm objects
+        print(f"[INIT] Truck {self.id} created. Type: {self.truck_type}, Cap: {self.capacity_kg}kg")
+    
+    def reset(self):
+        # print(f"[TRUCK] Resetting Truck {self.id} for new day.")
+        self.current_load_kg = 0
+        self.pigs_loaded = 0
+        self.route = []
+
 class Farm:
-    id: str
-    lat: float
-    lng: float
-    pigs: int
-    avg_weight: float
-    visited_this_week: bool = False
+    def __init__(self, f_id, lat, lon, initial_pigs, avg_weight):
+        self.id = f_id
+        self.lat = lat
+        self.lon = lon
+        self.inventory = initial_pigs
+        self.avg_weight = avg_weight
+        self.last_visit_day = -999
+        self.weight_std = 5.0 
+        self.urgency_score = 0
+        # print(f"[INIT] Farm {self.id} created at ({self.lat:.4f}, {self.lon:.4f}). Pigs: {self.inventory}, Avg W: {self.avg_weight:.2f}kg")
 
-    def get_total_weight(self):
-        return self.pigs * self.avg_weight
+    def grow_pigs(self):
+        # Pigs gain weight daily
+        gain = random.normalvariate(DAILY_GROWTH_MEAN, DAILY_GROWTH_STD)
+        old_weight = self.avg_weight
+        self.avg_weight += gain
+        # Imprimimos el log de engorde diario como pediste:
+        print(f"[GROWTH] {self.id}: Pigs grew from {old_weight:.2f}kg to {self.avg_weight:.2f}kg (+{gain:.2f}kg)")
 
-    def get_market_price_per_kg(self):
-        penalty = 0.0
-        w = self.avg_weight
-        if w < 100 or w > 120: penalty = CONFIG["prices"]["penalty_high"]
-        elif w < 105 or w > 115: penalty = CONFIG["prices"]["penalty_medium"]
-        return CONFIG["prices"]["base_per_kg"] * (1 - penalty)
-
-class OSRMRouter:
-    """Calcula distancias reales y construye la Matriz de Distancias"""
-    BASE_URL = "http://router.project-osrm.org/table/v1/driving/"
-
-    def get_distance_matrix(self, locations: List[Tuple[float, float]]):
-        logger.info(f"📡 Conectando con API OSRM para calcular matriz de {len(locations)}x{len(locations)} ubicaciones...")
-        
-        coords = ";".join([f"{lon},{lat}" for lat, lon in locations])
-        url = f"{self.BASE_URL}{coords}?annotations=distance"
-        
-        try:
-            resp = requests.get(url, timeout=5)
-            if resp.status_code == 200:
-                data = resp.json()
-                logger.info("✅ Datos de tráfico real descargados correctamente.")
-                return data['distances'] # Matriz en metros
-        except Exception as e:
-            logger.warning(f"⚠️ API OSRM falló ({str(e)}). Activando modo FALLBACK (Cálculo matemático).")
-            return self._create_fallback_matrix(locations)
-
-    def _create_fallback_matrix(self, locations):
-        size = len(locations)
-        matrix = [[0] * size for _ in range(size)]
-        logger.info("🧮 Calculando matriz mediante fórmula Haversine x 1.3 (Factor carretera)...")
-        for i in range(size):
-            for j in range(size):
-                if i != j:
-                    matrix[i][j] = self._haversine(locations[i], locations[j]) * 1000 * 1.3
-        return matrix
-
-    def _haversine(self, p1, p2):
-        R = 6371
-        dLat = math.radians(p2[0] - p1[0])
-        dLon = math.radians(p2[1] - p1[1])
-        a = math.sin(dLat/2)**2 + math.cos(math.radians(p1[0]))*math.cos(math.radians(p2[0]))*math.sin(dLon/2)**2
-        return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-
-class PigSolverVRP:
+class Simulation:
     def __init__(self):
-        self.router = OSRMRouter()
-        self.depot_loc = (CONFIG["slaughterhouse"]["lat"], CONFIG["slaughterhouse"]["lng"])
+        print("[SYSTEM] Initializing Simulation...")
+        self.farms = []
+        self.trucks = []
+        self.results = {
+            "summary": {},
+            "daily_logs": []
+        }
+        self.total_profit = 0
+        self.total_penalties = 0
+        self.total_transport_cost = 0
+        
+        self.init_scenario()
 
-    def solve_day(self, farms_data: List[dict]):
-        print("\n" + "="*60)
-        logger.info("🧠 INICIANDO CEREBRO LOGÍSTICO (VRP OPTIMIZER)")
-        print("="*60 + "\n")
+    def init_scenario(self):
+        # 1. Create Fleet - ORIGINAL CAPACITIES (10T and 20T)
+        print("[SYSTEM] Creating Fleet (Standard Capacity)...")
+        self.trucks.append(Truck(1, 10, 'small')) 
+        self.trucks.append(Truck(2, 10, 'small'))
+        self.trucks.append(Truck(3, 20, 'large'))
 
-        # 1. Preparar Datos
-        logger.info("--- [PASO 1] ANÁLISIS Y FILTRADO DE GRANJAS ---")
-        all_farms = [Farm(**f) for f in farms_data]
-        candidates = []
-
-        for f in all_farms:
-            weight = f.get_total_weight()
-            is_viable = not f.visited_this_week and f.pigs > 0 and f.avg_weight > 95
+        # 2. Create Farms - MIXED SIZES (Small, Medium, Large)
+        print("[SYSTEM] Generating 50 Mixed Farms (Small, Medium, Large)...")
+        base_coords = [
+            (41.93, 2.25), (41.80, 2.10), (42.00, 2.30), (41.65, 2.00), # Vic/Osona
+            (41.61, 0.62), (41.70, 0.80), (41.55, 0.50), (41.80, 0.90)  # Lleida
+        ]
+        
+        for i in range(50):
+            base = base_coords[i % len(base_coords)]
+            lat = base[0] + random.uniform(-0.15, 0.15) # Spread out
+            lon = base[1] + random.uniform(-0.15, 0.15)
             
-            if is_viable:
-                logger.info(f"  ✅ Granja {f.id} ACEPTADA: {f.pigs} cerdos (~{f.avg_weight}kg). Carga total: {weight}kg")
-                candidates.append(f)
+            # Mixed Inventory logic:
+            # 60% Small (forces multi-stop)
+            # 30% Medium (fills 1 truck)
+            # 10% Large (needs multiple trips)
+            rand_type = random.random()
+            
+            if rand_type < 0.60:
+                # Small: 20-60 pigs (Needs 2-3 stops to fill 10T truck)
+                inv = random.randint(20, 60)
+            elif rand_type < 0.90:
+                # Medium: 100-200 pigs (Fills a 10T truck, maybe 20T part load)
+                inv = random.randint(100, 200)
             else:
-                reason = "Ya visitada" if f.visited_this_week else "Peso insuficiente" if f.avg_weight <= 95 else "Sin stock"
-                logger.info(f"  ❌ Granja {f.id} RECHAZADA. Motivo: {reason}")
+                # Large: 300-600 pigs (Needs multiple trips)
+                inv = random.randint(300, 600)
 
-        if not candidates:
-            logger.warning("⚠️ No hay candidatos viables para hoy. Abortando misión.")
-            return {"routes": [], "summary": {"total_pigs": 0, "net_profit": 0}}
+            w = random.uniform(85, 105)
+            self.farms.append(Farm(f"Farm_{i+1}", lat, lon, inv, w))
 
-        # Estructura para el Solver
-        # Índice 0 siempre es el Depósito (Matadero)
-        logger.info(f"  📊 Total Candidatos: {len(candidates)}. Construyendo nodos de ruta...")
-        locations = [self.depot_loc] + [(f.lat, f.lng) for f in candidates]
-        demands = [0] + [int(f.get_total_weight()) for f in candidates] # Peso en Kg
+    # --- HELPER FUNCTIONS ---
+
+    def haversine(self, lat1, lon1, lat2, lon2):
+        R = 6371  # Earth radius km
+        dlat = math.radians(lat2 - lat1)
+        dlon = math.radians(lon2 - lon1)
+        a = math.sin(dlat / 2) * math.sin(dlat / 2) + \
+            math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * \
+            math.sin(dlon / 2) * math.sin(dlon / 2)
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return R * c
+
+    def calculate_revenue_batch(self, num_pigs, avg_weight, std_weight):
+        # print(f"  [CALC] Calculating revenue for {num_pigs} pigs (Avg W: {avg_weight:.2f}kg)")
+        weights = np.random.normal(avg_weight, std_weight, num_pigs)
         
-        # 2. Matriz de Distancias
-        logger.info("\n--- [PASO 2] CONSTRUCCIÓN DE MATRIZ DE COSTES ---")
-        distance_matrix = self.router.get_distance_matrix(locations)
-        logger.info(f"  🗺️  Matriz generada: {len(locations)}x{len(locations)} nodos interconectados.")
-
-        # 3. Configurar OR-Tools
-        logger.info("\n--- [PASO 3] CONFIGURACIÓN DE RESTRICCIONES MATEMÁTICAS ---")
-        manager = pywrapcp.RoutingIndexManager(len(locations), 10, 0) 
-        routing = pywrapcp.RoutingModel(manager)
-
-        # Callback de Distancia
-        def distance_callback(from_index, to_index):
-            from_node = manager.IndexToNode(from_index)
-            to_node = manager.IndexToNode(to_index)
-            return int(distance_matrix[from_node][to_node])
-
-        transit_callback_index = routing.RegisterTransitCallback(distance_callback)
-        routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
-        logger.info("  ⚙️  Objetivo del Solver: Minimizar distancia total recorrida.")
-
-        # A. Restricción de CAPACIDAD
-        def demand_callback(from_index):
-            from_node = manager.IndexToNode(from_index)
-            return demands[from_node]
-
-        demand_callback_index = routing.RegisterUnaryTransitCallback(demand_callback)
-        routing.AddDimensionWithVehicleCapacity(
-            demand_callback_index,
-            0,  
-            [20000] * 10,  # 20T Max
-            True, 
-            "Capacity"
-        )
-        logger.info("  ⚖️  Restricción activada: Máximo 20,000kg por camión.")
-
-        # B. Restricción de PARADAS
-        routing.AddConstantDimension(
-            1, 
-            3 + 1, # 3 granjas + 1 depósito
-            True, 
-            "Stops"
-        )
-        logger.info("  🛑 Restricción activada: Máximo 3 paradas por ruta.")
-
-        # 4. Ejecutar Solver
-        logger.info("\n--- [PASO 4] EJECUTANDO ALGORITMO DE OPTIMIZACIÓN ---")
-        logger.info("  ⏳ Evaluando miles de combinaciones posibles...")
+        total_revenue = 0
+        total_penalty_amount = 0
         
-        search_parameters = pywrapcp.DefaultRoutingSearchParameters()
-        search_parameters.first_solution_strategy = (
-            routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
-        search_parameters.time_limit.seconds = 2
-
-        solution = routing.SolveWithParameters(search_parameters)
-
-        # 5. Interpretar Resultados
-        logger.info("\n--- [PASO 5] ANÁLISIS DE LA SOLUCIÓN ---")
-        
-        if not solution:
-            logger.error("💀 No se encontró solución viable.")
-            return {}
-
-        final_routes = []
-        total_pigs_processed = 0
-        total_profit_global = 0
-
-        for vehicle_id in range(10):
-            index = routing.Start(vehicle_id)
-            if routing.IsEnd(solution.Value(routing.NextVar(index))):
-                continue 
-
-            logger.info(f"\n🚛 [CAMIÓN VIRTUAL #{vehicle_id}] ASIGNADO:")
-            
-            route_stops = []
-            route_distance_m = 0
-            route_weight = 0
-            
-            # Reconstruir ruta
-            route_log_str = "  📍 Matadero"
-            
-            while not routing.IsEnd(index):
-                node_index = manager.IndexToNode(index)
-                if node_index != 0: # Si no es depósito
-                    farm = candidates[node_index - 1]
-                    route_stops.append(farm)
-                    w = demands[node_index]
-                    route_weight += w
-                    route_log_str += f" -> Granja {farm.id} (+{w}kg)"
-                
-                previous_index = index
-                index = solution.Value(routing.NextVar(index))
-                dist_segment = routing.GetArcCostForVehicle(previous_index, index, vehicle_id)
-                route_distance_m += dist_segment
-
-            route_log_str += f" -> Matadero (Fin)"
-            logger.info(route_log_str)
-            logger.info(f"  📦 Carga Final: {route_weight}kg | Distancia: {route_distance_m/1000:.2f}km")
-
-            # Métricas Financieras
-            dist_km = route_distance_m / 1000
-            
-            # DECISIÓN ECONÓMICA DE FLOTA
-            if route_weight <= 10000:
-                truck_type = "small"
-                logger.info(f"  💡 DECISIÓN: Carga < 10T. Usando Camión PEQUEÑO (Ahorro de costes)")
+        for w in weights:
+            penalty = 0
+            if 105 <= w <= 115:
+                penalty = 0
+            elif (100 <= w < 105) or (115 < w <= 120):
+                penalty = PENALTY_FACTOR_MILD
             else:
-                truck_type = "large"
-                logger.info(f"  💡 DECISIÓN: Carga > 10T. Usando Camión GRANDE (Máxima eficiencia)")
-
-            cost_km = CONFIG["prices"][f"transport_{truck_type}"]
-            trip_cost = dist_km * cost_km
+                penalty = PENALTY_FACTOR_HARSH
             
-            # Ingresos
-            trip_revenue = 0
-            pigs_in_route = 0
-            for f in route_stops:
-                revenue_f = (f.pigs * f.avg_weight) * f.get_market_price_per_kg()
-                trip_revenue += revenue_f
-                pigs_in_route += f.pigs
+            value = w * PRICE_PER_KG * (1 - penalty)
+            total_revenue += value
+            total_penalty_amount += (w * PRICE_PER_KG * penalty)
 
-            profit = trip_revenue - trip_cost
-            logger.info(f"  💰 Balance Ruta: Ingresos {trip_revenue:.2f}€ - Coste {trip_cost:.2f}€ = BENEFICIO {profit:.2f}€")
+        return total_revenue, total_penalty_amount
 
-            final_routes.append({
-                "truck": truck_type,
-                "stops": [f.id for f in route_stops],
-                "total_pigs": pigs_in_route,
-                "total_weight": route_weight,
-                "distance_km": round(dist_km, 2),
-                "cost": round(trip_cost, 2),
-                "profit": round(profit, 2)
-            })
-            
-            total_pigs_processed += pigs_in_route
-            total_profit_global += profit
+    # --- PLANNER LOGIC (DSS) ---
 
-        logger.info(f"\n--- RESUMEN FINAL ---")
-        logger.info(f"🐖 Total Cerdos: {total_pigs_processed}")
-        logger.info(f"🚚 Rutas Optimizadas: {len(final_routes)}")
-        logger.info(f"💸 Beneficio Neto Global: {total_profit_global:.2f}€")
-        print("="*60 + "\n")
+    def plan_day(self, day_index):
+        weekday = day_index % 7
+        day_num = day_index + 1
+        
+        print(f"\n=== STARTING DAY {day_num} (Weekday: {weekday}) ===")
 
-        return {
-            "summary": {
-                "total_pigs": total_pigs_processed,
-                "total_routes": len(final_routes),
-                "total_net_profit": round(total_profit_global, 2)
-            },
-            "routes": final_routes
+        # Update growth
+        for f in self.farms:
+            f.grow_pigs()
+
+        if weekday not in WORK_DAYS:
+            print(f"[SYSTEM] Day {day_num} is a weekend. No operations.")
+            return None
+
+        daily_log = {
+            "day": day_num,
+            "trucks_ops": [],
+            "total_processed": 0,
+            "daily_profit": 0
         }
 
-# --- EJECUCIÓN ---
-if __name__ == "__main__":
-    # Mock Data: Escenario complejo para probar el Multi-Stop
-    farms = [
-        {"id": "F1", "lat": 41.95, "lng": 2.26, "pigs": 50, "avg_weight": 110},   # Pequeña 5.5T
-        {"id": "F2", "lat": 41.96, "lng": 2.27, "pigs": 60, "avg_weight": 108},   # Pequeña 6.4T
-        {"id": "F3", "lat": 41.94, "lng": 2.25, "pigs": 40, "avg_weight": 112},   # Pequeña 4.4T 
-        # F1+F2+F3 suman ~16.3T -> Deberían ir juntas en un camión de 20T
+        # 1. Identify Candidates
+        # Criteria: Not visited in last 7 days
+        candidates = []
+        for f in self.farms:
+            days_since = day_index - f.last_visit_day
+            if days_since >= 7 and f.inventory > 0:
+                candidates.append(f)
         
-        {"id": "F4", "lat": 42.10, "lng": 2.40, "pigs": 180, "avg_weight": 110},  # Grande 19.8T (Sola)
-        {"id": "F5", "lat": 42.15, "lng": 2.45, "pigs": 10, "avg_weight": 90},    # Rechazada (Peso bajo)
-    ]
+        print(f"[LOGIC] Found {len(candidates)} candidate farms available for pickup.")
 
-    solver = PigSolverVRP()
-    result = solver.solve_day(farms)
-    # print(json.dumps(result, indent=2)) # Descomenta si quieres ver el JSON puro al final
+        # 2. Urgency Score
+        for f in candidates:
+            # Logic: Closer to 115kg is more urgent.
+            f.urgency_score = f.avg_weight
+        
+        candidates.sort(key=lambda x: x.urgency_score, reverse=True)
+
+        slaughtered_today = 0
+        
+        # Reset trucks
+        for t in self.trucks:
+            t.reset()
+
+        # 3. Route Assignment
+        for truck in self.trucks:
+            if slaughtered_today >= SLAUGHTERHOUSE_CAPACITY:
+                print("[LIMIT] Slaughterhouse daily capacity reached.")
+                break
+            
+            if not candidates:
+                print("[INFO] No more candidates available.")
+                break
+
+            print(f"[ROUTE] Planning Truck {truck.id} ({truck.truck_type})...")
+            
+            # Start route with most urgent
+            current_farm = candidates.pop(0)
+            truck.route.append(current_farm)
+            
+            # Calculate capacity
+            pigs_capacity = int(truck.capacity_kg / current_farm.avg_weight)
+            pigs_to_take = min(pigs_capacity, current_farm.inventory)
+            
+            # Limit by slaughterhouse
+            remaining_slaughter_cap = SLAUGHTERHOUSE_CAPACITY - slaughtered_today
+            pigs_to_take = min(pigs_to_take, remaining_slaughter_cap)
+
+            truck.pigs_loaded += pigs_to_take
+            truck.current_load_kg += pigs_to_take * current_farm.avg_weight
+            
+            # Update farm state (temporarily for planning)
+            current_farm.inventory -= pigs_to_take
+            current_farm.last_visit_day = day_index
+            
+            slaughtered_today += pigs_to_take
+            print(f"  -> Stop 1: {current_farm.id}. Load: {pigs_to_take} pigs. Truck Fill: {int((truck.current_load_kg/truck.capacity_kg)*100)}%")
+
+            # Try Multi-stop
+            # Logic: If truck is less than 90% full, look for more.
+            while len(truck.route) < MAX_STOPS and truck.current_load_kg < truck.capacity_kg * 0.90:
+                print("  -> Searching for multi-stop...")
+                best_next_farm = None
+                min_dist = float('inf')
+                
+                for cand in candidates:
+                    if cand.inventory > 0:
+                        d = self.haversine(current_farm.lat, current_farm.lon, cand.lat, cand.lon)
+                        if d < min_dist:
+                            min_dist = d
+                            best_next_farm = cand
+                
+                # Increased search radius to 100km to facilitate connections
+                if best_next_farm and min_dist < 100: 
+                    print(f"  -> Found neighbor: {best_next_farm.id} ({min_dist:.1f}km away)")
+                    candidates.remove(best_next_farm)
+                    current_farm = best_next_farm
+                    truck.route.append(current_farm)
+                    
+                    # Load
+                    remaining_weight = truck.capacity_kg - truck.current_load_kg
+                    pigs_cap = int(remaining_weight / current_farm.avg_weight)
+                    pigs_take = min(pigs_cap, current_farm.inventory)
+                    pigs_take = min(pigs_take, SLAUGHTERHOUSE_CAPACITY - slaughtered_today)
+                    
+                    if pigs_take > 0:
+                        truck.pigs_loaded += pigs_take
+                        truck.current_load_kg += pigs_take * current_farm.avg_weight
+                        current_farm.inventory -= pigs_take
+                        current_farm.last_visit_day = day_index
+                        slaughtered_today += pigs_take
+                        print(f"  -> Stop {len(truck.route)}: {current_farm.id}. Added {pigs_take} pigs. Total Fill: {int((truck.current_load_kg/truck.capacity_kg)*100)}%")
+                    else:
+                        print("  -> Neighbor found but cant take pigs (Capacity/Limit).")
+                        break
+                else:
+                    print("  -> No suitable nearby farms found or truck full.")
+                    break 
+
+            # Process Trip
+            if truck.pigs_loaded > 0:
+                self.process_truck_trip(truck, daily_log)
+
+        return daily_log
+
+    def process_truck_trip(self, truck, daily_log):
+        # print(f"[TRIP] Processing Trip for Truck {truck.id}...")
+        total_dist = 0
+        current_lat, current_lon = SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon']
+        
+        route_names = []
+        
+        # Route traversal
+        for farm in truck.route:
+            dist = self.haversine(current_lat, current_lon, farm.lat, farm.lon)
+            total_dist += dist
+            current_lat, current_lon = farm.lat, farm.lon
+            route_names.append(farm.id)
+
+        # Return trip
+        return_dist = self.haversine(current_lat, current_lon, SLAUGHTERHOUSE_LOC['lat'], SLAUGHTERHOUSE_LOC['lon'])
+        total_dist += return_dist
+        
+        # Costs
+        trip_cost = total_dist * truck.cost_per_km
+        
+        # Revenue
+        avg_w_route = sum([f.avg_weight for f in truck.route]) / len(truck.route)
+        rev, pen = self.calculate_revenue_batch(truck.pigs_loaded, avg_w_route, 5.0)
+        
+        profit = rev - trip_cost
+        print(f"  -> TRIP FINISHED: {route_names} | Dist: {total_dist:.1f}km | Net: {profit:.0f} EUR")
+        
+        # Global stats update
+        self.total_profit += profit
+        self.total_penalties += pen
+        self.total_transport_cost += trip_cost
+        
+        op_data = {
+            "truck_id": truck.id,
+            "route": route_names,
+            "distance_km": round(total_dist, 2),
+            "pigs_delivered": truck.pigs_loaded,
+            "load_pct": round((truck.current_load_kg / truck.capacity_kg) * 100, 1),
+            "trip_cost": round(trip_cost, 2),
+            "revenue": round(rev, 2),
+            "penalty": round(pen, 2),
+            "profit": round(profit, 2)
+        }
+        
+        daily_log["trucks_ops"].append(op_data)
+        daily_log["total_processed"] += truck.pigs_loaded
+        daily_log["daily_profit"] += profit
+
+    def run(self):
+        print("\n[SYSTEM] STARTING MAIN SIMULATION LOOP\n")
+        
+        for d in range(SIMULATION_DAYS):
+            log = self.plan_day(d)
+            if log:
+                self.results["daily_logs"].append(log)
+        
+        # Apply fixed costs
+        print("\n[SYSTEM] Applying Weekly Fixed Costs...")
+        total_fixed_cost = 2 * len(self.trucks) * FIXED_COST_TRUCK # 2 weeks
+        self.total_profit -= total_fixed_cost
+        self.total_transport_cost += total_fixed_cost
+        
+        self.results["summary"] = {
+            "total_profit_net": round(self.total_profit, 2),
+            "total_transport_cost": round(self.total_transport_cost, 2),
+            "total_penalties": round(self.total_penalties, 2),
+            "final_farm_status": [{"id": f.id, "remaining": f.inventory, "weight": round(f.avg_weight, 1)} for f in self.farms]
+        }
+        
+        return self.results
+
+# --- EXECUTION ---
+
+if __name__ == "__main__":
+    sim = Simulation()
+    results = sim.run()
+    
+    # Save for Dashboard
+    with open('simulation_results.json', 'w') as f:
+        json.dump(results, f, indent=4)
+        
+    print("\n=== FINAL SIMULATION REPORT ===")
+    print(f"Total Net Profit: {results['summary']['total_profit_net']} EUR")
+    print(f"Total Transport Cost: {results['summary']['total_transport_cost']} EUR")
+    print(f"Total Penalties: {results['summary']['total_penalties']} EUR")
+    print("File 'simulation_results.json' generated successfully.")
