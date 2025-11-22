@@ -1,75 +1,87 @@
-from typing import List, Optional
-from pydantic import BaseModel, ConfigDict
+from typing import List, Literal
+from pydantic import BaseModel
 
 
-# ---------- Entrada simulación ----------
+# ---------- /api/init ----------
 
-class SimulationStartRequest(BaseModel):
-    days: int = 10  # 2 semanas laborales
-    start_day_index: int = 1  # por si quieres numerar 1..10
-    slaughterhouse_id: Optional[str] = None  # si quieres elegir uno concreto
-
-
-class SimulationStartResponse(BaseModel):
-    simulation_id: str
-    days_planned: int
+class InitSlaughterhouse(BaseModel):
+    id: str
+    lat: float
+    lng: float
+    capacity: int
 
 
-# ---------- Plan diario ----------
-
-class RouteStop(BaseModel):
-    farm_id: str
-    farm_name: str
-    pigs_loaded: int
-    avg_weight_kg: float
-    distance_from_prev_km: float
-    travel_time_hours: float
-    penalty_ratio: float  # 0.0, 0.15 o 0.20
-    revenue_eur: float
-    penalty_cost_eur: float
+class InitFarm(BaseModel):
+    id: str
+    lat: float
+    lng: float
+    pigs: int
+    avg_weight: float
 
 
-class TruckRoute(BaseModel):
-    transport_id: str
-    truck_type: str  # small / big
-    total_distance_km: float
-    total_travel_time_hours: float
-    total_load_kg: float
-    cost_variable_eur: float
-    cost_fixed_eur: float
-    route: List[RouteStop]
+class InitPrices(BaseModel):
+    base: float
+    diesel_s: float
 
 
-class DailyPlan(BaseModel):
-    simulation_id: str
+class InitResponse(BaseModel):
+    slaughterhouse: InitSlaughterhouse
+    farms: List[InitFarm]
+    prices: InitPrices
+
+
+# ---------- /api/simulation/next-day ----------
+
+class NextDayRequest(BaseModel):
+    # Lo dejamos por si más adelante quieres tunear growth_rate
+    growth_rate: float = 0.9
+
+
+class Route(BaseModel):
+    truck_type: str
+    path: List[List[float]]
+    stops: List[str]
+    pigs_transported: int
+    cost: float
+
+
+class KPIs(BaseModel):
+    daily_revenue: float
+    daily_cost: float
+    total_pigs: int
+
+
+class FarmUpdate(BaseModel):
+    id: str
+    new_weight: float
+    pigs_remaining: int
+    status: Literal["growing", "visited", "empty"]
+
+
+class LogEntry(BaseModel):
+    type: Literal["info", "warning", "error"]
+    msg: str
+
+
+class NextDayResponse(BaseModel):
     day_index: int
-    slaughterhouse_id: str
-
-    total_pigs_delivered: int
-    total_kg_delivered: float
-    capacity_used_pct: float  # % capacidad matadero
-
-    routes: List[TruckRoute]
+    routes: List[Route]
+    kpis: KPIs
+    farm_updates: List[FarmUpdate]
+    logs: List[LogEntry]
 
 
-# ---------- KPIs acumulados ----------
+# ---------- /api/simulation/reset ----------
 
-class CumulativeStats(BaseModel):
-    simulation_id: str
+class ResetResponse(BaseModel):
+    ok: bool
 
-    total_pigs_delivered: int
-    total_kg_delivered: float
 
-    total_revenue_eur: float
-    total_penalties_eur: float
-    total_transport_cost_eur: float
-    total_fixed_truck_cost_eur: float
+# ---------- /api/simulation/history ----------
 
-    margin_eur: float
-    margin_per_kg_eur: float
-
-    # opcional: huella de carbono
-    total_distance_km: float
-    co2_kg: Optional[float] = None
-
-    model_config = ConfigDict(from_attributes=False)
+class HistoryResponse(BaseModel):
+    labels: List[str]
+    profit: List[float]
+    revenue: List[float]
+    cost: List[float]
+    pigs_delivered: List[int]
