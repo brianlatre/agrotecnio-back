@@ -231,7 +231,7 @@ class Simulation:
         
         print(f"[LOGIC] Found {len(candidates)} candidate farms.")
 
-        # [CRITICAL FIX B] Advanced Scoring System
+        # [CRITICAL FIX B] Advanced Scoring System (Global Day Planning)
         PANIC_THRESHOLD_WEIGHT = 118.0 
         
         print("[LOGIC] Scoring candidates (Using API for key metrics)...")
@@ -285,22 +285,52 @@ class Simulation:
             # Multi-stop Search
             while len(truck.route) < MAX_STOPS and truck.current_load_kg < truck.capacity_kg * 0.90:
                 best_next_farm = None
-                min_dist = float('inf')
                 
-                # PERFORMANCE NOTE: 
-                # For the inner loop (scanning 40+ candidates), we use the Haversine Estimate.
-                # Calling the API 50 times here would freeze the script.
+                # [LOGIC CHANGE] "Smart Neighbor" instead of "Nearest Neighbor"
+                # We want to maximize: (Pig Quality Value) - (Transport Cost)
+                best_combined_score = -float('inf')
+                selected_distance = 0
+                
                 for cand in candidates:
                     if cand.inventory > 0:
-                        # Use FAST estimation here
-                        d = self.get_haversine_estimate(current_farm.lat, current_farm.lon, cand.lat, cand.lon)
-                        if d < min_dist:
-                            min_dist = d
+                        # Use FAST estimation for the loop
+                        dist_km = self.get_haversine_estimate(current_farm.lat, current_farm.lon, cand.lat, cand.lon)
+                        
+                        # Filter: Only look within reasonable range (100km)
+                        if dist_km > 100:
+                            continue
+
+                        # --- SCORE FORMULA ---
+                        
+                        # 1. Distance Cost (Negative)
+                        # Estimate 1.2 EUR/km cost
+                        cost_score = -(dist_km * 1.2)
+
+                        # 2. Pig Quality (Positive)
+                        # Ideal is 110kg. We want to minimize deviation from 110.
+                        # Score = 100 - deviation. 
+                        # 110kg -> 100 pts. 90kg -> 80 pts.
+                        quality_score = 100 - abs(cand.avg_weight - 110)
+
+                        # 3. Underweight Penalty (Avoid small pigs even if close)
+                        if cand.avg_weight < 100:
+                            quality_score -= 200 # Huge penalty, don't pick them!
+
+                        # 4. Panic Bonus (If neighbor is about to expire, GO THERE)
+                        if cand.avg_weight > 118:
+                            quality_score += 500
+
+                        # Final Combined Score
+                        combined_score = quality_score + cost_score
+
+                        if combined_score > best_combined_score:
+                            best_combined_score = combined_score
                             best_next_farm = cand
+                            selected_distance = dist_km
                 
-                if best_next_farm and min_dist < 100: 
-                    # [LOG REQUEST] Reason for next stop selection
-                    print(f"  -> Found neighbor: {best_next_farm.id} (~{min_dist:.1f}km away). Reason: Closest available farm (Nearest Neighbor heuristic) to minimize empty driving.")
+                if best_next_farm: 
+                    # [LOG REQUEST] Log with reasoning
+                    print(f"  -> Found Smart Neighbor: {best_next_farm.id} ({selected_distance:.1f}km). Score: {best_combined_score:.1f} (Weight: {best_next_farm.avg_weight:.1f}kg).")
                     
                     candidates.remove(best_next_farm)
                     current_farm = best_next_farm
@@ -324,6 +354,7 @@ class Simulation:
                     else:
                         break
                 else:
+                    # print("  -> No suitable neighbors found (Score too low or too far).")
                     break 
 
             if truck.pigs_loaded > 0:
