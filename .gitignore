@@ -1,2 +1,4 @@
-data/logistics.db
+data/*
 .env
+*.pyc
+__pycache__/
