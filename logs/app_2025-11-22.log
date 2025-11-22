@@ -1,0 +1,121 @@
+2025-11-22 17:36:55.468 | INFO     | logging:callHandlers:1737 - Started server process [11]
+2025-11-22 17:36:55.468 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:36:55.472 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:43:07.683 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:43:07.783 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:43:09.149 | INFO     | logging:callHandlers:1737 - Started server process [14]
+2025-11-22 17:43:09.150 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:43:09.154 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:43:11.260 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:43:11.361 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:44:06.963 | INFO     | logging:callHandlers:1737 - Started server process [25]
+2025-11-22 17:44:06.963 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:06.967 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:44:23.192 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:44:23.293 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:44:24.447 | INFO     | logging:callHandlers:1737 - Started server process [28]
+2025-11-22 17:44:24.447 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:24.451 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:44:26.255 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:44:27.644 | INFO     | logging:callHandlers:1737 - Started server process [31]
+2025-11-22 17:44:27.644 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:27.647 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:44:30.354 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:44:31.726 | INFO     | logging:callHandlers:1737 - Started server process [34]
+2025-11-22 17:44:31.727 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:32.958 | INFO     | logging:callHandlers:1737 - Started server process [37]
+2025-11-22 17:44:32.959 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:32.962 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:44:51.208 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:44:52.473 | INFO     | logging:callHandlers:1737 - Started server process [40]
+2025-11-22 17:44:52.473 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:44:52.477 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:44:59.299 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:44:59.400 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:45:00.757 | INFO     | logging:callHandlers:1737 - Started server process [43]
+2025-11-22 17:45:00.757 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:45:00.762 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:45:09.183 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:45:10.517 | INFO     | logging:callHandlers:1737 - Started server process [46]
+2025-11-22 17:45:10.517 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:45:11.775 | INFO     | logging:callHandlers:1737 - Started server process [49]
+2025-11-22 17:45:11.776 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:45:11.780 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:45:12.882 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:45:12.983 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:45:14.221 | INFO     | logging:callHandlers:1737 - Started server process [52]
+2025-11-22 17:45:14.221 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:45:14.226 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:45:29.253 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:45:29.354 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:45:30.633 | INFO     | logging:callHandlers:1737 - Started server process [55]
+2025-11-22 17:45:30.634 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:45:30.638 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:46:05.108 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:46:06.469 | INFO     | logging:callHandlers:1737 - Started server process [58]
+2025-11-22 17:46:06.469 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:46:06.473 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:46:07.175 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:46:07.276 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:46:08.625 | INFO     | logging:callHandlers:1737 - Started server process [61]
+2025-11-22 17:46:08.626 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:46:08.629 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:46:10.334 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:46:10.434 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:46:11.578 | INFO     | logging:callHandlers:1737 - Started server process [64]
+2025-11-22 17:46:11.578 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:46:11.582 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:46:13.787 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:46:13.888 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:46:15.034 | INFO     | logging:callHandlers:1737 - Started server process [67]
+2025-11-22 17:46:15.035 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:46:15.038 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:53:55.673 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:53:55.774 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:54:06.565 | INFO     | logging:callHandlers:1737 - Started server process [71]
+2025-11-22 17:54:06.565 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:54:06.570 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:56:16.793 | INFO     | logging:callHandlers:1737 - 172.21.0.1:50772 - "GET /docs HTTP/1.1" 200
+2025-11-22 17:56:16.937 | INFO     | logging:callHandlers:1737 - 172.21.0.1:50772 - "GET /openapi.json HTTP/1.1" 200
+2025-11-22 17:58:45.007 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:58:45.108 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:58:46.620 | INFO     | logging:callHandlers:1737 - Started server process [74]
+2025-11-22 17:58:46.621 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:58:46.624 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:58:48.126 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:58:48.227 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:58:49.504 | INFO     | logging:callHandlers:1737 - Started server process [77]
+2025-11-22 17:58:49.505 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:58:49.508 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 17:58:49.858 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 17:58:49.959 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 17:58:51.268 | INFO     | logging:callHandlers:1737 - Started server process [80]
+2025-11-22 17:58:51.268 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 17:58:51.271 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 18:07:23.699 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 18:07:23.802 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 18:07:25.352 | INFO     | logging:callHandlers:1737 - Started server process [83]
+2025-11-22 18:07:25.352 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 18:07:25.356 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 18:10:03.874 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 18:10:03.975 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 18:10:05.534 | INFO     | logging:callHandlers:1737 - Started server process [86]
+2025-11-22 18:10:05.535 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 18:10:05.538 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 18:11:53.261 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 18:11:53.362 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 18:11:54.740 | INFO     | logging:callHandlers:1737 - Started server process [89]
+2025-11-22 18:11:54.740 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 18:11:54.744 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 18:13:35.040 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 18:13:35.141 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 18:13:36.443 | INFO     | logging:callHandlers:1737 - Started server process [92]
+2025-11-22 18:13:36.444 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 18:13:36.447 | INFO     | logging:callHandlers:1737 - Application startup complete.
+2025-11-22 18:14:19.474 | INFO     | logging:callHandlers:1737 - 172.21.0.1:37258 - "GET /docs HTTP/1.1" 200
+2025-11-22 18:14:19.595 | INFO     | logging:callHandlers:1737 - 172.21.0.1:37258 - "GET /openapi.json HTTP/1.1" 200
+2025-11-22 18:15:31.435 | INFO     | logging:callHandlers:1737 - Shutting down
+2025-11-22 18:15:31.536 | INFO     | logging:callHandlers:1737 - Waiting for application shutdown.
+2025-11-22 18:15:33.072 | INFO     | logging:callHandlers:1737 - Started server process [95]
+2025-11-22 18:15:33.073 | INFO     | logging:callHandlers:1737 - Waiting for application startup.
+2025-11-22 18:15:33.076 | INFO     | logging:callHandlers:1737 - Application startup complete.

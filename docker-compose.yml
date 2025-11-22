@@ -10,6 +10,7 @@ services:
     volumes:
       - .:/code
       - ./data:/data
+      - ./logs:/logs
     
     environment:
       - DATABASE_URL=sqlite:///data/logistics.db
