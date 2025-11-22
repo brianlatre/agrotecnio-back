@@ -342,49 +342,12 @@ class Simulation:
                 slaughtered_today += truck.pigs_loaded
                 
                 # Apply changes to farms
-                # Logic note: 'candidates' was already modified by pops/removes. 
-                # But we need to deduct inventory NOW.
-                # Since we already popped them from candidates list, we just update the Farm objects directly.
-                
-                # Re-calculate exact pigs per farm for correct deduction (simple reconstruction)
-                # Because my previous logic block calculated totals but didn't store per-farm take nicely in a variable
-                # I will do a simpler approach: assume the 'truck.route' logic was correct and just deduct based on capacity fill logic again?
-                # No, that's risky. 
-                # FIX: I should have updated inventory in the route building, but if I had to rollback it would be hard.
-                # Since this is a simulation, I will finalize the deductions now.
-                
-                processed_load = 0
                 remaining_cap_kg = truck.capacity_kg
-                
-                # We have to iterate route again to apply deductions accurately
-                # This is slightly redundant but safer than complex rollback objects
                 actual_pigs_loaded_verify = 0
                 
                 for farm_in_route in truck.route:
-                    # This logic must match exactly the one above
-                    # Recalculate specific amount taken from this farm
-                    # Note: this is a simplification. In a rigorous systems we would store (Farm, amount) tuples in route.
-                    
-                    # For this hackathon level code, I will assume the farm gave as much as calculated
-                    # But to be precise, I will just deduct what fits NOW.
-                    
-                    # Wait, I already calculated 'truck.pigs_loaded'.
-                    # Let's just deduct from the farms proportionally or re-run logic?
-                    # Let's re-run deduction logic simply:
-                    
                     p_cap = int(remaining_cap_kg / farm_in_route.avg_weight)
                     p_take = min(p_cap, farm_in_route.inventory)
-                    # Note: We must respect the global slaughtered_today cap we checked earlier
-                    # But 'slaughtered_today' was already incremented by 'truck.pigs_loaded' (the Total).
-                    # We need to distribute 'truck.pigs_loaded' back to the farms.
-                    
-                    # Distribution logic: First farm gets filled, then second...
-                    # This matches the greedy filling above.
-                    
-                    # We need to track how much of the "truck.pigs_loaded" belongs to each farm.
-                    # Since I didn't store it, I will approximate: The simulation logic above filled sequentially.
-                    # So I can just fill sequentially here until truck.pigs_loaded is exhausted.
-                    
                     amount_for_this_farm = min(p_take, truck.pigs_loaded - actual_pigs_loaded_verify)
                     
                     farm_in_route.inventory -= amount_for_this_farm
@@ -393,7 +356,7 @@ class Simulation:
                     actual_pigs_loaded_verify += amount_for_this_farm
                     remaining_cap_kg -= (amount_for_this_farm * farm_in_route.avg_weight)
                 
-                self.process_truck_trip(truck, daily_log, trip_dist_km)
+                self.process_truck_trip(truck, daily_log, trip_dist_km, est_time)
                 
                 # Add truck back to active pool (at the end) to give chance to others
                 active_trucks.append(truck)
@@ -402,12 +365,7 @@ class Simulation:
                 # [ROLLBACK / REJECT]
                 print(f"  -> Trip REJECTED. Time limit exceeded. (Req: {est_time:.1f}h, Avail: {MAX_DAILY_HOURS - truck.daily_hours_used:.1f}h)")
                 # We need to put the farms back into candidates list!
-                # Since we popped them, we must re-append them.
                 for f in truck.route:
-                    # Re-insert respecting urgency? Or just append.
-                    # For simplicity append, they will be sorted next day or if we re-sort.
-                    # Actually, if we reject this truck, maybe another truck has time?
-                    # We should put them back in 'candidates' so other trucks can try.
                     candidates.insert(0, f) # Put back at front (high priority)
                 
                 # Truck is done
@@ -415,7 +373,7 @@ class Simulation:
 
         return daily_log
 
-    def process_truck_trip(self, truck, daily_log, precalc_dist_km):
+    def process_truck_trip(self, truck, daily_log, precalc_dist_km, trip_duration):
         # We use the pre-calculated distance to avoid calling API again
         total_dist = precalc_dist_km
         route_names = [f.id for f in truck.route]
@@ -426,7 +384,7 @@ class Simulation:
         profit = rev - trip_cost
         
         fill_pct = (truck.current_load_kg / truck.capacity_kg) * 100
-        print(f"  -> FINANCIALS: Route: {route_names} | Fill: {fill_pct:.1f}% | Net: {profit:.0f} EUR")
+        print(f"  -> FINANCIALS: Route: {route_names} | Fill: {fill_pct:.1f}% | Time: {trip_duration:.1f}h | Net: {profit:.0f} EUR")
         
         self.total_profit += profit
         self.total_penalties += pen
@@ -435,6 +393,7 @@ class Simulation:
         op_data = {
             "truck_id": truck.id,
             "route": route_names,
+            "trip_duration_hours": round(trip_duration, 2),
             "distance_km": round(total_dist, 2),
             "pigs_delivered": truck.pigs_loaded,
             "load_pct": round(fill_pct, 1),
