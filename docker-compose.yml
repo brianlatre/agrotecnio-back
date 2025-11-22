@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    
+    container_name: agrotecnio
+    
+    ports:
+      - "8000:8000"
+    
+    volumes:
+      - .:/code
+      - ./data:/data
+    
+    environment:
+      - DATABASE_URL=sqlite:///data/logistics.db
+
+    env_file:
+      - .env
+
+    working_dir: /code
+    restart: unless-stopped
