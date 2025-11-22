@@ -1,4 +1,4 @@
-from typing import List, Literal
+from typing import List, Literal, Dict, Any
 from pydantic import BaseModel
 
 
@@ -28,6 +28,7 @@ class InitResponse(BaseModel):
     slaughterhouse: InitSlaughterhouse
     farms: List[InitFarm]
     prices: InitPrices
+    simulation: Dict[str, Any]
 
 
 # ---------- /api/simulation/next-day ----------

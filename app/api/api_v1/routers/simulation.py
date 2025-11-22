@@ -70,76 +70,55 @@ def penalty_ratio(weight: float) -> float:
 
 # ---------- GET /api/init ----------
 
-# @router.get("/init", response_model=InitResponse)
-# def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
-#     slaughterhouse = db.query(Slaughterhouse).first()
-#     if not slaughterhouse:
-#         logger.error("No hay mataderos en la base de datos")
-#         raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
+@router.get("/init", response_model=InitResponse)
+def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
+    # --- LO DE ANTES: BD ---
+    slaughterhouse = db.query(Slaughterhouse).first()
+    if not slaughterhouse:
+        logger.error("No hay mataderos en la base de datos")
+        raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
 
-#     farms = db.query(Farm).all()
-#     if not farms:
-#         logger.error("No hay granjas en la base de datos")
-#         raise HTTPException(status_code=500, detail="No hay granjas en la base de datos")
+    farms = db.query(Farm).all()
+    if not farms:
+        logger.error("No hay granjas en la base de datos")
+        raise HTTPException(status_code=500, detail="No hay granjas en la base de datos")
 
-#     slaughterhouse_data = InitSlaughterhouse(
-#         id=slaughterhouse.slaughterhouse_id,
-#         lat=slaughterhouse.lat,
-#         lng=slaughterhouse.lon,
-#         capacity=slaughterhouse.capacity_per_day,
-#     )
+    slaughterhouse_data = InitSlaughterhouse(
+        id=slaughterhouse.slaughterhouse_id,
+        lat=slaughterhouse.lat,
+        lng=slaughterhouse.lon,
+        capacity=slaughterhouse.capacity_per_day,
+    )
 
-#     farms_data = [
-#         InitFarm(
-#             id=farm.farm_id,
-#             lat=farm.lat,
-#             lng=farm.lon,
-#             pigs=farm.inventory_pigs,
-#             avg_weight=farm.avg_weight_kg,
-#         )
-#         for farm in farms
-#     ]
+    farms_data = [
+        InitFarm(
+            id=farm.farm_id,
+            lat=farm.lat,
+            lng=farm.lon,
+            pigs=farm.inventory_pigs,
+            avg_weight=farm.avg_weight_kg,
+        )
+        for farm in farms
+    ]
 
-#     # precio base por kg desde el matadero; si no, fallback
-#     base_price = slaughterhouse.price_per_kg or 1.56
+    base_price = slaughterhouse.price_per_kg or 1.56
 
-#     # un transport “small” para coger diesel_s; si no hay, fallback
-#     small_truck = (
-#         db.query(Transport)
-#         .order_by(Transport.capacity_tons.asc())
-#         .first()
-#     )
-#     diesel_s = small_truck.cost_per_km if small_truck else 1.15
+    small_truck = (
+        db.query(Transport)
+        .order_by(Transport.capacity_tons.asc())
+        .first()
+    )
+    diesel_s = small_truck.cost_per_km if small_truck else 1.15
 
-#     prices = InitPrices(
-#         base=base_price,
-#         diesel_s=diesel_s,
-#     )
+    prices = InitPrices(
+        base=base_price,
+        diesel_s=diesel_s,
+    )
 
-#     logger.info(
-#         "Estado inicial de simulación cargado",
-#         slaughterhouse_id=slaughterhouse.slaughterhouse_id,
-#         farms_count=len(farms),
-#         base_price=base_price,
-#         diesel_s=diesel_s,
-#     )
-
-#     return InitResponse(
-#         slaughterhouse=slaughterhouse_data,
-#         farms=farms_data,
-#         prices=prices,
-#     )
-
-@router.get("/init")
-def get_initial_state() -> dict:
-    """
-    De momento devolvemos el resultado de la simulación
-    precomputada (simulation_results.json) tal cual, para que
-    el frontend pueda pintar el planning completo.
-    """
+    # --- NUEVO: leer JSON de simulación TAL CUAL ---
     try:
         with SIM_RESULTS_PATH.open("r", encoding="utf-8") as f:
-            data = json.load(f)
+            simulation_data = json.load(f)   # 🔹 aquí viene summary + daily_logs
     except FileNotFoundError:
         logger.error(
             "Fichero de resultados de simulación no encontrado",
@@ -159,7 +138,7 @@ def get_initial_state() -> dict:
             detail="Invalid simulation results JSON",
         )
 
-    summary = data.get("summary", {})
+    summary = simulation_data.get("summary", {})
     logger.info(
         "Resultados de simulación cargados desde fichero",
         total_profit_net=summary.get("total_profit_net"),
@@ -167,7 +146,12 @@ def get_initial_state() -> dict:
         total_penalties=summary.get("total_penalties"),
     )
 
-    return data
+    return InitResponse(
+        slaughterhouse=slaughterhouse_data,
+        farms=farms_data,
+        prices=prices,
+        simulation=simulation_data,
+    )
 
 
 # ---------- POST /api/simulation/next-day ----------
