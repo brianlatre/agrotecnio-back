@@ -4,6 +4,10 @@ from app.db import Base, engine
 from app.api.api_v1.api import api_router
 import app.models
 from app.core.config import settings
+from app.core.logging import setup_logging, get_logger
+
+setup_logging(json_logs=False, log_file=True)
+log = get_logger(service="agrotecnio-api")
 
 app = FastAPI(title=settings.PROJECT_NAME)
 

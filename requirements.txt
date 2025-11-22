@@ -5,3 +5,4 @@ pydantic>=2
 pydantic-settings
 python-dotenv
 email-validator
+loguru

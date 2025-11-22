@@ -4,6 +4,7 @@ from typing import Dict, List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
+from app.core.logging import get_logger
 from app.db import get_db
 from app.models.farm import Farm
 from app.models.slaughterhouse import Slaughterhouse
@@ -24,6 +25,7 @@ from app.schemas.simulation import (
 )
 
 router = APIRouter(tags=["simulation"])
+logger = get_logger(module="simulation")
 
 # Día actual de simulación (estado en memoria, simple)
 CURRENT_DAY_INDEX = 0
@@ -63,10 +65,12 @@ def penalty_ratio(weight: float) -> float:
 def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
     slaughterhouse = db.query(Slaughterhouse).first()
     if not slaughterhouse:
+        logger.error("No hay mataderos en la base de datos")
         raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
 
     farms = db.query(Farm).all()
     if not farms:
+        logger.error("No hay granjas en la base de datos")
         raise HTTPException(status_code=500, detail="No hay granjas en la base de datos")
 
     slaughterhouse_data = InitSlaughterhouse(
@@ -103,6 +107,14 @@ def get_initial_state(db: Session = Depends(get_db)) -> InitResponse:
         diesel_s=diesel_s,
     )
 
+    logger.info(
+        "Estado inicial de simulación cargado",
+        slaughterhouse_id=slaughterhouse.slaughterhouse_id,
+        farms_count=len(farms),
+        base_price=base_price,
+        diesel_s=diesel_s,
+    )
+
     return InitResponse(
         slaughterhouse=slaughterhouse_data,
         farms=farms_data,
@@ -121,15 +133,30 @@ def simulate_next_day(
 
     slaughterhouse = db.query(Slaughterhouse).first()
     if not slaughterhouse:
+        logger.error("Simulación cancelada: no hay mataderos en la base de datos")
         raise HTTPException(status_code=500, detail="No hay mataderos en la base de datos")
 
     transports = db.query(Transport).all()
     if not transports:
+        logger.error("Simulación cancelada: no hay camiones en la base de datos")
         raise HTTPException(status_code=500, detail="No hay camiones en la base de datos")
 
     farms = db.query(Farm).filter(Farm.inventory_pigs > 0).all()
     if not farms:
+        logger.warning("Simulación cancelada: no hay cerdos disponibles en ninguna granja")
         raise HTTPException(status_code=400, detail="No hay cerdos disponibles en ninguna granja")
+
+    # solo para logs, no cambia la lógica
+    next_day_index = CURRENT_DAY_INDEX + 1
+
+    logger.info(
+        "Iniciando simulación de día",
+        day_index=next_day_index,
+        growth_rate=payload.growth_rate,
+        farms_with_pigs=len(farms),
+        transports_count=len(transports),
+        slaughterhouse_id=slaughterhouse.slaughterhouse_id,
+    )
 
     # 1) Aumentar peso de todos los cerdos (crecimiento diario aproximado)
     growth = payload.growth_rate
@@ -267,7 +294,7 @@ def simulate_next_day(
         total_pigs=total_pigs,
     )
 
-    # 8) Logs
+    # 8) Logs (para frontend)
     logs: List[LogEntry] = []
     for idx, r in enumerate(routes, start=1):
         logs.append(
@@ -287,6 +314,15 @@ def simulate_next_day(
                 )
             )
 
+    logger.info(
+        "Simulación de día completada",
+        day_index=next_day_index,
+        routes_count=len(routes),
+        total_pigs=total_pigs,
+        daily_revenue=kpis.daily_revenue,
+        daily_cost=kpis.daily_cost,
+    )
+
     # 9) Actualizar índice de día
     CURRENT_DAY_INDEX += 1
 
@@ -303,10 +339,9 @@ def simulate_next_day(
 
 @router.post("/simulation/reset", response_model=ResetResponse)
 def reset_simulation() -> ResetResponse:
-    # De momento solo confirmamos el reset; más adelante podemos restaurar
-    # inventarios/pesos desde un snapshot inicial.
     global CURRENT_DAY_INDEX
     CURRENT_DAY_INDEX = 0
+    logger.info("Simulación reseteada", day_index=CURRENT_DAY_INDEX)
     return ResetResponse(ok=True)
 
 
@@ -320,6 +355,11 @@ def get_simulation_history() -> HistoryResponse:
     revenue = [5000.0, 7000.0, 8000.0]
     cost = [4000.0, 4500.0, 4800.0]
     pigs_delivered = [180, 350, 420]
+
+    logger.info(
+        "Devolviendo histórico de simulación (dummy)",
+        days=len(labels),
+    )
 
     return HistoryResponse(
         labels=labels,
