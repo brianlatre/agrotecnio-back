@@ -1,258 +1,258 @@
 {
     "summary": {
-        "total_profit_net": 733469.03,
-        "total_transport_cost": 4602.89,
-        "total_penalties": 52260.3,
+        "total_profit_net": 935172.65,
+        "total_transport_cost": 9996.53,
+        "total_penalties": 120725.14,
         "final_farm_status": [
             {
-                "id": "Farm_1_Manlleu",
+                "id": "Farm_1_Vic_Centre",
+                "remaining": 283,
+                "weight": 116.3
+            },
+            {
+                "id": "Farm_2_Vic_Centre",
                 "remaining": 0,
-                "weight": 113.9
+                "weight": 118.7
             },
             {
-                "id": "Farm_2_Taradell",
-                "remaining": 419,
-                "weight": 111.5
-            },
-            {
-                "id": "Farm_3_Manlleu",
-                "remaining": 88,
-                "weight": 108.0
-            },
-            {
-                "id": "Farm_4_Taradell",
+                "id": "Farm_3_Vic_Centre",
                 "remaining": 0,
-                "weight": 123.2
+                "weight": 120.7
             },
             {
-                "id": "Farm_5_Gurb",
-                "remaining": 230,
-                "weight": 112.9
-            },
-            {
-                "id": "Farm_6_Calldetenes",
-                "remaining": 152,
-                "weight": 123.1
-            },
-            {
-                "id": "Farm_7_Taradell",
+                "id": "Farm_4_Vic_Centre",
                 "remaining": 0,
-                "weight": 111.0
+                "weight": 124.2
             },
             {
-                "id": "Farm_8_Calldetenes",
+                "id": "Farm_5_Vic_Centre",
+                "remaining": 79,
+                "weight": 126.2
+            },
+            {
+                "id": "Farm_6_Vic_Centre",
+                "remaining": 19,
+                "weight": 124.6
+            },
+            {
+                "id": "Farm_7_Vic_Centre",
+                "remaining": 248,
+                "weight": 116.8
+            },
+            {
+                "id": "Farm_8_Vic_Centre",
                 "remaining": 0,
-                "weight": 116.9
+                "weight": 119.2
             },
             {
-                "id": "Farm_9_Gurb",
-                "remaining": 43,
-                "weight": 105.8
-            },
-            {
-                "id": "Farm_10_Tona",
-                "remaining": 37,
-                "weight": 114.4
-            },
-            {
-                "id": "Farm_11_Taradell",
+                "id": "Farm_9_Vic_Centre",
                 "remaining": 0,
-                "weight": 113.6
+                "weight": 117.6
             },
             {
-                "id": "Farm_12_Tona",
+                "id": "Farm_10_Vic_Centre",
+                "remaining": 117,
+                "weight": 120.8
+            },
+            {
+                "id": "Farm_11_Vic_Centre",
+                "remaining": 192,
+                "weight": 122.2
+            },
+            {
+                "id": "Farm_12_Vic_Centre",
                 "remaining": 0,
-                "weight": 123.4
+                "weight": 125.7
             },
             {
-                "id": "Farm_13_Sta. Eugenia",
-                "remaining": 50,
-                "weight": 109.4
-            },
-            {
-                "id": "Farm_14_Taradell",
-                "remaining": 550,
-                "weight": 115.0
-            },
-            {
-                "id": "Farm_15_Gurb",
+                "id": "Farm_13_Vic_Centre",
                 "remaining": 0,
-                "weight": 117.5
+                "weight": 122.1
             },
             {
-                "id": "Farm_16_Taradell",
-                "remaining": 43,
-                "weight": 102.4
-            },
-            {
-                "id": "Farm_17_Tona",
+                "id": "Farm_14_Vic_Centre",
                 "remaining": 0,
-                "weight": 116.9
+                "weight": 120.0
             },
             {
-                "id": "Farm_18_Taradell",
-                "remaining": 42,
-                "weight": 105.1
-            },
-            {
-                "id": "Farm_19_Gurb",
-                "remaining": 187,
-                "weight": 106.3
-            },
-            {
-                "id": "Farm_20_Calldetenes",
+                "id": "Farm_15_Vic_Centre",
                 "remaining": 0,
-                "weight": 118.1
-            },
-            {
-                "id": "Farm_21_Tona",
-                "remaining": 43,
-                "weight": 105.5
-            },
-            {
-                "id": "Farm_22_Taradell",
-                "remaining": 92,
-                "weight": 110.2
-            },
-            {
-                "id": "Farm_23_Roda de Ter",
-                "remaining": 238,
-                "weight": 108.4
-            },
-            {
-                "id": "Farm_24_Gurb",
-                "remaining": 0,
-                "weight": 113.5
-            },
-            {
-                "id": "Farm_25_Sta. Eugenia",
-                "remaining": 0,
-                "weight": 118.1
-            },
-            {
-                "id": "Farm_26_Sta. Eugenia",
-                "remaining": 176,
-                "weight": 109.1
-            },
-            {
-                "id": "Farm_27_Taradell",
-                "remaining": 0,
-                "weight": 118.4
-            },
-            {
-                "id": "Farm_28_Calldetenes",
-                "remaining": 40,
-                "weight": 103.4
-            },
-            {
-                "id": "Farm_29_Gurb",
-                "remaining": 0,
-                "weight": 120.5
-            },
-            {
-                "id": "Farm_30_Manlleu",
-                "remaining": 45,
-                "weight": 102.0
-            },
-            {
-                "id": "Farm_31_Gurb",
-                "remaining": 120,
-                "weight": 107.2
-            },
-            {
-                "id": "Farm_32_Taradell",
-                "remaining": 134,
-                "weight": 117.8
-            },
-            {
-                "id": "Farm_33_Manlleu",
-                "remaining": 45,
-                "weight": 104.8
-            },
-            {
-                "id": "Farm_34_Roda de Ter",
-                "remaining": 0,
-                "weight": 116.9
-            },
-            {
-                "id": "Farm_35_Gurb",
-                "remaining": 0,
-                "weight": 115.2
-            },
-            {
-                "id": "Farm_36_Sta. Eugenia",
-                "remaining": 0,
-                "weight": 113.1
-            },
-            {
-                "id": "Farm_37_Manlleu",
-                "remaining": 5,
-                "weight": 113.5
-            },
-            {
-                "id": "Farm_38_Manlleu",
-                "remaining": 0,
-                "weight": 112.2
-            },
-            {
-                "id": "Farm_39_Gurb",
-                "remaining": 0,
-                "weight": 114.4
-            },
-            {
-                "id": "Farm_40_Manlleu",
-                "remaining": 0,
-                "weight": 115.1
-            },
-            {
-                "id": "Farm_41_Calldetenes",
-                "remaining": 32,
-                "weight": 119.7
-            },
-            {
-                "id": "Farm_42_Roda de Ter",
-                "remaining": 82,
                 "weight": 119.0
             },
             {
-                "id": "Farm_43_Tona",
+                "id": "Farm_16_Vic_Centre",
                 "remaining": 0,
-                "weight": 117.0
+                "weight": 119.9
             },
             {
-                "id": "Farm_44_Taradell",
+                "id": "Farm_17_Vic_Centre",
                 "remaining": 0,
-                "weight": 112.7
+                "weight": 116.2
             },
             {
-                "id": "Farm_45_Sta. Eugenia",
-                "remaining": 38,
-                "weight": 117.8
-            },
-            {
-                "id": "Farm_46_Sta. Eugenia",
+                "id": "Farm_18_Vic_Centre",
                 "remaining": 0,
-                "weight": 110.6
+                "weight": 125.4
             },
             {
-                "id": "Farm_47_Tona",
-                "remaining": 197,
-                "weight": 121.1
+                "id": "Farm_19_Vic_Centre",
+                "remaining": 181,
+                "weight": 125.1
             },
             {
-                "id": "Farm_48_Taradell",
-                "remaining": 87,
-                "weight": 112.9
+                "id": "Farm_20_Vic_Centre",
+                "remaining": 0,
+                "weight": 122.5
             },
             {
-                "id": "Farm_49_Roda de Ter",
-                "remaining": 8,
-                "weight": 112.9
+                "id": "Farm_21_Vic_Centre",
+                "remaining": 0,
+                "weight": 119.6
             },
             {
-                "id": "Farm_50_Sta. Eugenia",
-                "remaining": 240,
-                "weight": 108.2
+                "id": "Farm_22_Vic_Centre",
+                "remaining": 0,
+                "weight": 120.3
+            },
+            {
+                "id": "Farm_23_Vic_Centre",
+                "remaining": 0,
+                "weight": 123.9
+            },
+            {
+                "id": "Farm_24_Vic_Centre",
+                "remaining": 0,
+                "weight": 118.9
+            },
+            {
+                "id": "Farm_25_Vic_Centre",
+                "remaining": 0,
+                "weight": 119.1
+            },
+            {
+                "id": "Farm_26_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 129.8
+            },
+            {
+                "id": "Farm_27_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 130.0
+            },
+            {
+                "id": "Farm_28_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 127.3
+            },
+            {
+                "id": "Farm_29_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 130.0
+            },
+            {
+                "id": "Farm_30_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 127.3
+            },
+            {
+                "id": "Farm_31_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 132.1
+            },
+            {
+                "id": "Farm_32_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 129.8
+            },
+            {
+                "id": "Farm_33_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 124.8
+            },
+            {
+                "id": "Farm_34_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 126.8
+            },
+            {
+                "id": "Farm_35_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 129.8
+            },
+            {
+                "id": "Farm_36_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 129.6
+            },
+            {
+                "id": "Farm_37_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 130.5
+            },
+            {
+                "id": "Farm_38_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 128.8
+            },
+            {
+                "id": "Farm_39_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 128.3
+            },
+            {
+                "id": "Farm_40_Ripoll_Muntanya",
+                "remaining": 0,
+                "weight": 130.4
+            },
+            {
+                "id": "Farm_41_Moia_Altipla",
+                "remaining": 0,
+                "weight": 126.3
+            },
+            {
+                "id": "Farm_42_Moia_Altipla",
+                "remaining": 0,
+                "weight": 127.1
+            },
+            {
+                "id": "Farm_43_Moia_Altipla",
+                "remaining": 0,
+                "weight": 123.0
+            },
+            {
+                "id": "Farm_44_Moia_Altipla",
+                "remaining": 0,
+                "weight": 123.9
+            },
+            {
+                "id": "Farm_45_Moia_Altipla",
+                "remaining": 0,
+                "weight": 125.4
+            },
+            {
+                "id": "Farm_46_Moia_Altipla",
+                "remaining": 0,
+                "weight": 129.3
+            },
+            {
+                "id": "Farm_47_Moia_Altipla",
+                "remaining": 0,
+                "weight": 125.8
+            },
+            {
+                "id": "Farm_48_Moia_Altipla",
+                "remaining": 0,
+                "weight": 125.7
+            },
+            {
+                "id": "Farm_49_Moia_Altipla",
+                "remaining": 0,
+                "weight": 124.5
+            },
+            {
+                "id": "Farm_50_Moia_Altipla",
+                "remaining": 0,
+                "weight": 125.9
             }
         ]
     },
@@ -263,65 +263,66 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_29_Gurb",
-                        "Farm_41_Calldetenes"
+                        "Farm_31_Ripoll_Muntanya",
+                        "Farm_4_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.75,
-                    "distance_km": 12.32,
-                    "pigs_delivered": 180,
+                    "trip_duration_hours": 3.06,
+                    "distance_km": 77.98,
+                    "pigs_delivered": 168,
                     "load_pct": 99.5,
-                    "trip_cost": 15.33,
-                    "revenue": 29187.16,
-                    "penalty": 1602.74,
-                    "profit": 29171.83
+                    "trip_cost": 96.95,
+                    "revenue": 27091.29,
+                    "penalty": 3762.43,
+                    "profit": 26994.33
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_40_Ripoll_Muntanya",
+                        "Farm_28_Ripoll_Muntanya"
+                    ],
+                    "trip_duration_hours": 3.31,
+                    "distance_km": 90.48,
+                    "pigs_delivered": 167,
+                    "load_pct": 99.5,
+                    "trip_cost": 112.49,
+                    "revenue": 26544.83,
+                    "penalty": 4487.12,
+                    "profit": 26432.34
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_6_Calldetenes"
+                        "Farm_37_Ripoll_Muntanya",
+                        "Farm_35_Ripoll_Muntanya"
                     ],
-                    "trip_duration_hours": 1.2,
-                    "distance_km": 9.84,
-                    "pigs_delivered": 177,
-                    "load_pct": 99.9,
-                    "trip_cost": 12.28,
-                    "revenue": 29254.34,
-                    "penalty": 2008.18,
-                    "profit": 29242.06
+                    "trip_duration_hours": 3.37,
+                    "distance_km": 93.44,
+                    "pigs_delivered": 167,
+                    "load_pct": 100.0,
+                    "trip_cost": 116.79,
+                    "revenue": 26388.93,
+                    "penalty": 4809.9,
+                    "profit": 26272.14
                 },
                 {
-                    "truck_id": 1,
+                    "truck_id": 2,
                     "route": [
-                        "Farm_4_Taradell",
-                        "Farm_27_Taradell"
+                        "Farm_32_Ripoll_Muntanya",
+                        "Farm_23_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.97,
-                    "distance_km": 23.26,
-                    "pigs_delivered": 178,
-                    "load_pct": 99.9,
-                    "trip_cost": 29.05,
-                    "revenue": 29504.12,
-                    "penalty": 1233.53,
-                    "profit": 29475.07
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_12_Tona",
-                        "Farm_47_Tona"
-                    ],
-                    "trip_duration_hours": 2.06,
-                    "distance_km": 27.94,
-                    "pigs_delivered": 178,
-                    "load_pct": 99.8,
-                    "trip_cost": 34.87,
-                    "revenue": 29381.95,
-                    "penalty": 2036.25,
-                    "profit": 29347.08
+                    "trip_duration_hours": 3.16,
+                    "distance_km": 83.01,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.5,
+                    "trip_cost": 103.19,
+                    "revenue": 27379.95,
+                    "penalty": 3491.78,
+                    "profit": 27276.76
                 }
             ],
-            "total_processed": 713,
-            "daily_profit": 117236.04066475884
+            "total_processed": 672,
+            "daily_profit": 106975.57598071394
         },
         {
             "day": 2,
@@ -329,64 +330,66 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_45_Sta. Eugenia"
+                        "Farm_29_Ripoll_Muntanya",
+                        "Farm_34_Ripoll_Muntanya"
                     ],
-                    "trip_duration_hours": 1.13,
-                    "distance_km": 6.44,
-                    "pigs_delivered": 184,
+                    "trip_duration_hours": 3.13,
+                    "distance_km": 81.73,
+                    "pigs_delivered": 168,
                     "load_pct": 99.9,
-                    "trip_cost": 8.05,
-                    "revenue": 29462.78,
-                    "penalty": 1669.89,
-                    "profit": 29454.73
+                    "trip_cost": 102.06,
+                    "revenue": 26741.78,
+                    "penalty": 4367.62,
+                    "profit": 26639.72
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_36_Ripoll_Muntanya",
+                        "Farm_11_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.94,
+                    "distance_km": 72.22,
+                    "pigs_delivered": 171,
+                    "load_pct": 99.6,
+                    "trip_cost": 89.89,
+                    "revenue": 27792.27,
+                    "penalty": 3400.68,
+                    "profit": 27702.38
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_20_Calldetenes"
+                        "Farm_27_Ripoll_Muntanya",
+                        "Farm_39_Ripoll_Muntanya"
                     ],
-                    "trip_duration_hours": 1.17,
-                    "distance_km": 8.48,
-                    "pigs_delivered": 184,
-                    "load_pct": 99.7,
-                    "trip_cost": 10.56,
-                    "revenue": 29276.93,
-                    "penalty": 1665.42,
-                    "profit": 29266.37
+                    "trip_duration_hours": 3.42,
+                    "distance_km": 96.23,
+                    "pigs_delivered": 167,
+                    "load_pct": 99.9,
+                    "trip_cost": 120.13,
+                    "revenue": 26741.33,
+                    "penalty": 4380.72,
+                    "profit": 26621.2
                 },
                 {
-                    "truck_id": 1,
+                    "truck_id": 2,
                     "route": [
-                        "Farm_15_Gurb",
-                        "Farm_42_Roda de Ter"
+                        "Farm_26_Ripoll_Muntanya",
+                        "Farm_33_Ripoll_Muntanya"
                     ],
-                    "trip_duration_hours": 2.05,
-                    "distance_km": 27.59,
-                    "pigs_delivered": 184,
-                    "load_pct": 100.0,
-                    "trip_cost": 34.48,
-                    "revenue": 28945.31,
-                    "penalty": 1996.81,
-                    "profit": 28910.83
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_25_Sta. Eugenia",
-                        "Farm_32_Taradell"
-                    ],
-                    "trip_duration_hours": 2.02,
-                    "distance_km": 26.11,
-                    "pigs_delivered": 184,
-                    "load_pct": 99.7,
-                    "trip_cost": 32.52,
-                    "revenue": 29344.49,
-                    "penalty": 1678.68,
-                    "profit": 29311.97
+                    "trip_duration_hours": 3.09,
+                    "distance_km": 79.68,
+                    "pigs_delivered": 169,
+                    "load_pct": 99.4,
+                    "trip_cost": 99.05,
+                    "revenue": 27270.35,
+                    "penalty": 3696.08,
+                    "profit": 27171.31
                 }
             ],
-            "total_processed": 736,
-            "daily_profit": 116943.8948494841
+            "total_processed": 675,
+            "daily_profit": 108134.6024553141
         },
         {
             "day": 3,
@@ -394,21 +397,94 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_43_Tona",
-                        "Farm_34_Roda de Ter"
+                        "Farm_46_Moia_Altipla",
+                        "Farm_41_Moia_Altipla"
                     ],
-                    "trip_duration_hours": 2.34,
-                    "distance_km": 42.08,
-                    "pigs_delivered": 149,
-                    "load_pct": 80.6,
-                    "trip_cost": 42.4,
-                    "revenue": 23874.61,
-                    "penalty": 1299.23,
-                    "profit": 23832.2
+                    "trip_duration_hours": 2.79,
+                    "distance_km": 64.51,
+                    "pigs_delivered": 167,
+                    "load_pct": 99.5,
+                    "trip_cost": 80.2,
+                    "revenue": 26875.36,
+                    "penalty": 3870.78,
+                    "profit": 26795.16
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_38_Ripoll_Muntanya",
+                        "Farm_30_Ripoll_Muntanya"
+                    ],
+                    "trip_duration_hours": 3.44,
+                    "distance_km": 96.97,
+                    "pigs_delivered": 167,
+                    "load_pct": 99.6,
+                    "trip_cost": 120.76,
+                    "revenue": 26511.94,
+                    "penalty": 4646.34,
+                    "profit": 26391.18
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_42_Moia_Altipla",
+                        "Farm_19_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.67,
+                    "distance_km": 58.75,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.5,
+                    "trip_cost": 73.08,
+                    "revenue": 27640.88,
+                    "penalty": 3191.49,
+                    "profit": 27567.79
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_5_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.02,
+                    "distance_km": 1.19,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.6,
+                    "trip_cost": 1.49,
+                    "revenue": 27459.91,
+                    "penalty": 3481.26,
+                    "profit": 27458.43
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_48_Moia_Altipla"
+                    ],
+                    "trip_duration_hours": 2.12,
+                    "distance_km": 56.2,
+                    "pigs_delivered": 90,
+                    "load_pct": 52.6,
+                    "trip_cost": 36.96,
+                    "revenue": 14459.0,
+                    "penalty": 2043.78,
+                    "profit": 14422.04
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_47_Moia_Altipla",
+                        "Farm_12_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.69,
+                    "distance_km": 59.33,
+                    "pigs_delivered": 171,
+                    "load_pct": 99.7,
+                    "trip_cost": 73.94,
+                    "revenue": 27545.62,
+                    "penalty": 3727.87,
+                    "profit": 27471.68
                 }
             ],
-            "total_processed": 149,
-            "daily_profit": 23832.202595112496
+            "total_processed": 935,
+            "daily_profit": 150106.2836957217
         },
         {
             "day": 4,
@@ -416,21 +492,123 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_8_Calldetenes",
-                        "Farm_17_Tona"
+                        "Farm_45_Moia_Altipla",
+                        "Farm_10_Vic_Centre"
                     ],
-                    "trip_duration_hours": 2.05,
-                    "distance_km": 27.71,
-                    "pigs_delivered": 116,
-                    "load_pct": 62.9,
-                    "trip_cost": 21.79,
-                    "revenue": 18414.31,
-                    "penalty": 1095.73,
-                    "profit": 18392.52
+                    "trip_duration_hours": 2.59,
+                    "distance_km": 54.62,
+                    "pigs_delivered": 173,
+                    "load_pct": 99.7,
+                    "trip_cost": 68.05,
+                    "revenue": 28223.32,
+                    "penalty": 2778.56,
+                    "profit": 28155.27
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_50_Moia_Altipla",
+                        "Farm_49_Moia_Altipla"
+                    ],
+                    "trip_duration_hours": 2.61,
+                    "distance_km": 55.71,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.7,
+                    "trip_cost": 69.4,
+                    "revenue": 27490.92,
+                    "penalty": 3483.58,
+                    "profit": 27421.52
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_18_Vic_Centre",
+                        "Farm_14_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.61,
+                    "distance_km": 5.3,
+                    "pigs_delivered": 174,
+                    "load_pct": 100.0,
+                    "trip_cost": 6.62,
+                    "revenue": 28479.95,
+                    "penalty": 2822.65,
+                    "profit": 28473.33
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_6_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.11,
+                    "distance_km": 5.45,
+                    "pigs_delivered": 171,
+                    "load_pct": 99.5,
+                    "trip_cost": 6.78,
+                    "revenue": 27495.24,
+                    "penalty": 3493.67,
+                    "profit": 27488.46
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_44_Moia_Altipla",
+                        "Farm_3_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.55,
+                    "distance_km": 52.5,
+                    "pigs_delivered": 174,
+                    "load_pct": 99.6,
+                    "trip_cost": 65.38,
+                    "revenue": 28467.32,
+                    "penalty": 2583.14,
+                    "profit": 28401.94
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_43_Moia_Altipla",
+                        "Farm_13_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.75,
+                    "distance_km": 62.57,
+                    "pigs_delivered": 174,
+                    "load_pct": 99.7,
+                    "trip_cost": 77.98,
+                    "revenue": 28355.76,
+                    "penalty": 3038.02,
+                    "profit": 28277.78
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_20_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.13,
+                    "distance_km": 6.7,
+                    "pigs_delivered": 99,
+                    "load_pct": 56.5,
+                    "trip_cost": 4.73,
+                    "revenue": 16021.34,
+                    "penalty": 1578.22,
+                    "profit": 16016.61
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_15_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.06,
+                    "distance_km": 3.08,
+                    "pigs_delivered": 93,
+                    "load_pct": 51.4,
+                    "trip_cost": 1.98,
+                    "revenue": 15270.42,
+                    "penalty": 738.49,
+                    "profit": 15268.45
                 }
             ],
-            "total_processed": 116,
-            "daily_profit": 18392.517026089692
+            "total_processed": 1228,
+            "daily_profit": 199503.35710552646
         },
         {
             "day": 5,
@@ -438,34 +616,95 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_35_Gurb"
+                        "Farm_22_Vic_Centre",
+                        "Farm_16_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.05,
-                    "distance_km": 2.31,
-                    "pigs_delivered": 184,
+                    "trip_duration_hours": 1.64,
+                    "distance_km": 6.86,
+                    "pigs_delivered": 177,
+                    "load_pct": 99.9,
+                    "trip_cost": 8.57,
+                    "revenue": 29191.06,
+                    "penalty": 2060.28,
+                    "profit": 29182.49
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_21_Vic_Centre",
+                        "Farm_9_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.61,
+                    "distance_km": 5.38,
+                    "pigs_delivered": 179,
                     "load_pct": 99.7,
-                    "trip_cost": 2.88,
-                    "revenue": 29593.35,
-                    "penalty": 1611.16,
-                    "profit": 29590.47
+                    "trip_cost": 6.7,
+                    "revenue": 29428.49,
+                    "penalty": 1752.85,
+                    "profit": 29421.79
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_40_Manlleu"
+                        "Farm_8_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.27,
-                    "distance_km": 13.32,
-                    "pigs_delivered": 65,
-                    "load_pct": 35.1,
-                    "trip_cost": 5.85,
-                    "revenue": 10499.07,
-                    "penalty": 519.81,
-                    "profit": 10493.22
+                    "trip_duration_hours": 1.12,
+                    "distance_km": 6.2,
+                    "pigs_delivered": 177,
+                    "load_pct": 99.5,
+                    "trip_cost": 7.71,
+                    "revenue": 29190.96,
+                    "penalty": 1868.62,
+                    "profit": 29183.25
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_25_Vic_Centre",
+                        "Farm_2_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.61,
+                    "distance_km": 5.56,
+                    "pigs_delivered": 178,
+                    "load_pct": 99.5,
+                    "trip_cost": 6.92,
+                    "revenue": 29393.83,
+                    "penalty": 1724.93,
+                    "profit": 29386.91
+                },
+                {
+                    "truck_id": 1,
+                    "route": [
+                        "Farm_24_Vic_Centre",
+                        "Farm_1_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.57,
+                    "distance_km": 3.7,
+                    "pigs_delivered": 180,
+                    "load_pct": 99.6,
+                    "trip_cost": 4.61,
+                    "revenue": 29703.97,
+                    "penalty": 1468.26,
+                    "profit": 29699.37
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_17_Vic_Centre",
+                        "Farm_7_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.77,
+                    "distance_km": 13.54,
+                    "pigs_delivered": 182,
+                    "load_pct": 99.9,
+                    "trip_cost": 16.91,
+                    "revenue": 29780.7,
+                    "penalty": 1524.1,
+                    "profit": 29763.79
                 }
             ],
-            "total_processed": 249,
-            "daily_profit": 40083.68977218904
+            "total_processed": 1073,
+            "daily_profit": 176637.5967658971
         },
         {
             "day": 8,
@@ -473,78 +712,36 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_6_Calldetenes"
+                        "Farm_35_Ripoll_Muntanya",
+                        "Farm_28_Ripoll_Muntanya",
+                        "Farm_4_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.2,
-                    "distance_km": 9.84,
-                    "pigs_delivered": 169,
-                    "load_pct": 99.9,
-                    "trip_cost": 12.29,
-                    "revenue": 26892.09,
-                    "penalty": 4465.25,
-                    "profit": 26879.8
+                    "trip_duration_hours": 4.08,
+                    "distance_km": 103.83,
+                    "pigs_delivered": 48,
+                    "load_pct": 29.4,
+                    "trip_cost": 38.11,
+                    "revenue": 7553.42,
+                    "penalty": 1650.21,
+                    "profit": 7515.31
                 },
                 {
-                    "truck_id": 1,
+                    "truck_id": 2,
                     "route": [
-                        "Farm_41_Calldetenes"
+                        "Farm_23_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.16,
-                    "distance_km": 8.17,
-                    "pigs_delivered": 173,
-                    "load_pct": 99.6,
-                    "trip_cost": 10.17,
-                    "revenue": 28113.28,
-                    "penalty": 2994.23,
-                    "profit": 28103.11
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_24_Gurb",
-                        "Farm_5_Gurb"
-                    ],
-                    "trip_duration_hours": 1.72,
-                    "distance_km": 10.99,
-                    "pigs_delivered": 184,
-                    "load_pct": 99.7,
-                    "trip_cost": 13.69,
-                    "revenue": 29429.26,
-                    "penalty": 1554.71,
-                    "profit": 29415.57
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_36_Sta. Eugenia",
-                        "Farm_14_Taradell"
-                    ],
-                    "trip_duration_hours": 1.92,
-                    "distance_km": 20.89,
-                    "pigs_delivered": 183,
-                    "load_pct": 99.5,
-                    "trip_cost": 25.99,
-                    "revenue": 29871.28,
-                    "penalty": 1326.69,
-                    "profit": 29845.29
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_27_Taradell"
-                    ],
-                    "trip_duration_hours": 1.47,
-                    "distance_km": 23.26,
-                    "pigs_delivered": 23,
-                    "load_pct": 13.1,
-                    "trip_cost": 3.8,
-                    "revenue": 3692.13,
-                    "penalty": 430.43,
-                    "profit": 3688.33
+                    "trip_duration_hours": 1.05,
+                    "distance_km": 2.57,
+                    "pigs_delivered": 19,
+                    "load_pct": 11.3,
+                    "trip_cost": 0.36,
+                    "revenue": 3006.73,
+                    "penalty": 549.15,
+                    "profit": 3006.36
                 }
             ],
-            "total_processed": 732,
-            "daily_profit": 117932.10279525074
+            "total_processed": 67,
+            "daily_profit": 10521.670519050427
         },
         {
             "day": 9,
@@ -552,77 +749,36 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_45_Sta. Eugenia"
+                        "Farm_39_Ripoll_Muntanya",
+                        "Farm_34_Ripoll_Muntanya",
+                        "Farm_11_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.13,
-                    "distance_km": 6.44,
-                    "pigs_delivered": 175,
-                    "load_pct": 99.7,
-                    "trip_cost": 8.03,
-                    "revenue": 28710.45,
-                    "penalty": 2517.41,
-                    "profit": 28702.41
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_20_Calldetenes",
-                        "Farm_48_Taradell"
-                    ],
-                    "trip_duration_hours": 1.99,
-                    "distance_km": 24.26,
-                    "pigs_delivered": 182,
+                    "trip_duration_hours": 3.71,
+                    "distance_km": 85.5,
+                    "pigs_delivered": 168,
                     "load_pct": 99.8,
-                    "trip_cost": 30.27,
-                    "revenue": 29669.39,
-                    "penalty": 2102.6,
-                    "profit": 29639.12
+                    "trip_cost": 106.66,
+                    "revenue": 26481.43,
+                    "penalty": 5254.73,
+                    "profit": 26374.78
                 },
                 {
-                    "truck_id": 1,
+                    "truck_id": 2,
                     "route": [
-                        "Farm_32_Taradell"
+                        "Farm_33_Ripoll_Muntanya"
                     ],
-                    "trip_duration_hours": 1.35,
-                    "distance_km": 17.46,
-                    "pigs_delivered": 175,
-                    "load_pct": 99.7,
-                    "trip_cost": 21.77,
-                    "revenue": 28770.66,
-                    "penalty": 2274.9,
-                    "profit": 28748.89
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_42_Roda de Ter"
-                    ],
-                    "trip_duration_hours": 1.46,
-                    "distance_km": 23.05,
-                    "pigs_delivered": 173,
-                    "load_pct": 99.6,
-                    "trip_cost": 28.68,
-                    "revenue": 28132.43,
-                    "penalty": 3185.46,
-                    "profit": 28103.75
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_47_Tona"
-                    ],
-                    "trip_duration_hours": 1.45,
-                    "distance_km": 22.26,
-                    "pigs_delivered": 170,
-                    "load_pct": 99.5,
-                    "trip_cost": 27.7,
-                    "revenue": 27299.83,
-                    "penalty": 3639.38,
-                    "profit": 27272.13
+                    "trip_duration_hours": 2.43,
+                    "distance_km": 71.53,
+                    "pigs_delivered": 15,
+                    "load_pct": 9.0,
+                    "trip_cost": 8.09,
+                    "revenue": 2372.75,
+                    "penalty": 435.98,
+                    "profit": 2364.66
                 }
             ],
-            "total_processed": 875,
-            "daily_profit": 142466.302063993
+            "total_processed": 183,
+            "daily_profit": 28739.437925033504
         },
         {
             "day": 10,
@@ -630,53 +786,37 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_11_Taradell",
-                        "Farm_44_Taradell",
-                        "Farm_2_Taradell"
+                        "Farm_30_Ripoll_Muntanya",
+                        "Farm_12_Vic_Centre",
+                        "Farm_5_Vic_Centre"
                     ],
-                    "trip_duration_hours": 2.51,
-                    "distance_km": 25.55,
-                    "pigs_delivered": 182,
-                    "load_pct": 99.9,
-                    "trip_cost": 31.9,
-                    "revenue": 29507.71,
-                    "penalty": 1597.5,
-                    "profit": 29475.81
+                    "trip_duration_hours": 3.58,
+                    "distance_km": 79.17,
+                    "pigs_delivered": 162,
+                    "load_pct": 99.7,
+                    "trip_cost": 98.66,
+                    "revenue": 25464.36,
+                    "penalty": 5647.24,
+                    "profit": 25365.7
                 },
                 {
-                    "truck_id": 1,
+                    "truck_id": 2,
                     "route": [
-                        "Farm_1_Manlleu",
-                        "Farm_37_Manlleu"
-                    ],
-                    "trip_duration_hours": 2.01,
-                    "distance_km": 25.33,
-                    "pigs_delivered": 180,
-                    "load_pct": 99.6,
-                    "trip_cost": 31.52,
-                    "revenue": 29465.42,
-                    "penalty": 1766.14,
-                    "profit": 29433.9
-                },
-                {
-                    "truck_id": 1,
-                    "route": [
-                        "Farm_39_Gurb",
-                        "Farm_38_Manlleu",
-                        "Farm_49_Roda de Ter"
+                        "Farm_41_Moia_Altipla",
+                        "Farm_19_Vic_Centre"
                     ],
                     "trip_duration_hours": 2.77,
-                    "distance_km": 38.53,
-                    "pigs_delivered": 182,
-                    "load_pct": 99.9,
-                    "trip_cost": 48.13,
-                    "revenue": 29443.3,
-                    "penalty": 1560.95,
-                    "profit": 29395.17
+                    "distance_km": 63.35,
+                    "pigs_delivered": 163,
+                    "load_pct": 99.4,
+                    "trip_cost": 78.7,
+                    "revenue": 25731.12,
+                    "penalty": 5372.53,
+                    "profit": 25652.42
                 }
             ],
-            "total_processed": 544,
-            "daily_profit": 88304.87346581346
+            "total_processed": 325,
+            "daily_profit": 51018.12013132143
         },
         {
             "day": 11,
@@ -684,35 +824,51 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_46_Sta. Eugenia",
-                        "Farm_10_Tona"
+                        "Farm_6_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.92,
-                    "distance_km": 21.12,
-                    "pigs_delivered": 180,
-                    "load_pct": 99.8,
-                    "trip_cost": 26.37,
-                    "revenue": 29105.21,
-                    "penalty": 1879.36,
-                    "profit": 29078.85
+                    "trip_duration_hours": 1.11,
+                    "distance_km": 5.45,
+                    "pigs_delivered": 163,
+                    "load_pct": 99.6,
+                    "trip_cost": 6.79,
+                    "revenue": 25710.08,
+                    "penalty": 5364.49,
+                    "profit": 25703.29
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_49_Moia_Altipla",
+                        "Farm_10_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 2.42,
+                    "distance_km": 46.24,
+                    "pigs_delivered": 168,
+                    "load_pct": 99.7,
+                    "trip_cost": 57.61,
+                    "revenue": 26564.07,
+                    "penalty": 4995.61,
+                    "profit": 26506.45
                 },
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_7_Taradell"
+                        "Farm_13_Vic_Centre",
+                        "Farm_14_Vic_Centre",
+                        "Farm_3_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.53,
-                    "distance_km": 26.3,
-                    "pigs_delivered": 84,
-                    "load_pct": 45.6,
-                    "trip_cost": 14.99,
-                    "revenue": 13553.16,
-                    "penalty": 682.31,
-                    "profit": 13538.17
+                    "trip_duration_hours": 2.14,
+                    "distance_km": 6.87,
+                    "pigs_delivered": 24,
+                    "load_pct": 14.3,
+                    "trip_cost": 1.23,
+                    "revenue": 3811.3,
+                    "penalty": 639.72,
+                    "profit": 3810.08
                 }
             ],
-            "total_processed": 264,
-            "daily_profit": 42617.013649976514
+            "total_processed": 355,
+            "daily_profit": 56019.818796693224
         },
         {
             "day": 12,
@@ -720,21 +876,37 @@
                 {
                     "truck_id": 1,
                     "route": [
-                        "Farm_35_Gurb",
-                        "Farm_22_Taradell"
+                        "Farm_8_Vic_Centre",
+                        "Farm_9_Vic_Centre",
+                        "Farm_1_Vic_Centre"
                     ],
-                    "trip_duration_hours": 1.78,
-                    "distance_km": 14.06,
-                    "pigs_delivered": 182,
-                    "load_pct": 99.7,
-                    "trip_cost": 17.52,
-                    "revenue": 29677.91,
-                    "penalty": 1865.56,
-                    "profit": 29660.39
+                    "trip_duration_hours": 2.15,
+                    "distance_km": 7.65,
+                    "pigs_delivered": 170,
+                    "load_pct": 99.5,
+                    "trip_cost": 9.52,
+                    "revenue": 27638.41,
+                    "penalty": 3105.13,
+                    "profit": 27628.89
+                },
+                {
+                    "truck_id": 2,
+                    "route": [
+                        "Farm_2_Vic_Centre",
+                        "Farm_7_Vic_Centre"
+                    ],
+                    "trip_duration_hours": 1.68,
+                    "distance_km": 9.22,
+                    "pigs_delivered": 173,
+                    "load_pct": 99.8,
+                    "trip_cost": 11.51,
+                    "revenue": 27898.81,
+                    "penalty": 3437.1,
+                    "profit": 27887.3
                 }
             ],
-            "total_processed": 182,
-            "daily_profit": 29660.39057045119
+            "total_processed": 343,
+            "daily_profit": 55516.19059861997
         }
     ],
     "metadata": {
@@ -743,205 +915,205 @@
             "lon": 2.2545
         },
         "farms": {
-            "Farm_1_Manlleu": {
-                "lat": 41.9905,
-                "lon": 2.273842
+            "Farm_1_Vic_Centre": {
+                "lat": 41.927925,
+                "lon": 2.250257
             },
-            "Farm_2_Taradell": {
-                "lat": 41.863839,
-                "lon": 2.283799
+            "Farm_2_Vic_Centre": {
+                "lat": 41.928493,
+                "lon": 2.24822
             },
-            "Farm_3_Manlleu": {
-                "lat": 41.969228,
-                "lon": 2.283829
+            "Farm_3_Vic_Centre": {
+                "lat": 41.938727,
+                "lon": 2.251193
             },
-            "Farm_4_Taradell": {
-                "lat": 41.884048,
-                "lon": 2.272146
+            "Farm_4_Vic_Centre": {
+                "lat": 41.939277,
+                "lon": 2.26502
             },
-            "Farm_5_Gurb": {
-                "lat": 41.954938,
-                "lon": 2.237155
+            "Farm_5_Vic_Centre": {
+                "lat": 41.927543,
+                "lon": 2.256203
             },
-            "Farm_6_Calldetenes": {
-                "lat": 41.903149,
-                "lon": 2.254422
+            "Farm_6_Vic_Centre": {
+                "lat": 41.91576,
+                "lon": 2.255165
             },
-            "Farm_7_Taradell": {
-                "lat": 41.85111,
-                "lon": 2.282914
+            "Farm_7_Vic_Centre": {
+                "lat": 41.908487,
+                "lon": 2.26691
             },
-            "Farm_8_Calldetenes": {
-                "lat": 41.928812,
-                "lon": 2.275323
+            "Farm_8_Vic_Centre": {
+                "lat": 41.94997,
+                "lon": 2.259975
             },
-            "Farm_9_Gurb": {
-                "lat": 41.958454,
-                "lon": 2.223943
+            "Farm_9_Vic_Centre": {
+                "lat": 41.935523,
+                "lon": 2.252835
             },
-            "Farm_10_Tona": {
-                "lat": 41.861153,
-                "lon": 2.220158
+            "Farm_10_Vic_Centre": {
+                "lat": 41.926403,
+                "lon": 2.249075
             },
-            "Farm_11_Taradell": {
-                "lat": 41.869912,
-                "lon": 2.257176
+            "Farm_11_Vic_Centre": {
+                "lat": 41.934839,
+                "lon": 2.243594
             },
-            "Farm_12_Tona": {
-                "lat": 41.867833,
-                "lon": 2.229015
+            "Farm_12_Vic_Centre": {
+                "lat": 41.927813,
+                "lon": 2.254485
             },
-            "Farm_13_Sta. Eugenia": {
-                "lat": 41.900135,
-                "lon": 2.299473
+            "Farm_13_Vic_Centre": {
+                "lat": 41.935543,
+                "lon": 2.262537
             },
-            "Farm_14_Taradell": {
-                "lat": 41.876408,
-                "lon": 2.275078
+            "Farm_14_Vic_Centre": {
+                "lat": 41.931229,
+                "lon": 2.263262
             },
-            "Farm_15_Gurb": {
-                "lat": 41.959631,
-                "lon": 2.242193
+            "Farm_15_Vic_Centre": {
+                "lat": 41.930977,
+                "lon": 2.256085
             },
-            "Farm_16_Taradell": {
-                "lat": 41.872375,
-                "lon": 2.295978
+            "Farm_16_Vic_Centre": {
+                "lat": 41.931515,
+                "lon": 2.255353
             },
-            "Farm_17_Tona": {
-                "lat": 41.8573,
-                "lon": 2.197225
+            "Farm_17_Vic_Centre": {
+                "lat": 41.950412,
+                "lon": 2.261193
             },
-            "Farm_18_Taradell": {
-                "lat": 41.917275,
-                "lon": 2.303066
+            "Farm_18_Vic_Centre": {
+                "lat": 41.93509,
+                "lon": 2.271169
             },
-            "Farm_19_Gurb": {
-                "lat": 41.935653,
-                "lon": 2.228698
+            "Farm_19_Vic_Centre": {
+                "lat": 41.920872,
+                "lon": 2.240286
             },
-            "Farm_20_Calldetenes": {
-                "lat": 41.9202,
-                "lon": 2.288729
+            "Farm_20_Vic_Centre": {
+                "lat": 41.917914,
+                "lon": 2.278692
             },
-            "Farm_21_Tona": {
-                "lat": 41.867405,
-                "lon": 2.218897
+            "Farm_21_Vic_Centre": {
+                "lat": 41.937876,
+                "lon": 2.26233
             },
-            "Farm_22_Taradell": {
-                "lat": 41.895856,
-                "lon": 2.27318
+            "Farm_22_Vic_Centre": {
+                "lat": 41.918527,
+                "lon": 2.242402
             },
-            "Farm_23_Roda de Ter": {
-                "lat": 41.969669,
-                "lon": 2.260086
+            "Farm_23_Vic_Centre": {
+                "lat": 41.927971,
+                "lon": 2.253392
             },
-            "Farm_24_Gurb": {
-                "lat": 41.944295,
-                "lon": 2.260849
+            "Farm_24_Vic_Centre": {
+                "lat": 41.928513,
+                "lon": 2.237406
             },
-            "Farm_25_Sta. Eugenia": {
-                "lat": 41.891064,
-                "lon": 2.297443
+            "Farm_25_Vic_Centre": {
+                "lat": 41.942613,
+                "lon": 2.258432
             },
-            "Farm_26_Sta. Eugenia": {
-                "lat": 41.908412,
-                "lon": 2.284965
+            "Farm_26_Ripoll_Muntanya": {
+                "lat": 42.215588,
+                "lon": 2.194229
             },
-            "Farm_27_Taradell": {
-                "lat": 41.866419,
-                "lon": 2.28286
+            "Farm_27_Ripoll_Muntanya": {
+                "lat": 42.257344,
+                "lon": 2.149091
             },
-            "Farm_28_Calldetenes": {
-                "lat": 41.920165,
-                "lon": 2.280022
+            "Farm_28_Ripoll_Muntanya": {
+                "lat": 42.178683,
+                "lon": 2.235014
             },
-            "Farm_29_Gurb": {
-                "lat": 41.942417,
-                "lon": 2.240878
+            "Farm_29_Ripoll_Muntanya": {
+                "lat": 42.209557,
+                "lon": 2.165047
             },
-            "Farm_30_Manlleu": {
-                "lat": 41.988786,
-                "lon": 2.278619
+            "Farm_30_Ripoll_Muntanya": {
+                "lat": 42.157162,
+                "lon": 2.174389
             },
-            "Farm_31_Gurb": {
-                "lat": 41.951034,
-                "lon": 2.252315
+            "Farm_31_Ripoll_Muntanya": {
+                "lat": 42.195329,
+                "lon": 2.212716
             },
-            "Farm_32_Taradell": {
-                "lat": 41.873536,
-                "lon": 2.261476
+            "Farm_32_Ripoll_Muntanya": {
+                "lat": 42.2017,
+                "lon": 2.218408
             },
-            "Farm_33_Manlleu": {
-                "lat": 41.998978,
-                "lon": 2.25522
+            "Farm_33_Ripoll_Muntanya": {
+                "lat": 42.186269,
+                "lon": 2.188526
             },
-            "Farm_34_Roda de Ter": {
-                "lat": 41.999023,
-                "lon": 2.314726
+            "Farm_34_Ripoll_Muntanya": {
+                "lat": 42.177618,
+                "lon": 2.174247
             },
-            "Farm_35_Gurb": {
-                "lat": 41.935054,
-                "lon": 2.250557
+            "Farm_35_Ripoll_Muntanya": {
+                "lat": 42.225647,
+                "lon": 2.249527
             },
-            "Farm_36_Sta. Eugenia": {
-                "lat": 41.916291,
-                "lon": 2.285994
+            "Farm_36_Ripoll_Muntanya": {
+                "lat": 42.174436,
+                "lon": 2.185731
             },
-            "Farm_37_Manlleu": {
-                "lat": 41.991705,
-                "lon": 2.283639
+            "Farm_37_Ripoll_Muntanya": {
+                "lat": 42.246427,
+                "lon": 2.236659
             },
-            "Farm_38_Manlleu": {
-                "lat": 42.000526,
-                "lon": 2.284695
+            "Farm_38_Ripoll_Muntanya": {
+                "lat": 42.214646,
+                "lon": 2.17349
             },
-            "Farm_39_Gurb": {
-                "lat": 41.977576,
-                "lon": 2.190757
+            "Farm_39_Ripoll_Muntanya": {
+                "lat": 42.222855,
+                "lon": 2.164119
             },
-            "Farm_40_Manlleu": {
-                "lat": 41.976937,
-                "lon": 2.273461
+            "Farm_40_Ripoll_Muntanya": {
+                "lat": 42.203491,
+                "lon": 2.226376
             },
-            "Farm_41_Calldetenes": {
-                "lat": 41.925309,
-                "lon": 2.290462
+            "Farm_41_Moia_Altipla": {
+                "lat": 41.825409,
+                "lon": 2.083939
             },
-            "Farm_42_Roda de Ter": {
-                "lat": 41.988353,
-                "lon": 2.292579
+            "Farm_42_Moia_Altipla": {
+                "lat": 41.811361,
+                "lon": 2.071712
             },
-            "Farm_43_Tona": {
-                "lat": 41.860342,
-                "lon": 2.230789
+            "Farm_43_Moia_Altipla": {
+                "lat": 41.795521,
+                "lon": 2.09076
             },
-            "Farm_44_Taradell": {
-                "lat": 41.859053,
-                "lon": 2.277624
+            "Farm_44_Moia_Altipla": {
+                "lat": 41.810766,
+                "lon": 2.084889
             },
-            "Farm_45_Sta. Eugenia": {
-                "lat": 41.920933,
-                "lon": 2.276314
+            "Farm_45_Moia_Altipla": {
+                "lat": 41.806513,
+                "lon": 2.089914
             },
-            "Farm_46_Sta. Eugenia": {
-                "lat": 41.919596,
-                "lon": 2.258402
+            "Farm_46_Moia_Altipla": {
+                "lat": 41.82034,
+                "lon": 2.075182
             },
-            "Farm_47_Tona": {
-                "lat": 41.856223,
-                "lon": 2.21057
+            "Farm_47_Moia_Altipla": {
+                "lat": 41.821271,
+                "lon": 2.10406
             },
-            "Farm_48_Taradell": {
-                "lat": 41.884982,
-                "lon": 2.302938
+            "Farm_48_Moia_Altipla": {
+                "lat": 41.800842,
+                "lon": 2.075307
             },
-            "Farm_49_Roda de Ter": {
-                "lat": 41.999697,
-                "lon": 2.314004
+            "Farm_49_Moia_Altipla": {
+                "lat": 41.818983,
+                "lon": 2.121697
             },
-            "Farm_50_Sta. Eugenia": {
-                "lat": 41.91344,
-                "lon": 2.283672
+            "Farm_50_Moia_Altipla": {
+                "lat": 41.801413,
+                "lon": 2.09828
             }
         }
     }

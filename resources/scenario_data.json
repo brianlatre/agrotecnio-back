@@ -18,354 +18,354 @@
     ],
     "farms": [
         {
-            "id": "Farm_1_Manlleu",
-            "lat": 41.9905,
-            "lon": 2.273842,
-            "inventory": 139,
-            "avg_weight": 102.11
+            "id": "Farm_1_Vic_Centre",
+            "lat": 41.927925,
+            "lon": 2.250257,
+            "inventory": 402,
+            "avg_weight": 105.34
         },
         {
-            "id": "Farm_2_Taradell",
-            "lat": 41.863839,
-            "lon": 2.283799,
-            "inventory": 458,
-            "avg_weight": 100.17
+            "id": "Farm_2_Vic_Centre",
+            "lat": 41.928493,
+            "lon": 2.24822,
+            "inventory": 94,
+            "avg_weight": 107.61
         },
         {
-            "id": "Farm_3_Manlleu",
-            "lat": 41.969228,
-            "lon": 2.283829,
-            "inventory": 88,
-            "avg_weight": 97.0
+            "id": "Farm_3_Vic_Centre",
+            "lat": 41.938727,
+            "lon": 2.251193,
+            "inventory": 95,
+            "avg_weight": 109.97
         },
         {
-            "id": "Farm_4_Taradell",
-            "lat": 41.884048,
-            "lon": 2.272146,
-            "inventory": 159,
-            "avg_weight": 111.94
-        },
-        {
-            "id": "Farm_5_Gurb",
-            "lat": 41.954938,
-            "lon": 2.237155,
-            "inventory": 366,
-            "avg_weight": 101.97
-        },
-        {
-            "id": "Farm_6_Calldetenes",
-            "lat": 41.903149,
-            "lon": 2.254422,
-            "inventory": 498,
-            "avg_weight": 111.8
-        },
-        {
-            "id": "Farm_7_Taradell",
-            "lat": 41.85111,
-            "lon": 2.282914,
-            "inventory": 84,
-            "avg_weight": 99.43
-        },
-        {
-            "id": "Farm_8_Calldetenes",
-            "lat": 41.928812,
-            "lon": 2.275323,
-            "inventory": 52,
-            "avg_weight": 105.25
-        },
-        {
-            "id": "Farm_9_Gurb",
-            "lat": 41.958454,
-            "lon": 2.223943,
-            "inventory": 43,
-            "avg_weight": 94.82
-        },
-        {
-            "id": "Farm_10_Tona",
-            "lat": 41.861153,
-            "lon": 2.220158,
-            "inventory": 163,
-            "avg_weight": 103.03
-        },
-        {
-            "id": "Farm_11_Taradell",
-            "lat": 41.869912,
-            "lon": 2.257176,
-            "inventory": 77,
-            "avg_weight": 103.13
-        },
-        {
-            "id": "Farm_12_Tona",
-            "lat": 41.867833,
-            "lon": 2.229015,
-            "inventory": 131,
-            "avg_weight": 111.7
-        },
-        {
-            "id": "Farm_13_Sta. Eugenia",
-            "lat": 41.900135,
-            "lon": 2.299473,
-            "inventory": 50,
-            "avg_weight": 98.32
-        },
-        {
-            "id": "Farm_14_Taradell",
-            "lat": 41.876408,
-            "lon": 2.275078,
-            "inventory": 593,
-            "avg_weight": 103.54
-        },
-        {
-            "id": "Farm_15_Gurb",
-            "lat": 41.959631,
-            "lon": 2.242193,
+            "id": "Farm_4_Vic_Centre",
+            "lat": 41.939277,
+            "lon": 2.26502,
             "inventory": 86,
-            "avg_weight": 106.49
+            "avg_weight": 113.02
         },
         {
-            "id": "Farm_16_Taradell",
-            "lat": 41.872375,
-            "lon": 2.295978,
-            "inventory": 43,
-            "avg_weight": 91.05
+            "id": "Farm_5_Vic_Centre",
+            "lat": 41.927543,
+            "lon": 2.256203,
+            "inventory": 370,
+            "avg_weight": 114.81
         },
         {
-            "id": "Farm_17_Tona",
-            "lat": 41.8573,
-            "lon": 2.197225,
-            "inventory": 64,
-            "avg_weight": 105.31
-        },
-        {
-            "id": "Farm_18_Taradell",
-            "lat": 41.917275,
-            "lon": 2.303066,
-            "inventory": 42,
-            "avg_weight": 94.51
-        },
-        {
-            "id": "Farm_19_Gurb",
-            "lat": 41.935653,
-            "lon": 2.228698,
-            "inventory": 187,
-            "avg_weight": 95.09
-        },
-        {
-            "id": "Farm_20_Calldetenes",
-            "lat": 41.9202,
-            "lon": 2.288729,
-            "inventory": 212,
-            "avg_weight": 106.85
-        },
-        {
-            "id": "Farm_21_Tona",
-            "lat": 41.867405,
-            "lon": 2.218897,
-            "inventory": 43,
-            "avg_weight": 94.48
-        },
-        {
-            "id": "Farm_22_Taradell",
-            "lat": 41.895856,
-            "lon": 2.27318,
-            "inventory": 238,
-            "avg_weight": 98.78
-        },
-        {
-            "id": "Farm_23_Roda de Ter",
-            "lat": 41.969669,
-            "lon": 2.260086,
-            "inventory": 238,
-            "avg_weight": 96.91
-        },
-        {
-            "id": "Farm_24_Gurb",
-            "lat": 41.944295,
-            "lon": 2.260849,
-            "inventory": 48,
-            "avg_weight": 101.9
-        },
-        {
-            "id": "Farm_25_Sta. Eugenia",
-            "lat": 41.891064,
-            "lon": 2.297443,
-            "inventory": 66,
-            "avg_weight": 107.07
-        },
-        {
-            "id": "Farm_26_Sta. Eugenia",
-            "lat": 41.908412,
-            "lon": 2.284965,
-            "inventory": 176,
-            "avg_weight": 97.32
-        },
-        {
-            "id": "Farm_27_Taradell",
-            "lat": 41.866419,
-            "lon": 2.28286,
-            "inventory": 42,
-            "avg_weight": 107.46
-        },
-        {
-            "id": "Farm_28_Calldetenes",
-            "lat": 41.920165,
-            "lon": 2.280022,
-            "inventory": 40,
-            "avg_weight": 92.37
-        },
-        {
-            "id": "Farm_29_Gurb",
-            "lat": 41.942417,
-            "lon": 2.240878,
-            "inventory": 159,
-            "avg_weight": 109.97
-        },
-        {
-            "id": "Farm_30_Manlleu",
-            "lat": 41.988786,
-            "lon": 2.278619,
-            "inventory": 45,
-            "avg_weight": 91.12
-        },
-        {
-            "id": "Farm_31_Gurb",
-            "lat": 41.951034,
-            "lon": 2.252315,
-            "inventory": 120,
-            "avg_weight": 95.89
-        },
-        {
-            "id": "Farm_32_Taradell",
-            "lat": 41.873536,
-            "lon": 2.261476,
-            "inventory": 427,
-            "avg_weight": 106.67
-        },
-        {
-            "id": "Farm_33_Manlleu",
-            "lat": 41.998978,
-            "lon": 2.25522,
-            "inventory": 45,
-            "avg_weight": 93.59
-        },
-        {
-            "id": "Farm_34_Roda de Ter",
-            "lat": 41.999023,
-            "lon": 2.314726,
-            "inventory": 74,
-            "avg_weight": 106.09
-        },
-        {
-            "id": "Farm_35_Gurb",
-            "lat": 41.935054,
-            "lon": 2.250557,
-            "inventory": 220,
-            "avg_weight": 104.58
-        },
-        {
-            "id": "Farm_36_Sta. Eugenia",
-            "lat": 41.916291,
-            "lon": 2.285994,
-            "inventory": 140,
-            "avg_weight": 101.73
-        },
-        {
-            "id": "Farm_37_Manlleu",
-            "lat": 41.991705,
-            "lon": 2.283639,
-            "inventory": 46,
-            "avg_weight": 102.52
-        },
-        {
-            "id": "Farm_38_Manlleu",
-            "lat": 42.000526,
-            "lon": 2.284695,
-            "inventory": 73,
-            "avg_weight": 100.95
-        },
-        {
-            "id": "Farm_39_Gurb",
-            "lat": 41.977576,
-            "lon": 2.190757,
-            "inventory": 47,
-            "avg_weight": 103.25
-        },
-        {
-            "id": "Farm_40_Manlleu",
-            "lat": 41.976937,
-            "lon": 2.273461,
-            "inventory": 65,
-            "avg_weight": 104.32
-        },
-        {
-            "id": "Farm_41_Calldetenes",
-            "lat": 41.925309,
-            "lon": 2.290462,
-            "inventory": 226,
-            "avg_weight": 108.74
-        },
-        {
-            "id": "Farm_42_Roda de Ter",
-            "lat": 41.988353,
-            "lon": 2.292579,
+            "id": "Farm_6_Vic_Centre",
+            "lat": 41.91576,
+            "lon": 2.255165,
             "inventory": 353,
-            "avg_weight": 107.46
+            "avg_weight": 112.69
         },
         {
-            "id": "Farm_43_Tona",
-            "lat": 41.860342,
-            "lon": 2.230789,
-            "inventory": 75,
-            "avg_weight": 106.07
+            "id": "Farm_7_Vic_Centre",
+            "lat": 41.908487,
+            "lon": 2.26691,
+            "inventory": 495,
+            "avg_weight": 105.53
         },
         {
-            "id": "Farm_44_Taradell",
-            "lat": 41.859053,
-            "lon": 2.277624,
-            "inventory": 66,
-            "avg_weight": 100.95
+            "id": "Farm_8_Vic_Centre",
+            "lat": 41.94997,
+            "lon": 2.259975,
+            "inventory": 311,
+            "avg_weight": 108.27
         },
         {
-            "id": "Farm_45_Sta. Eugenia",
-            "lat": 41.920933,
-            "lon": 2.276314,
+            "id": "Farm_9_Vic_Centre",
+            "lat": 41.935523,
+            "lon": 2.252835,
+            "inventory": 94,
+            "avg_weight": 106.52
+        },
+        {
+            "id": "Farm_10_Vic_Centre",
+            "lat": 41.926403,
+            "lon": 2.249075,
+            "inventory": 366,
+            "avg_weight": 109.79
+        },
+        {
+            "id": "Farm_11_Vic_Centre",
+            "lat": 41.934839,
+            "lon": 2.243594,
+            "inventory": 419,
+            "avg_weight": 110.83
+        },
+        {
+            "id": "Farm_12_Vic_Centre",
+            "lat": 41.927813,
+            "lon": 2.254485,
+            "inventory": 92,
+            "avg_weight": 113.86
+        },
+        {
+            "id": "Farm_13_Vic_Centre",
+            "lat": 41.935543,
+            "lon": 2.262537,
+            "inventory": 97,
+            "avg_weight": 110.33
+        },
+        {
+            "id": "Farm_14_Vic_Centre",
+            "lat": 41.931229,
+            "lon": 2.263262,
+            "inventory": 89,
+            "avg_weight": 109.71
+        },
+        {
+            "id": "Farm_15_Vic_Centre",
+            "lat": 41.930977,
+            "lon": 2.256085,
+            "inventory": 93,
+            "avg_weight": 107.15
+        },
+        {
+            "id": "Farm_16_Vic_Centre",
+            "lat": 41.931515,
+            "lon": 2.255353,
+            "inventory": 88,
+            "avg_weight": 108.54
+        },
+        {
+            "id": "Farm_17_Vic_Centre",
+            "lat": 41.950412,
+            "lon": 2.261193,
+            "inventory": 98,
+            "avg_weight": 105.96
+        },
+        {
+            "id": "Farm_18_Vic_Centre",
+            "lat": 41.93509,
+            "lon": 2.271169,
+            "inventory": 87,
+            "avg_weight": 114.08
+        },
+        {
+            "id": "Farm_19_Vic_Centre",
+            "lat": 41.920872,
+            "lon": 2.240286,
             "inventory": 397,
-            "avg_weight": 107.0
+            "avg_weight": 114.15
         },
         {
-            "id": "Farm_46_Sta. Eugenia",
-            "lat": 41.919596,
-            "lon": 2.258402,
-            "inventory": 54,
-            "avg_weight": 99.86
+            "id": "Farm_20_Vic_Centre",
+            "lat": 41.917914,
+            "lon": 2.278692,
+            "inventory": 99,
+            "avg_weight": 110.98
         },
         {
-            "id": "Farm_47_Tona",
-            "lat": 41.856223,
-            "lon": 2.21057,
-            "inventory": 414,
-            "avg_weight": 109.97
+            "id": "Farm_21_Vic_Centre",
+            "lat": 41.937876,
+            "lon": 2.26233,
+            "inventory": 88,
+            "avg_weight": 108.55
         },
         {
-            "id": "Farm_48_Taradell",
-            "lat": 41.884982,
-            "lon": 2.302938,
-            "inventory": 241,
-            "avg_weight": 101.77
+            "id": "Farm_22_Vic_Centre",
+            "lat": 41.918527,
+            "lon": 2.242402,
+            "inventory": 89,
+            "avg_weight": 108.77
         },
         {
-            "id": "Farm_49_Roda de Ter",
-            "lat": 41.999697,
-            "lon": 2.314004,
-            "inventory": 70,
-            "avg_weight": 101.44
+            "id": "Farm_23_Vic_Centre",
+            "lat": 41.927971,
+            "lon": 2.253392,
+            "inventory": 89,
+            "avg_weight": 112.4
         },
         {
-            "id": "Farm_50_Sta. Eugenia",
-            "lat": 41.91344,
-            "lon": 2.283672,
-            "inventory": 240,
-            "avg_weight": 96.95
+            "id": "Farm_24_Vic_Centre",
+            "lat": 41.928513,
+            "lon": 2.237406,
+            "inventory": 94,
+            "avg_weight": 107.83
+        },
+        {
+            "id": "Farm_25_Vic_Centre",
+            "lat": 41.942613,
+            "lon": 2.258432,
+            "inventory": 94,
+            "avg_weight": 107.95
+        },
+        {
+            "id": "Farm_26_Ripoll_Muntanya",
+            "lat": 42.215588,
+            "lon": 2.194229,
+            "inventory": 96,
+            "avg_weight": 118.48
+        },
+        {
+            "id": "Farm_27_Ripoll_Muntanya",
+            "lat": 42.257344,
+            "lon": 2.149091,
+            "inventory": 98,
+            "avg_weight": 118.61
+        },
+        {
+            "id": "Farm_28_Ripoll_Muntanya",
+            "lat": 42.178683,
+            "lon": 2.235014,
+            "inventory": 95,
+            "avg_weight": 116.26
+        },
+        {
+            "id": "Farm_29_Ripoll_Muntanya",
+            "lat": 42.209557,
+            "lon": 2.165047,
+            "inventory": 91,
+            "avg_weight": 118.87
+        },
+        {
+            "id": "Farm_30_Ripoll_Muntanya",
+            "lat": 42.157162,
+            "lon": 2.174389,
+            "inventory": 98,
+            "avg_weight": 116.16
+        },
+        {
+            "id": "Farm_31_Ripoll_Muntanya",
+            "lat": 42.195329,
+            "lon": 2.212716,
+            "inventory": 96,
+            "avg_weight": 121.23
+        },
+        {
+            "id": "Farm_32_Ripoll_Muntanya",
+            "lat": 42.2017,
+            "lon": 2.218408,
+            "inventory": 100,
+            "avg_weight": 119.03
+        },
+        {
+            "id": "Farm_33_Ripoll_Muntanya",
+            "lat": 42.186269,
+            "lon": 2.188526,
+            "inventory": 88,
+            "avg_weight": 113.17
+        },
+        {
+            "id": "Farm_34_Ripoll_Muntanya",
+            "lat": 42.177618,
+            "lon": 2.174247,
+            "inventory": 88,
+            "avg_weight": 115.67
+        },
+        {
+            "id": "Farm_35_Ripoll_Muntanya",
+            "lat": 42.225647,
+            "lon": 2.249527,
+            "inventory": 87,
+            "avg_weight": 118.55
+        },
+        {
+            "id": "Farm_36_Ripoll_Muntanya",
+            "lat": 42.174436,
+            "lon": 2.185731,
+            "inventory": 85,
+            "avg_weight": 118.88
+        },
+        {
+            "id": "Farm_37_Ripoll_Muntanya",
+            "lat": 42.246427,
+            "lon": 2.236659,
+            "inventory": 96,
+            "avg_weight": 119.41
+        },
+        {
+            "id": "Farm_38_Ripoll_Muntanya",
+            "lat": 42.214646,
+            "lon": 2.17349,
+            "inventory": 90,
+            "avg_weight": 117.42
+        },
+        {
+            "id": "Farm_39_Ripoll_Muntanya",
+            "lat": 42.222855,
+            "lon": 2.164119,
+            "inventory": 85,
+            "avg_weight": 116.99
+        },
+        {
+            "id": "Farm_40_Ripoll_Muntanya",
+            "lat": 42.203491,
+            "lon": 2.226376,
+            "inventory": 90,
+            "avg_weight": 119.9
+        },
+        {
+            "id": "Farm_41_Moia_Altipla",
+            "lat": 41.825409,
+            "lon": 2.083939,
+            "inventory": 97,
+            "avg_weight": 114.99
+        },
+        {
+            "id": "Farm_42_Moia_Altipla",
+            "lat": 41.811361,
+            "lon": 2.071712,
+            "inventory": 88,
+            "avg_weight": 115.47
+        },
+        {
+            "id": "Farm_43_Moia_Altipla",
+            "lat": 41.795521,
+            "lon": 2.09076,
+            "inventory": 87,
+            "avg_weight": 112.3
+        },
+        {
+            "id": "Farm_44_Moia_Altipla",
+            "lat": 41.810766,
+            "lon": 2.084889,
+            "inventory": 91,
+            "avg_weight": 112.5
+        },
+        {
+            "id": "Farm_45_Moia_Altipla",
+            "lat": 41.806513,
+            "lon": 2.089914,
+            "inventory": 85,
+            "avg_weight": 114.59
+        },
+        {
+            "id": "Farm_46_Moia_Altipla",
+            "lat": 41.82034,
+            "lon": 2.075182,
+            "inventory": 99,
+            "avg_weight": 117.83
+        },
+        {
+            "id": "Farm_47_Moia_Altipla",
+            "lat": 41.821271,
+            "lon": 2.10406,
+            "inventory": 99,
+            "avg_weight": 114.18
+        },
+        {
+            "id": "Farm_48_Moia_Altipla",
+            "lat": 41.800842,
+            "lon": 2.075307,
+            "inventory": 90,
+            "avg_weight": 114.48
+        },
+        {
+            "id": "Farm_49_Moia_Altipla",
+            "lat": 41.818983,
+            "lon": 2.121697,
+            "inventory": 92,
+            "avg_weight": 113.69
+        },
+        {
+            "id": "Farm_50_Moia_Altipla",
+            "lat": 41.801413,
+            "lon": 2.09828,
+            "inventory": 85,
+            "avg_weight": 113.91
         }
     ]
 }
